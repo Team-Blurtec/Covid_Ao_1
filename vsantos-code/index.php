@@ -1,12 +1,7 @@
 <?php
 require_once 'assets/php/config.php';
 
-$sql = "SELECT nome, confirmados, activos, recuperados, obitos FROM provincias ORDER BY nome ASC";
 
-$stmt = $connection->prepare($sql);
-$stmt->execute();
-
-$dados = $stmt->fetchAll(PDO::FETCH_OBJ);
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -93,9 +88,11 @@ $dados = $stmt->fetchAll(PDO::FETCH_OBJ);
                         <i class="fas fa-user-cog fa-lg"></i><br>
                         Login
                     </h4>
+                    <div class="clearfix"></div>
                     <button type="button" class="close vs-modal-close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body vs-modal-body">
+                    <div id="loginModalAlert"></div>
                     <form action="#" method="post" id="admin-login-form" class="px-3">
                         <div class="input-group input-group-lg form-group">
                             <div class="input-group-prepend">
@@ -103,10 +100,10 @@ $dados = $stmt->fetchAll(PDO::FETCH_OBJ);
                                 <i class="far fa-user fa-lg"></i>
                             </span>
                             </div>
-                            <label for="u-name" class="sr-only"></label><input type="text" name="u-name" id="u-name"
-                                                                               class="form-control" placeholder="Nome"
-                                                                               required
-                                                                               autofocus>
+                            <label for="name" class="sr-only"></label><input type="text" name="name" id="name"
+                                                                             class="form-control" placeholder="Nome"
+                                                                             required
+                                                                             autofocus>
                         </div>
                         <div class="input-group input-group-lg form-group">
                             <div class="input-group-prepend">
@@ -114,12 +111,18 @@ $dados = $stmt->fetchAll(PDO::FETCH_OBJ);
                                 <i class="fas fa-key fa-lg"></i>
                             </span>
                             </div>
-                            <label for="u-pass" class="sr-only"></label><input type="password" name="u-pass" id="u-pass"
-                                                                               class="form-control"
-                                                                               placeholder="Palavra passe" required>
+                            <label for="password" class="sr-only"></label><input type="password" name="password"
+                                                                                 id="password"
+                                                                                 class="form-control"
+                                                                                 placeholder="Palavra passe" required>
                         </div>
                         <div class="form-group">
-                            <div class="forgot float-right">
+                            <div class="float-left">
+                                <a href="#" id="registo-modal-link">
+                                    <i class="fas fa-user-plus"></i>&nbsp; Nova conta
+                                </a>
+                            </div>
+                            <div class="float-right">
                                 <a href="#" id="forgot-link">Esqueceu a sua palavra passe?</a>
                             </div>
                             <div class="clearfix"></div>
@@ -134,11 +137,39 @@ $dados = $stmt->fetchAll(PDO::FETCH_OBJ);
         </div>
     </div>
     <!--Modal Login-Form end-->
+    <!--Modal Registrar admin-->
+
+    <!--Modal Registrar admin end-->
 </div>
 
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="assets/js/all.min.js"></script>
 <script type="text/javascript" src="assets/js/sweetalert2.min.js"></script>
+
+<!--Scripts e funcoes-->
+<script type="text/javascript">
+    $("#admin-login-form-btn").click(function (e) {
+        if ($("#admin-login-form")[0].checkValidity()) {
+            e.preventDefault();
+
+            $("#admin-login-form-btn").val('A verificar...');
+            $.ajax({
+                url: 'assets/php/action.php',
+                method: 'post',
+                data: $("#admin-login-form").serialize() + '&action=login',
+                success: function (response) {
+                    $("#admin-login-form-btn").val('Entrar');
+                    if (response === 'login') {
+                        window.location = 'admin/index.php';
+                    } else {
+                        $("#loginModalAlert").html(response);
+                        $("#admin-login-form")[0].reset();
+                    }
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>
