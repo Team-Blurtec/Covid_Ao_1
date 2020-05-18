@@ -2,61 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d2e3a40-1a5b-4ec0-b8d0-f6ae1876cce2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/admin/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/all.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/all.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/sweetalert2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/sweetalert2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/vs-styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/all.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/sweetalert2.all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/sweetalert2.all.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/sweetalert2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/sweetalert2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/php/config.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/php/footer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/php/header.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts-custom/MavenPro-VariableFont_wght.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-brands-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-brands-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-brands-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-brands-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-regular-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-regular-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-solid-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-solid-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-solid-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/cvao_db.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vsantos-code/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/vsantos-code/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,9 +19,42 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vsantos-code/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="54" column="57" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vsantos-code/assets/css/vs-styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="16" column="29" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>side</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Viktor Denift &lt;d-thenifts5_nc_th@outlook.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -82,20 +64,23 @@
     <option name="PUSH_TAGS">
       <GitPushTagMode />
     </option>
+    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/examples/dashboard.html" />
         <option value="$PROJECT_DIR$/examples/dashboard.php" />
+        <option value="$PROJECT_DIR$/vsantos-code/assets/css/vs-styles.css" />
+        <option value="$PROJECT_DIR$/vsantos-code/index.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="40" />
-    <option name="y" value="39" />
-    <option name="width" value="1346" />
-    <option name="height" value="684" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP7" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -109,6 +94,24 @@
               <item name="COVIDAO" type="b2602c69:ProjectViewProjectNode" />
               <item name="COVIDAO" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="COVIDAO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="COVIDAO" type="462c0819:PsiDirectoryNode" />
+              <item name="vsantos-code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="COVIDAO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="COVIDAO" type="462c0819:PsiDirectoryNode" />
+              <item name="vsantos-code" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="COVIDAO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="COVIDAO" type="462c0819:PsiDirectoryNode" />
+              <item name="vsantos-code" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -119,7 +122,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../devi-ango" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -140,6 +143,23 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="PHP Built-in Web Server.cvao">
+    <configuration name="user.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/COVIDAO/examples/user.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="cvao" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.user.html" />
+      <item itemvalue="PHP Built-in Web Server.cvao" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.user.html" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -155,22 +175,31 @@
       <workItem from="1589744043983" duration="4117000" />
       <workItem from="1589754514531" duration="433000" />
       <workItem from="1589805620667" duration="224000" />
-      <workItem from="1589805986775" duration="1192000" />
+      <workItem from="1589805986775" duration="5917000" />
     </task>
+    <task id="LOCAL-00001" summary="v0.0.1-54&#10;#terminei o layout visual da landing page e criei um layout para fazer login a partir do layout&#10;#ainda ha problemas para se efectuar a distribuicao de paineis de informacao da landing page&#10;#avancando para o layout do admin">
+      <created>1589807711703</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589807711703</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13946000" />
+    <option name="totallyTimeSpent" value="18671000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="0" width="697" height="735" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26701966" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26687598" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32991454" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -188,6 +217,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -214,6 +246,14 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="v0.0.1-54&#10;#terminei o layout visual da landing page e criei um layout para fazer login a partir do layout&#10;#ainda ha problemas para se efectuar a distribuicao de paineis de informacao da landing page&#10;#avancando para o layout do admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.0.1-54&#10;#terminei o layout visual da landing page e criei um layout para fazer login a partir do layout&#10;#ainda ha problemas para se efectuar a distribuicao de paineis de informacao da landing page&#10;#avancando para o layout do admin" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/examples/conexao.php">
@@ -248,6 +288,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/light-bootstrap-dashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="256" column="5" lean-forward="true" selection-start-line="256" selection-start-column="5" selection-end-line="256" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BS3/assets/css/light-bootstrap-dashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="248" column="1" selection-start-line="235" selection-end-line="248" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BS3/assets/js/demo.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BS3/notifications.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="248" column="90" selection-start-line="248" selection-start-column="90" selection-end-line="248" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vsantos-code/cvao_db.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/covid_ao.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2313" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vsantos-code/assets/css/vs-styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vsantos-code/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="54" column="57" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
