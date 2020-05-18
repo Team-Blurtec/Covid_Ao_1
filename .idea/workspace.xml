@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d2e3a40-1a5b-4ec0-b8d0-f6ae1876cce2" name="Default Changelist" comment="">
+    <list default="true" id="1d2e3a40-1a5b-4ec0-b8d0-f6ae1876cce2" name="Default Changelist" comment="v0.0.5-60&#10;#correcção de bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +20,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vsantos-code/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2329">
+            <state relative-caret-position="24">
               <caret line="64" column="43" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
             </state>
           </provider>
@@ -81,9 +81,6 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="PUSH_TAGS">
-      <GitPushTagMode />
-    </option>
     <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="IdeDocumentHistory">
@@ -96,12 +93,13 @@
         <option value="$PROJECT_DIR$/vsantos-code/assets/php/action.php" />
         <option value="$PROJECT_DIR$/vsantos-code/assets/php/config.php" />
         <option value="$PROJECT_DIR$/vsantos-code/index.php" />
+        <option value="$PROJECT_DIR$/vsantos-code/package.json" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP7" />
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -123,19 +121,6 @@
               <item name="COVIDAO" type="462c0819:PsiDirectoryNode" />
               <item name="vsantos-code" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="COVIDAO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COVIDAO" type="462c0819:PsiDirectoryNode" />
-              <item name="vsantos-code" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="COVIDAO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="COVIDAO" type="462c0819:PsiDirectoryNode" />
-              <item name="vsantos-code" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="php" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -148,6 +133,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../devi-ango" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -199,7 +186,9 @@
       <workItem from="1589754514531" duration="433000" />
       <workItem from="1589805620667" duration="224000" />
       <workItem from="1589805986775" duration="9719000" />
-      <workItem from="1589839139477" duration="395000" />
+      <workItem from="1589839139477" duration="2530000" />
+      <workItem from="1589842583215" duration="238000" />
+      <workItem from="1589842900365" duration="547000" />
     </task>
     <task id="LOCAL-00001" summary="v0.0.1-54&#10;#terminei o layout visual da landing page e criei um layout para fazer login a partir do layout&#10;#ainda ha problemas para se efectuar a distribuicao de paineis de informacao da landing page&#10;#avancando para o layout do admin">
       <created>1589807711703</created>
@@ -222,17 +211,23 @@
       <option name="project" value="LOCAL" />
       <updated>1589816243465</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="v0.0.5-60&#10;#correcção de bugs">
+      <created>1589839584583</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1589839584583</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22868000" />
+    <option name="totallyTimeSpent" value="25788000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="697" height="735" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2747253" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1354009" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -244,13 +239,14 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.3298611" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.32478634" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Github Tools" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,7 +301,8 @@
     <MESSAGE value="v0.0.1-54&#10;#terminei o layout visual da landing page e criei um layout para fazer login a partir do layout&#10;#ainda ha problemas para se efectuar a distribuicao de paineis de informacao da landing page&#10;#avancando para o layout do admin" />
     <MESSAGE value="v0.0.3-56&#10;#corrigi erro de responsividade da tabela em telas menores(dispositivos smartphones)&#10;#exportei a tabela da base de dados que estou a utilizar para buscar os dados" />
     <MESSAGE value="v0.0.5-59&#10;#verificação do login está completa&#10;#esta mudança trouxe erros na landing page&#10;#alterada a classe config e agora é extendida pela classe auth&#10;#ligeiras mudanças na landing page" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.0.5-59&#10;#verificação do login está completa&#10;#esta mudança trouxe erros na landing page&#10;#alterada a classe config e agora é extendida pela classe auth&#10;#ligeiras mudanças na landing page" />
+    <MESSAGE value="v0.0.5-60&#10;#correcção de bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.0.5-60&#10;#correcção de bugs" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -382,9 +379,10 @@
         <state relative-caret-position="-2313" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vsantos-code/package.json" />
     <entry file="file://$PROJECT_DIR$/vsantos-code/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2329">
+        <state relative-caret-position="24">
           <caret line="64" column="43" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
         </state>
       </provider>
