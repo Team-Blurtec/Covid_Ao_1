@@ -1,7 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d2e3a40-1a5b-4ec0-b8d0-f6ae1876cce2" name="Default Changelist" comment="" />
+    <list default="true" id="1d2e3a40-1a5b-4ec0-b8d0-f6ae1876cce2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/admin/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/all.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/sweetalert2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/sweetalert2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/css/vs-styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/all.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/sweetalert2.all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/sweetalert2.all.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/sweetalert2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/js/sweetalert2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/php/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/php/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/php/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts-custom/MavenPro-VariableFont_wght.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vsantos-code/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,35 +70,18 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/examples/dashboard.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="338" column="84" selection-start-line="338" selection-start-column="84" selection-end-line="338" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/examples/icons.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1581">
-              <caret line="93" column="57" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/Retro_Dow/PROGRAMAS/light-bootstrap-dashboard-master/lu/examples/dashboard.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2839">
-              <caret line="167" column="18" selection-start-line="36" selection-start-column="4" selection-end-line="167" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -63,26 +102,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="lu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lu" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="COVIDAO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="COVIDAO" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -119,16 +154,18 @@
       <workItem from="1589734395696" duration="94000" />
       <workItem from="1589744043983" duration="4117000" />
       <workItem from="1589754514531" duration="433000" />
+      <workItem from="1589805620667" duration="224000" />
+      <workItem from="1589805986775" duration="1192000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12530000" />
+    <option name="totallyTimeSpent" value="13946000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="916" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2596401" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26701966" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -140,7 +177,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32991454" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -151,6 +188,32 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/examples/conexao.php">
@@ -167,9 +230,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/Retro_Dow/PROGRAMAS/light-bootstrap-dashboard-master/lu/examples/maps.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Retro_Dow/PROGRAMAS/light-bootstrap-dashboard-master/lu/examples/maps.html" />
+    <entry file="file://$USER_HOME$/Downloads/Retro_Dow/PROGRAMAS/light-bootstrap-dashboard-master/lu/examples/dashboard.html" />
     <entry file="file://$PROJECT_DIR$/examples/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -179,17 +241,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/icons.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
+        <state relative-caret-position="2232">
           <caret line="93" column="57" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/Retro_Dow/PROGRAMAS/light-bootstrap-dashboard-master/lu/examples/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2839">
-          <caret line="167" column="18" selection-start-line="36" selection-start-column="4" selection-end-line="167" selection-end-column="18" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
