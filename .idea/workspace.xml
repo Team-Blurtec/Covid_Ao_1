@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d2e3a40-1a5b-4ec0-b8d0-f6ae1876cce2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/php/action.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vsantos-code/assets/php/auth.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vsantos-code/assets/php/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/vsantos-code/assets/php/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vsantos-code/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/vsantos-code/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,16 +16,12 @@
     </execution>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vsantos-code/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="121" column="93" selection-start-line="121" selection-start-column="93" selection-end-line="121" selection-end-column="93" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="-2329">
+              <caret line="64" column="43" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -37,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vsantos-code/assets/php/action.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+            <state relative-caret-position="384">
+              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -46,7 +38,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vsantos-code/assets/php/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
+            <state relative-caret-position="1056">
               <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
             </state>
           </provider>
@@ -118,6 +110,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -147,7 +140,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -206,7 +198,8 @@
       <workItem from="1589744043983" duration="4117000" />
       <workItem from="1589754514531" duration="433000" />
       <workItem from="1589805620667" duration="224000" />
-      <workItem from="1589805986775" duration="9342000" />
+      <workItem from="1589805986775" duration="9719000" />
+      <workItem from="1589839139477" duration="395000" />
     </task>
     <task id="LOCAL-00001" summary="v0.0.1-54&#10;#terminei o layout visual da landing page e criei um layout para fazer login a partir do layout&#10;#ainda ha problemas para se efectuar a distribuicao de paineis de informacao da landing page&#10;#avancando para o layout do admin">
       <created>1589807711703</created>
@@ -222,17 +215,24 @@
       <option name="project" value="LOCAL" />
       <updated>1589812770629</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="v0.0.5-59&#10;#verificação do login está completa&#10;#esta mudança trouxe erros na landing page&#10;#alterada a classe config e agora é extendida pela classe auth&#10;#ligeiras mudanças na landing page">
+      <created>1589816243465</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1589816243465</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22096000" />
+    <option name="totallyTimeSpent" value="22868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="697" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26687598" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2747253" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -244,7 +244,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3298611" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.3298611" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -284,13 +284,28 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="v0.0.1-54&#10;#terminei o layout visual da landing page e criei um layout para fazer login a partir do layout&#10;#ainda ha problemas para se efectuar a distribuicao de paineis de informacao da landing page&#10;#avancando para o layout do admin" />
     <MESSAGE value="v0.0.3-56&#10;#corrigi erro de responsividade da tabela em telas menores(dispositivos smartphones)&#10;#exportei a tabela da base de dados que estou a utilizar para buscar os dados" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.0.3-56&#10;#corrigi erro de responsividade da tabela em telas menores(dispositivos smartphones)&#10;#exportei a tabela da base de dados que estou a utilizar para buscar os dados" />
+    <MESSAGE value="v0.0.5-59&#10;#verificação do login está completa&#10;#esta mudança trouxe erros na landing page&#10;#alterada a classe config e agora é extendida pela classe auth&#10;#ligeiras mudanças na landing page" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.0.5-59&#10;#verificação do login está completa&#10;#esta mudança trouxe erros na landing page&#10;#alterada a classe config e agora é extendida pela classe auth&#10;#ligeiras mudanças na landing page" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -367,10 +382,24 @@
         <state relative-caret-position="-2313" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vsantos-code/assets/css/vs-styles.css">
+    <entry file="file://$PROJECT_DIR$/vsantos-code/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2329">
+          <caret line="64" column="43" selection-start-line="64" selection-start-column="43" selection-end-line="64" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vsantos-code/assets/php/action.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="29" />
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vsantos-code/assets/php/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -381,28 +410,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vsantos-code/assets/php/action.php">
+    <entry file="file://$PROJECT_DIR$/vsantos-code/assets/css/vs-styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vsantos-code/assets/php/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vsantos-code/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="121" column="93" selection-start-line="121" selection-start-column="93" selection-end-line="121" selection-end-column="93" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="384">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="29" />
         </state>
       </provider>
     </entry>
