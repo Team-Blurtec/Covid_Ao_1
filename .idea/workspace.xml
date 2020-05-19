@@ -15,29 +15,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="135" column="23" lean-forward="true" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="338" column="84" selection-start-line="338" selection-start-column="84" selection-end-line="338" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/examples/icons.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1581">
-              <caret line="93" column="57" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/Retro_Dow/PROGRAMAS/light-bootstrap-dashboard-master/lu/examples/dashboard.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2839">
-              <caret line="167" column="18" selection-start-line="36" selection-start-column="4" selection-end-line="167" selection-end-column="18" />
+            <state relative-caret-position="204">
+              <caret line="276" column="89" selection-start-line="276" selection-start-column="89" selection-end-line="276" selection-end-column="89" />
             </state>
           </provider>
         </entry>
@@ -48,32 +42,48 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/examples/dashboard.html" />
+        <option value="$PROJECT_DIR$/examples/conexao.php" />
+        <option value="$PROJECT_DIR$/examples/index.php" />
         <option value="$PROJECT_DIR$/examples/dashboard.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="40" />
-    <option name="y" value="39" />
-    <option name="width" value="1346" />
-    <option name="height" value="684" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="793" />
+    <option name="width" value="814" />
+    <option name="height" value="907" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="Covid_Ao_1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\wamp64\www\Covid_Ao_1" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="Covid_Ao_1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\wamp64\www\Covid_Ao_1" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="examples" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="lu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lu" type="462c0819:PsiDirectoryNode" />
+              <item name="Covid_Ao_1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Covid_Ao_1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="lu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lu" type="462c0819:PsiDirectoryNode" />
+              <item name="Covid_Ao_1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Covid_Ao_1" type="462c0819:PsiDirectoryNode" />
               <item name="examples" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -119,16 +129,19 @@
       <workItem from="1589734395696" duration="94000" />
       <workItem from="1589744043983" duration="4117000" />
       <workItem from="1589754514531" duration="433000" />
+      <workItem from="1589924970575" duration="126000" />
+      <workItem from="1589925240432" duration="3259000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12530000" />
+    <option name="totallyTimeSpent" value="16146000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="916" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2596401" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2632375" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -153,41 +166,26 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/examples/conexao.php">
+    <entry file="file://$PROJECT_DIR$/examples/table.html" />
+    <entry file="file://$PROJECT_DIR$/../../Retro_Dow/PROGRAMAS/light-bootstrap-dashboard-master/lu/examples/maps.html" />
+    <entry file="file://$PROJECT_DIR$/examples/icons.html" />
+    <entry file="file://$PROJECT_DIR$/../../Retro_Dow/PROGRAMAS/light-bootstrap-dashboard-master/lu/examples/dashboard.html" />
+    <entry file="file://$PROJECT_DIR$/examples/assets/php/config.php" />
+    <entry file="file://$PROJECT_DIR$/examples/conexao.php" />
+    <entry file="file://$PROJECT_DIR$/examples/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        <state relative-caret-position="561">
+          <caret line="135" column="23" lean-forward="true" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="701">
-          <caret line="233" column="30" lean-forward="true" selection-start-line="171" selection-start-column="23" selection-end-line="233" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Retro_Dow/PROGRAMAS/light-bootstrap-dashboard-master/lu/examples/maps.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="338" column="84" selection-start-line="338" selection-start-column="84" selection-end-line="338" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/icons.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
-          <caret line="93" column="57" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Retro_Dow/PROGRAMAS/light-bootstrap-dashboard-master/lu/examples/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2839">
-          <caret line="167" column="18" selection-start-line="36" selection-start-column="4" selection-end-line="167" selection-end-column="18" />
+        <state relative-caret-position="204">
+          <caret line="276" column="89" selection-start-line="276" selection-start-column="89" selection-end-line="276" selection-end-column="89" />
         </state>
       </provider>
     </entry>
