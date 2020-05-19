@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "Maven Pro";
+    src: url("../webfonts-custom/MavenPro-VariableFont_wght.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Maven Pro", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #1b1e21 !important;
+}
+
+.style-wrapper {
+    height: 100vh !important;
+}
+
+.vs-navbar {
+    background-image: linear-gradient(to right, darkred 50%, #000000 150%);
+}
+
+.vs-navbrand {
+    color: #000000 !important;
+}
+
+.vs-navbrand:hover {
+    color: yellow !important;
+}
+
+.vs-navlink {
+    color: yellow !important;
+}
+
+.vs-navlink:hover {
+    color: #000000 !important;
+}
+
+.vs-modal-close {
+    color: yellow !important;
+}
+
+.vs-modal-header {
+    background-image: linear-gradient(to right, darkred 50%, #2b2b2b 150%);
+}
+
+.vs-modal-title {
+    color: yellow !important;
+}
+
+.vs-modal-body {
+    background-color: #000;
+}
+
+.vs-modal-close:hover {
+    color: #000000 !important;
+}
+
+.vs-login-btn {
+    border-radius: 50px !important;
+    font-weight: lighter;
+    font-size: 20px;
+    color: yellow !important;
+    background-image: linear-gradient(to right, #212529 50%, #212529 150%);
+    border: none;
+}
+
+.vs-login-btn:hover {
+    background-image: linear-gradient(to right, darkred 50%, darkred 150%);
+}
+
+tr {
+    background-image: linear-gradient(to right, darkred 50%, #2b2b2b 150%);
+    color: yellow !important;
+}
+
+@media (max-width: 720px) {
+    .style-wrapper {
+        margin: 2px !important;
+    }
+}

@@ -49,14 +49,14 @@
                 ['Provincia', 'Casos'],
 
             <?php include 'conexao.php';
-            $sql="SELECT Nome,C_activos FROM provincia";
+            $sql="SELECT nome,confirmados FROM provincias";
             $buscar = mysqli_query($conexao,$sql);
 
 
             while ($dados = mysqli_fetch_array($buscar)){
 
-                $Nome = $dados['Nome'];
-                $C_activos =$dados['C_activos'];
+                $Nome = $dados['nome'];
+                $C_activos =$dados['confirmados'];
 
                     ?>
                 ['<?php echo $Nome?>',<?php echo $C_activos?>],
@@ -67,7 +67,7 @@
 
             var options = { region: 'AO',
                 resolution: 'provinces',
-                colors: ['#acb2b9', '#2f3f4f']};
+                colors: ['#acb2b9', '#FF0000']};
 
             var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
@@ -86,15 +86,15 @@
 
                 <?php
 
-                $sql="SELECT c_confirmados,c_activos,c_recuperados,Mortes FROM casos_diarios  ORDER BY id DESC LIMIT 1 ";
+                $sql="SELECT confirmados,activos,recuperados,obitos FROM casos_registrados  ORDER BY id DESC LIMIT 1 ";
                 $buscar = mysqli_query($conexao,$sql);
 
 
                 while ($dados = mysqli_fetch_array($buscar)){
 
-                $c_activos = $dados['c_activos'];
-                $c_recuperados = $dados['c_recuperados'];
-                $c_mortes = $dados['Mortes'];
+                $c_activos = $dados['activos'];
+                $c_recuperados = $dados['recuperados'];
+                $c_mortes = $dados['obitos'];
 
 
                 ?>
@@ -131,15 +131,15 @@
 
                 <?php
 
-                $sql="SELECT data_d,c_activos,c_recuperados FROM casos_diarios";
+                $sql="SELECT data_casos,activos,recuperados FROM casos_registrados";
                 $buscar = mysqli_query($conexao,$sql);
 
 
                 while ($dados = mysqli_fetch_array($buscar)){
 
-                $c_data = $dados['data_d'];
-                $c_activos = $dados['c_activos'];
-                $c_recuperados = $dados['c_recuperados'];
+                $c_data = $dados['data_casos'];
+                $c_activos = $dados['activos'];
+                $c_recuperados = $dados['recuperados'];
 
                 ?>
                 ['<?php echo $c_data?>',<?php echo $c_activos?>,<?php echo $c_recuperados?>],
@@ -238,21 +238,21 @@
                                     <table class="table table-hover table-striped">
                                         <thead>
                                         <th>Provincia</th>
-                                        <th>Casos Activos</th>
+                                        <th>Casos Confirmados</th>
                                         </thead>
                                         <tbody>
 
 
 
                                         <?php
-                                        $sql="SELECT Nome,C_activos FROM provincia";
+                                        $sql="SELECT nome,confirmados FROM provincias";
                                         $buscar = mysqli_query($conexao,$sql);
 
 
                                         while ($dados = mysqli_fetch_array($buscar)){
 
-                                        $Nome = $dados['Nome'];
-                                        $C_activos =$dados['C_activos'];
+                                        $Nome = $dados['nome'];
+                                        $C_activos =$dados['confirmados'];
 
                                         ?>
                                         <tr>
