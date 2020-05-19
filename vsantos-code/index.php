@@ -1,7 +1,8 @@
 <?php
 require_once 'assets/php/config.php';
 ?>
-<?php require_once 'assets/php/header.php'; ?>
+    <!--Inclui o ficheiro header onde contem a estrutura inicial de documentos html bem como estilos css-->
+<?php include_once 'assets/php/header.php'; ?>
 
 <!--Painel Principal-->
 <div class="container">
@@ -67,3 +68,5 @@ require_once 'assets/php/config.php';
         }
     });
 </script>
+    <!--Inclui o ficheiro footer onde contem os scripts predefinidos ao bom funcionamento da pagina-->
+<?php include_once 'assets/php/footer.php' ?>
