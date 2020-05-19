@@ -96,7 +96,10 @@ if (isset($_SESSION['admin'])) {
                                            placeholder="Confirme a palavra passe" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" value="Finalizar" id="AdminSystem-register-btn"
+                                    <div id="passError" class="text-warning font-weight-bold"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Submeter" id="AdminSystem-register-btn"
                                            class="btn btn-dark btn-lg btn-block vs-login-btn">
                                 </div>
                             </form>
@@ -119,6 +122,18 @@ if (isset($_SESSION['admin'])) {
         $("#AdminSys-nc-btn").click(function () {
             $("#jumbotron").hide();
             $("#AdminSystem-register").show();
+        });
+        $("#AdminSystem-register-btn").click(function (e) {
+            if ($("#AdminSystem-RForm")[0].checkValidity()) {
+                e.preventDefault();
+
+                $("#AdminSystem-register-btn").val('a submeter...');
+                if ($("#r-pass").val() !== $("#cr-pass").val()) {
+                    $("#passError").text('* a palavra passe não coincide. Deve digitar a mesma palavra passe');
+                    $("#AdminSystem-register-btn").val('Submeter');
+                    $("#AdminSystem-RForm")[0].reset();
+                }
+            }
         });
     });
 </script>
