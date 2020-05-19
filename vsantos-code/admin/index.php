@@ -37,8 +37,8 @@ if (isset($_SESSION['admin'])) {
                 <label for="password">
                     <input type="password" class="form-control" placeholder="Palavra passe" required>
                 </label>
-                <input type="button" id="AdminSystem-login-btn" value="Entrar"
-                       class="btn vs-login-btn">
+                <input type="submit" id="AdminSystem-login-btn" value="Entrar"
+                       class="btn btn-dark vs-login-btn">
                 <div class="form-group">
                     <div class="float-left">
                         <a href="#" id="forgot-link">Esqueceu a sua palavra passe?</a>
@@ -50,11 +50,59 @@ if (isset($_SESSION['admin'])) {
 </nav>
 <div class="container">
     <div class="row">
-        <div class="col-lg-12">
-            <div class="jumbotron rounded-pill vs-navbar mt-5">
-                <h4 class="text-center vs-modal-title">
+        <div class="col-lg-12 my-auto">
+            <div class="jumbotron rounded-pill text-center vs-navbar mt-5" id="jumbotron">
+                <h3 class="text-center vs-modal-title">
                     "Com grandes poderes surgem grandes responsabilidades" - Peter Parker
-                </h4>
+                </h3>
+                <br>
+                <input type="button" id="AdminSys-nc-btn" value="Nova conta" class="btn btn-dark btn-lg vs-login-btn">
+            </div>
+            <div class="row justify-content-center" id="AdminSystem-register" style="display: none">
+                <div class="col-lg-10 mt-4">
+                    <div class="card-group vs-shadow">
+                        <div class="card rounded-left p-4 vs-navbar" style="flex-grow: 1.4;">
+                            <h1 class="text-center font-weight-bold" style="color: #000000">
+                                <span><i class="fas fa-user-plus fa-lg"></i></span><br>
+                                Criar nova conta
+                            </h1>
+                            <hr class="my-3 bg-light">
+                            <form action="#" method="post" class="px-3" id="AdminSystem-RForm">
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text rounded-0">
+                                            <i class="far fa-user fa-lg" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" name="r-name" id="r-name" class="form-control rounded-0"
+                                           placeholder="Nome" required>
+                                </div>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text rounded-0">
+                                            <i class="fas fa-key fa-lg" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <input type="password" name="r-pass" id="r-pass" class="form-control rounded-0"
+                                           placeholder="Palavra passe" required>
+                                </div>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text rounded-0">
+                                            <i class="fas fa-key fa-lg" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <input type="password" name="cr-pass" id="cr-pass" class="form-control rounded-0"
+                                           placeholder="Confirme a palavra passe" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Finalizar" id="AdminSystem-register-btn"
+                                           class="btn btn-dark btn-lg btn-block vs-login-btn">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -68,22 +116,9 @@ if (isset($_SESSION['admin'])) {
 <!--Scripts e funcoes-->
 <script type="text/javascript">
     $(document).ready(function () {
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            timer: 3000,
-            timerProgressBar: true,
-            onOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer);
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-        });
-        Toast.fire({
-            icon: 'success',
-            title: 'Signed in successfully'
-        });
-        $("#AdminSystem-login-btn").click(function (e) {
-
+        $("#AdminSys-nc-btn").click(function () {
+            $("#jumbotron").hide();
+            $("#AdminSystem-register").show();
         });
     });
 </script>
