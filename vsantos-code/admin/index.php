@@ -17,7 +17,7 @@ if (isset($_SESSION['admin'])) {
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <!--Outros estilos-->
     <link href="../assets/css/all.min.css"> <!--Estilo dos icones FontAwesome5-->
-    <link href="../assets/css/sweetalert2.css" rel="stylesheet"> <!--Estilo de alertas e fades com Sweetalert2-->
+    <link href="../assets/css/sweetalert2.min.css" rel="stylesheet"> <!--Estilo de alertas e fades com Sweetalert2-->
 </head>
 <body>
 <nav class="navbar navbar-expand-md vs-navbar navbar-dark">
@@ -30,15 +30,20 @@ if (isset($_SESSION['admin'])) {
     <div class="collapse navbar-collapse navbar-right" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
             <hr class="my-3 bg-light">
-            <form action="#" method="post" id="AdminSystem-login-form" class="px-3">
+            <form action="#" method="post" id="AdminSystem-login-form" class="px-3 custom-control">
                 <label for="text">
-                    <input type="text" class="form-control" placeholder="Nome de admin">
+                    <input type="text" class="form-control" placeholder="Nome de admin" required autofocus>
                 </label>
                 <label for="password">
-                    <input type="password" class="form-control" placeholder="Palavra passe">
+                    <input type="password" class="form-control" placeholder="Palavra passe" required>
                 </label>
-                <input type="submit" name="AdminSystem-login-btn" id="AdminSystem-login-btn" value="Entrar"
+                <input type="button" id="AdminSystem-login-btn" value="Entrar"
                        class="btn vs-login-btn">
+                <div class="form-group">
+                    <div class="float-left">
+                        <a href="#" id="forgot-link">Esqueceu a sua palavra passe?</a>
+                    </div>
+                </div>
             </form>
         </ul>
     </div>
@@ -46,7 +51,7 @@ if (isset($_SESSION['admin'])) {
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <div class="jumbotron vs-navbar mt-5">
+            <div class="jumbotron rounded-pill vs-navbar mt-5">
                 <h4 class="text-center vs-modal-title">
                     "Com grandes poderes surgem grandes responsabilidades" - Peter Parker
                 </h4>
@@ -58,33 +63,27 @@ if (isset($_SESSION['admin'])) {
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../assets/js/all.min.js"></script>
-<script type="text/javascript" src="../assets/js/sweetalert2.min.js"></script>
+<script type="text/javascript" src="../assets/js/sweetalert2.all.min.js"></script>
 
 <!--Scripts e funcoes-->
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#login-modal").show();
-
-        $("#admin-login-form-btn").click(function (e) {
-            if ($("#admin-login-form")[0].checkValidity()) {
-                e.preventDefault();
-
-                $("#admin-login-form-btn").val('A verificar...');
-                $.ajax({
-                    url: 'assets/php/action.php',
-                    method: 'post',
-                    data: $("#admin-login-form").serialize() + '&action=login',
-                    success: function (response) {
-                        $("#admin-login-form-btn").val('Entrar');
-                        if (response === 'login') {
-                            window.location = 'system/index.php';
-                        } else {
-                            $("#loginModalAlert").html(response);
-                            $("#admin-login-form")[0].reset();
-                        }
-                    }
-                });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            timer: 3000,
+            timerProgressBar: true,
+            onOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer);
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
             }
+        });
+        Toast.fire({
+            icon: 'success',
+            title: 'Signed in successfully'
+        });
+        $("#AdminSystem-login-btn").click(function (e) {
+
         });
     });
 </script>
