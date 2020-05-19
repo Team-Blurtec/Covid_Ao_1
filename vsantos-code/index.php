@@ -1,6 +1,3 @@
-<?php
-require_once 'assets/php/config.php';
-?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -27,7 +24,7 @@ require_once 'assets/php/config.php';
 <!--Painel Principal-->
 <div class="container">
     <div class="row style-wrapper my-auto">
-        <div class="row-cols-1">
+        <div class="cols-1">
             <div class="card my-4" style="background-color: #1b1e21">
                 <div class="card-body" style="background-color: #1b1e21">
                     <div class="table-responsive" id="registros">

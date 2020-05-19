@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d2e3a40-1a5b-4ec0-b8d0-f6ae1876cce2" name="Default Changelist" comment="v0.1.0-6+test&#10;##feature: &#10;nenhuma mudanca observada&#10;##fix: &#10;#agora apresenta os dados conforme registrados na base de dados&#10;##docs: &#10;foram apagados os ficheiros header e footer que iriam simplificar&#10;o estilo.&#10;usando novo padrao de commitizen&#10;##refactor:&#10;como sempre, usando o padrao php&#10;##perf:&#10;nenhum mudanca observada&#10;##test:&#10;existe um bug na responsividade da pagina para dispositivos menores&#10;##chore:&#10;correccao de erros">
+      <change afterPath="$PROJECT_DIR$/vsantos-code/admin/system/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vsantos-code/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/vsantos-code/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vsantos-code/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/vsantos-code/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,16 +23,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vsantos-code/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="31" column="73" lean-forward="true" selection-start-line="31" selection-start-column="73" selection-end-line="31" selection-end-column="73" />
+            <state relative-caret-position="216">
+              <caret line="21" column="6" lean-forward="true" selection-start-line="17" selection-end-line="21" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vsantos-code/admin/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vsantos-code/assets/php/process.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
+            <state relative-caret-position="308">
               <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
             </state>
           </provider>
@@ -63,10 +75,6 @@
         <entry key="$PROJECT_DIR$" value="hotfix/0.0.1" />
       </map>
     </option>
-    <option name="PUSH_TAGS">
-      <GitPushTagMode />
-    </option>
-    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -77,13 +85,13 @@
         <option value="$PROJECT_DIR$/vsantos-code/assets/php/config.php" />
         <option value="$PROJECT_DIR$/vsantos-code/package.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/vsantos-code/admin/index.php" />
         <option value="$PROJECT_DIR$/vsantos-code/assets/php/header.php" />
         <option value="$PROJECT_DIR$/vsantos-code/assets/php/footer.php" />
         <option value="$PROJECT_DIR$/vsantos-code/assets/css/vs-styles.css" />
-        <option value="$PROJECT_DIR$/vsantos-code/index.php" />
         <option value="$PROJECT_DIR$/vsantos-code/assets/php/auth.php" />
         <option value="$PROJECT_DIR$/vsantos-code/assets/php/process.php" />
+        <option value="$PROJECT_DIR$/vsantos-code/index.php" />
+        <option value="$PROJECT_DIR$/vsantos-code/admin/index.php" />
       </list>
     </option>
   </component>
@@ -120,6 +128,17 @@
             <path>
               <item name="COVIDAO" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="C:\xampp\htdocs\COVIDAO" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="COVIDAO" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\xampp\htdocs\COVIDAO" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="vsantos-code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="COVIDAO" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\xampp\htdocs\COVIDAO" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="vsantos-code" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="admin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -190,7 +209,7 @@
       <workItem from="1589839139477" duration="2530000" />
       <workItem from="1589842583215" duration="238000" />
       <workItem from="1589842900365" duration="1343000" />
-      <workItem from="1589876791602" duration="8599000" />
+      <workItem from="1589876791602" duration="10679000" />
     </task>
     <task id="LOCAL-00001" summary="v0.0.1-54&#10;#terminei o layout visual da landing page e criei um layout para fazer login a partir do layout&#10;#ainda ha problemas para se efectuar a distribuicao de paineis de informacao da landing page&#10;#avancando para o layout do admin">
       <created>1589807711703</created>
@@ -255,17 +274,24 @@
       <option name="project" value="LOCAL" />
       <updated>1589885198445</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="v0.1.0-7+test">
+      <created>1589886373001</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1589886373001</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35183000" />
+    <option name="totallyTimeSpent" value="37263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.42072213" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19969743" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -277,9 +303,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49848714" visible="true" weight="0.32478634" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49848714" weight="0.32478634" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5015129" side_tool="true" weight="0.32478634" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5015129" side_tool="true" visible="true" weight="0.32478634" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -344,7 +370,8 @@
     <MESSAGE value="v0.1.0test&#10;#remoção do link para login do admin na landing page&#10;#algumas mudanças na estrutura do código&#10;#correcção de bugs" />
     <MESSAGE value="v0.1.0-1test&#10;#remoção do link para login do admin na landing page&#10;#algumas mudanças na estrutura do código&#10;#correcção de bugs" />
     <MESSAGE value="v0.1.0-6+test&#10;##feature: &#10;nenhuma mudanca observada&#10;##fix: &#10;#agora apresenta os dados conforme registrados na base de dados&#10;##docs: &#10;foram apagados os ficheiros header e footer que iriam simplificar&#10;o estilo.&#10;usando novo padrao de commitizen&#10;##refactor:&#10;como sempre, usando o padrao php&#10;##perf:&#10;nenhum mudanca observada&#10;##test:&#10;existe um bug na responsividade da pagina para dispositivos menores&#10;##chore:&#10;correccao de erros" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.1.0-6+test&#10;##feature: &#10;nenhuma mudanca observada&#10;##fix: &#10;#agora apresenta os dados conforme registrados na base de dados&#10;##docs: &#10;foram apagados os ficheiros header e footer que iriam simplificar&#10;o estilo.&#10;usando novo padrao de commitizen&#10;##refactor:&#10;como sempre, usando o padrao php&#10;##perf:&#10;nenhum mudanca observada&#10;##test:&#10;existe um bug na responsividade da pagina para dispositivos menores&#10;##chore:&#10;correccao de erros" />
+    <MESSAGE value="v0.1.0-7+test" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.1.0-7+test" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -422,13 +449,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vsantos-code/package.json" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vsantos-code/assets/php/action.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
@@ -440,13 +460,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1056">
           <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vsantos-code/admin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="82" column="9" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -463,13 +476,6 @@
     <entry file="file://$PROJECT_DIR$/vsantos-code/assets/php/footer.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/vsantos-code/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="31" column="73" lean-forward="true" selection-start-line="31" selection-start-column="73" selection-end-line="31" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vsantos-code/assets/php/auth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -484,10 +490,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vsantos-code/assets/php/process.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
+        <state relative-caret-position="308">
           <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vsantos-code/admin/system/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vsantos-code/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="21" column="6" lean-forward="true" selection-start-line="17" selection-end-line="21" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vsantos-code/admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
