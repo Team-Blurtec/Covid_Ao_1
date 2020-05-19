@@ -56,3 +56,28 @@
     </div>
 </div>
 <!--Modal Login-Form end-->
+
+<script type="text/javascript">
+    $("#admin-login-form-btn").click(function (e) {
+        if ($("#admin-login-form")[0].checkValidity()) {
+            e.preventDefault();
+
+            $("#admin-login-form-btn").val('A verificar...');
+            $.ajax({
+                url: 'assets/php/action.php',
+                method: 'post',
+                data: $("#admin-login-form").serialize() + '&action=login',
+                success: function (response) {
+                    $("#admin-login-form-btn").val('Entrar');
+                    if (response === 'login') {
+                        window.location = 'admin/index.php';
+                    } else {
+                        $("#loginModalAlert").html(response);
+                        $("#admin-login-form")[0].reset();
+                    }
+                }
+            });
+        }
+    });
+
+</script>

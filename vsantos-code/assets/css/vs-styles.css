@@ -17,6 +17,10 @@ body {
     background-color: #1b1e21 !important;
 }
 
+.style-wrapper {
+    height: 100vh !important;
+}
+
 .vs-navbar {
     background-image: linear-gradient(to right, darkred 50%, #000000 150%);
 }
@@ -73,4 +77,10 @@ body {
 tr {
     background-image: linear-gradient(to right, darkred 50%, #2b2b2b 150%);
     color: yellow !important;
+}
+
+@media (max-width: 720px) {
+    .style-wrapper {
+        margin: 2px !important;
+    }
 }

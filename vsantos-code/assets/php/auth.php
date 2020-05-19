@@ -15,4 +15,16 @@ class Auth extends Database
 
         return $row;
     }
+
+    public function buscar()
+    {
+        $sql = "SELECT * FROM provincias ORDER BY nome ASC";
+
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
 }
