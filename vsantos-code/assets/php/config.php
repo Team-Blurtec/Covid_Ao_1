@@ -33,15 +33,12 @@ class Database
     //Error Success Message Alert
     public function showMessage($type, $message)
     {
-        return '<div class="alert alert-' . $type . ' alert-dismissible">
-<button type="button" class="close" data-dismiss="alert">&times;</button>
-<strong class="text-center">' . $message . '</strong>
-</div>';
-    }
-
-    //Error Sucess Modal Alert
-    public function showModalAlert($type, $message)
-    {
-        return '<div></div>';
+        return '<script>
+Swal.fire({
+text: ' . $message . ',
+icon;: ' . $type . ',
+buttons;: false;
+})
+</script>';
     }
 }

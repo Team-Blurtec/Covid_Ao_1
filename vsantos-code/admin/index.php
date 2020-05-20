@@ -75,7 +75,7 @@ if (isset($_SESSION['admin'])) {
                                         </span>
                                     </div>
                                     <input type="text" name="r-name" id="r-name" class="form-control rounded-0"
-                                           placeholder="Nome" required>
+                                           placeholder="Nome" required minlength="4">
                                 </div>
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
@@ -84,7 +84,7 @@ if (isset($_SESSION['admin'])) {
                                         </span>
                                     </div>
                                     <input type="password" name="r-pass" id="r-pass" class="form-control rounded-0"
-                                           placeholder="Palavra passe" required>
+                                           placeholder="Palavra passe" required minlength="6">
                                 </div>
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
@@ -93,7 +93,7 @@ if (isset($_SESSION['admin'])) {
                                         </span>
                                     </div>
                                     <input type="password" name="cr-pass" id="cr-pass" class="form-control rounded-0"
-                                           placeholder="Confirme a palavra passe" required>
+                                           placeholder="Confirme a palavra passe" required minlength="6">
                                 </div>
                                 <div class="form-group">
                                     <div id="passError" class="text-warning font-weight-bold"></div>
@@ -132,6 +132,34 @@ if (isset($_SESSION['admin'])) {
                     $("#passError").text('* a palavra passe não coincide. Deve digitar a mesma palavra passe');
                     $("#AdminSystem-register-btn").val('Submeter');
                     $("#AdminSystem-RForm")[0].reset();
+                } else {
+                    $("#passError").text('');
+                    $.ajax({
+                        url: '../assets/php/action.php',
+                        method: 'post',
+                        data: $("#AdminSystem-RForm").serialize() + '&action=register',
+                        success: function (response) {
+                            $("#AdminSystem-register-btn").val('Submeter');
+                            if (response === 'register') {
+                                Swal.fire({
+                                    title: 'Conta',
+                                    text: 'Nova conta criada com sucesso! Redirecionando...',
+                                    icon: 'success',
+                                    timer: 5000,
+                                    timerProgressBar: true
+                                });
+                                window.location = 'system/';
+                            } else {
+                                Swal.fire({
+                                    title: 'Conta',
+                                    text: 'Erro ao criar a nova conta. Verifique se preencheu correctamente o formulário',
+                                    icon: 'error',
+                                    timer: 3000,
+                                    timerProgressBar: true
+                                });
+                            }
+                        }
+                    });
                 }
             }
         });
