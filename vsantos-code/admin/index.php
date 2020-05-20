@@ -32,10 +32,12 @@ if (isset($_SESSION['admin'])) {
             <hr class="my-3 bg-light">
             <form action="#" method="post" id="AdminSystem-login-form" class="px-3 custom-control">
                 <label for="text">
-                    <input type="text" class="form-control" placeholder="Nome de admin" required autofocus>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Nome de admin" required
+                           autofocus>
                 </label>
                 <label for="password">
-                    <input type="password" class="form-control" placeholder="Palavra passe" required>
+                    <input type="password" name="password" id="password" class="form-control"
+                           placeholder="Palavra passe" required>
                 </label>
                 <input type="submit" id="AdminSystem-login-btn" value="Entrar"
                        class="btn btn-dark vs-login-btn">
@@ -68,7 +70,6 @@ if (isset($_SESSION['admin'])) {
                             </h1>
                             <hr class="my-3 bg-light">
                             <form action="#" method="post" class="px-3" id="AdminSystem-RForm">
-                                <div id="regAlert"></div>
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text rounded-0">
@@ -77,6 +78,16 @@ if (isset($_SESSION['admin'])) {
                                     </div>
                                     <input type="text" name="r-name" id="r-name" class="form-control rounded-0"
                                            placeholder="Nome" required minlength="4">
+                                </div>
+                                <div id="regAlert"></div>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text rounded-0">
+                                            <i class="far fa-envelope fa-lg" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <input type="email" name="r-email" id="r-email" class="form-control rounded-0"
+                                           placeholder="E-mail" required minlength="4">
                                 </div>
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
@@ -124,6 +135,32 @@ if (isset($_SESSION['admin'])) {
             $("#jumbotron").hide();
             $("#AdminSystem-register").show();
         });
+
+        //Login com conta admin
+        $("#AdminSystem-login-btn").click(function (e) {
+            if ($("#AdminSystem-login-form")[0].checkValidity()) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: '../assets/php/action.php',
+                    method: 'post',
+                    data: $("#AdminSystem-login-form").serialize() + '&action=login',
+                    success: function (response) {
+                        if (response === 'login') {
+                            window.location = 'system/';
+                        } else {
+                            console.log(response);
+                            Swal.fire({
+                                text: 'As credenciais não se encontram certas.',
+                                icon: 'error'
+                            });
+                        }
+                    }
+                });
+            }
+        });
+
+        // Criar nova conta admin
         $("#AdminSystem-register-btn").click(function (e) {
             if ($("#AdminSystem-RForm")[0].checkValidity()) {
                 e.preventDefault();
@@ -132,7 +169,7 @@ if (isset($_SESSION['admin'])) {
                 if ($("#r-pass").val() !== $("#cr-pass").val()) {
                     $("#passError").text('* a palavra passe não coincide. Deve digitar a mesma palavra passe');
                     $("#AdminSystem-register-btn").val('Submeter');
-                    $("#AdminSystem-RForm")[0].reset();
+
                 } else {
                     $("#passError").text('');
                     $.ajax({
@@ -143,20 +180,15 @@ if (isset($_SESSION['admin'])) {
                             $("#AdminSystem-register-btn").val('Submeter');
                             if (response === 'register') {
                                 Swal.fire({
-                                    title: 'Conta',
-                                    text: 'Nova conta criada com sucesso! Redirecionando...',
+                                    text: 'Nova conta criada com sucesso!',
                                     icon: 'success',
                                     timer: 10000,
                                     timerProgressBar: true
                                 });
+                                $("#AdminSystem-RForm")[0].reset();
+                                $("#AdminSystem-register").hide();
+                                $("#jumbotron").show();
                             } else {
-                                Swal.fire({
-                                    title: 'Conta',
-                                    text: 'Erro ao criar a nova conta. Verifique se preencheu correctamente o formulário',
-                                    icon: 'error',
-                                    timer: 10000,
-                                    timerProgressBar: true
-                                });
                                 $("#regAlert").html(response);
                             }
                         }

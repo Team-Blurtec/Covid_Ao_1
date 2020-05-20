@@ -8,14 +8,15 @@ $user = new Auth();
 //Registrar com Ajax
 if (isset($_POST['action']) && $_POST['action'] == 'register') {
     $name = $user->test_input($_POST['r-name']);
+    $email = $user->test_input($_POST['r-email']);
     $pass = $user->test_input($_POST['r-pass']);
 
     $hpass = password_hash($pass, PASSWORD_DEFAULT);
 
-    if ($user->existe_conta($name)) {
+    if ($user->existe_conta($email)) {
         echo $user->showMessage('warning', 'Esta conta já se encontra em uso.');
     } else {
-        if ($user->register($name, $hpass)) {
+        if ($user->register($name, $hpass, $email)) {
             echo 'register';
 
             $_SESSION['user'] = $name;
@@ -33,7 +34,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'login') {
     $log = $user->login($nome);
 
     if ($log != null) {
-        if (password_verify($passe, $log['password'])) {
+        if (password_verify($passe, $log['passe'])) {
             echo 'login';
         } else {
             echo $user->showMessage('warning', 'As credenciais são inválidas. Verifique o seu nome e/ou sua palavra passe');
