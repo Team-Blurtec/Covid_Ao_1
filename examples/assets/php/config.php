@@ -38,10 +38,4 @@ class Database
 <strong class="text-center">' . $message . '</strong>
 </div>';
     }
-
-    //Error Sucess Modal Alert
-    public function showModalAlert($type, $message)
-    {
-        return '<div></div>';
-    }
 }

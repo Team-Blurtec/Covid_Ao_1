@@ -27,4 +27,26 @@ class Auth extends Database
 
         return $result;
     }
+
+    public function existe_conta(string $name)
+    {
+        $sql = "SELECT nome FROM admin WHERE nome=:nome";
+
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute(['nome' => $name]);
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $row;
+    }
+
+    public function register($name, $hpass)
+    {
+        $sql = "INSERT INTO admin(nome,passe)VALUES(:nome,:passe)";
+
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute(['nome' => $name, 'passe' => $hpass]);
+
+        return true;
+    }
 }

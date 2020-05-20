@@ -1,83 +1,170 @@
-<!--Modal Login-Form-->
-<div class="modal fade" id="login-modal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header vs-modal-header">
-                <h4 class="modal-title vs-modal-title">
-                    <i class="fas fa-user-cog fa-lg"></i><br>
-                    Login
-                </h4>
-                <div class="clearfix"></div>
-                <button type="button" class="close vs-modal-close" data-dismiss="modal">&times;</button>
+<?php
+if (isset($_SESSION['admin'])) {
+    header('location: system/');
+}
+?>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="JSKT">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>COVID.AO</title>
+    <!--Estilo manual-->
+    <link href="../assets/css/vs-styles.css" rel="stylesheet">
+    <!--Estilo do bootstrap4-->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <!--Outros estilos-->
+    <link href="../assets/css/all.min.css"> <!--Estilo dos icones FontAwesome5-->
+    <link href="../assets/css/sweetalert2.min.css" rel="stylesheet"> <!--Estilo de alertas e fades com Sweetalert2-->
+</head>
+<body>
+<nav class="navbar navbar-expand-md vs-navbar navbar-dark">
+
+    <a class="navbar-brand vs-navbrand" href="./"><i class="fas fa-viruses fa-lg"></i>&nbsp;
+        &nbsp;COVID.ao | Admin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse navbar-right" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+            <hr class="my-3 bg-light">
+            <form action="#" method="post" id="AdminSystem-login-form" class="px-3 custom-control">
+                <label for="text">
+                    <input type="text" class="form-control" placeholder="Nome de admin" required autofocus>
+                </label>
+                <label for="password">
+                    <input type="password" class="form-control" placeholder="Palavra passe" required>
+                </label>
+                <input type="submit" id="AdminSystem-login-btn" value="Entrar"
+                       class="btn btn-dark vs-login-btn">
+                <div class="form-group">
+                    <div class="float-left">
+                        <a href="#" id="forgot-link">Esqueceu a sua palavra passe?</a>
+                    </div>
+                </div>
+            </form>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 my-auto">
+            <div class="jumbotron rounded-pill text-center vs-navbar mt-5" id="jumbotron">
+                <h3 class="text-center vs-modal-title">
+                    "Com grandes poderes surgem grandes responsabilidades" - Peter Parker
+                </h3>
+                <br>
+                <input type="button" id="AdminSys-nc-btn" value="Nova conta" class="btn btn-dark btn-lg vs-login-btn">
             </div>
-            <div class="modal-body vs-modal-body">
-                <div id="loginModalAlert"></div>
-                <form action="#" method="post" id="admin-login-form" class="px-3">
-                    <div class="input-group input-group-lg form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text vs-navbar vs-modal-title">
-                                <i class="far fa-user fa-lg"></i>
-                            </span>
+            <div class="row justify-content-center" id="AdminSystem-register" style="display: none">
+                <div class="col-lg-10 mt-4">
+                    <div class="card-group vs-shadow">
+                        <div class="card rounded-left p-4 vs-navbar" style="flex-grow: 1.4;">
+                            <h1 class="text-center font-weight-bold" style="color: #000000">
+                                <span><i class="fas fa-user-plus fa-lg"></i></span><br>
+                                Criar nova conta
+                            </h1>
+                            <hr class="my-3 bg-light">
+                            <form action="#" method="post" class="px-3" id="AdminSystem-RForm">
+                                <div id="regAlert"></div>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text rounded-0">
+                                            <i class="far fa-user fa-lg" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" name="r-name" id="r-name" class="form-control rounded-0"
+                                           placeholder="Nome" required minlength="4">
+                                </div>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text rounded-0">
+                                            <i class="fas fa-key fa-lg" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <input type="password" name="r-pass" id="r-pass" class="form-control rounded-0"
+                                           placeholder="Palavra passe" required minlength="6">
+                                </div>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text rounded-0">
+                                            <i class="fas fa-key fa-lg" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <input type="password" name="cr-pass" id="cr-pass" class="form-control rounded-0"
+                                           placeholder="Confirme a palavra passe" required minlength="6">
+                                </div>
+                                <div class="form-group">
+                                    <div id="passError" class="text-warning font-weight-bold"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Submeter" id="AdminSystem-register-btn"
+                                           class="btn btn-dark btn-lg btn-block vs-login-btn">
+                                </div>
+                            </form>
                         </div>
-                        <label for="name" class="sr-only"></label><input type="text" name="name" id="name"
-                                                                         class="form-control" placeholder="Nome"
-                                                                         required
-                                                                         autofocus>
                     </div>
-                    <div class="input-group input-group-lg form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text vs-navbar vs-modal-title">
-                                <i class="fas fa-key fa-lg"></i>
-                            </span>
-                        </div>
-                        <label for="password" class="sr-only"></label><input type="password" name="password"
-                                                                             id="password"
-                                                                             class="form-control"
-                                                                             placeholder="Palavra passe" required>
-                    </div>
-                    <div class="form-group">
-                        <div class="float-left">
-                            <a href="#" id="registo-modal-link">
-                                <i class="fas fa-user-plus"></i>&nbsp; Nova conta
-                            </a>
-                        </div>
-                        <div class="float-right">
-                            <a href="#" id="forgot-link">Esqueceu a sua palavra passe?</a>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Entrar" id="admin-login-form-btn"
-                               class="btn btn-lg btn-block vs-login-btn">
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<!--Modal Login-Form end-->
 
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/all.min.js"></script>
+<script type="text/javascript" src="../assets/js/sweetalert2.all.min.js"></script>
+
+<!--Scripts e funcoes-->
 <script type="text/javascript">
-    $("#admin-login-form-btn").click(function (e) {
-        if ($("#admin-login-form")[0].checkValidity()) {
-            e.preventDefault();
+    $(document).ready(function () {
+        $("#AdminSys-nc-btn").click(function () {
+            $("#jumbotron").hide();
+            $("#AdminSystem-register").show();
+        });
+        $("#AdminSystem-register-btn").click(function (e) {
+            if ($("#AdminSystem-RForm")[0].checkValidity()) {
+                e.preventDefault();
 
-            $("#admin-login-form-btn").val('A verificar...');
-            $.ajax({
-                url: 'assets/php/action.php',
-                method: 'post',
-                data: $("#admin-login-form").serialize() + '&action=login',
-                success: function (response) {
-                    $("#admin-login-form-btn").val('Entrar');
-                    if (response === 'login') {
-                        window.location = 'admin/index.php';
-                    } else {
-                        $("#loginModalAlert").html(response);
-                        $("#admin-login-form")[0].reset();
-                    }
+                $("#AdminSystem-register-btn").val('a submeter...');
+                if ($("#r-pass").val() !== $("#cr-pass").val()) {
+                    $("#passError").text('* a palavra passe não coincide. Deve digitar a mesma palavra passe');
+                    $("#AdminSystem-register-btn").val('Submeter');
+                    $("#AdminSystem-RForm")[0].reset();
+                } else {
+                    $("#passError").text('');
+                    $.ajax({
+                        url: '../assets/php/action.php',
+                        method: 'post',
+                        data: $("#AdminSystem-RForm").serialize() + '&action=register',
+                        success: function (response) {
+                            $("#AdminSystem-register-btn").val('Submeter');
+                            if (response === 'register') {
+                                Swal.fire({
+                                    title: 'Conta',
+                                    text: 'Nova conta criada com sucesso! Redirecionando...',
+                                    icon: 'success',
+                                    timer: 10000,
+                                    timerProgressBar: true
+                                });
+                            } else {
+                                Swal.fire({
+                                    title: 'Conta',
+                                    text: 'Erro ao criar a nova conta. Verifique se preencheu correctamente o formulário',
+                                    icon: 'error',
+                                    timer: 10000,
+                                    timerProgressBar: true
+                                });
+                                $("#regAlert").html(response);
+                            }
+                        }
+                    });
                 }
-            });
-        }
+            }
+        });
     });
-
 </script>
+</body>
+</html>

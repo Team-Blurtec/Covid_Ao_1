@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Maio-2020 às 01:12
+-- Tempo de geração: 20-Maio-2020 às 17:30
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.3
 
@@ -39,7 +39,9 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `nome`, `passe`) VALUES
-(1, 'retro', '12345678');
+(1, 'retro', '$2y$10$iMi/sg0LryDOGAxUSsZX8uJnuVk1Sdu1BcE7GQWqY8D6vNrmUFaF2'),
+(2, 'Agnaldo', '$2y$10$FKnGbav0A0xo0hdzeTpIz.CxT9Dyt7Jt91L4qJV9J0zEp7ZHe75tm'),
+(3, 'IroMan', '$2y$10$Iz8w8Co7P8z8IPPGfY1V/O0G4YQRkK.ATPIgO3e/vbz08wedr2QiW');
 
 -- --------------------------------------------------------
 
@@ -62,7 +64,7 @@ CREATE TABLE `casos_registrados` (
 --
 
 INSERT INTO `casos_registrados` (`id`, `confirmados`, `activos`, `recuperados`, `obitos`, `data_casos`, `admin_id`) VALUES
-(2, 52, 38, 27, 3, '2020-05-19', 1);
+(1, 52, 38, 27, 3, '2020-05-20', 1);
 
 -- --------------------------------------------------------
 
@@ -84,9 +86,9 @@ CREATE TABLE `provincias` (
 --
 
 INSERT INTO `provincias` (`id`, `nome`, `confirmados`, `activos`, `recuperados`, `obitos`) VALUES
-(1, 'Luanda', 48, 0, 0, 0),
+(1, 'Luanda', 0, 0, 0, 0),
 (2, 'Benguela', 0, 0, 0, 0),
-(3, 'Cabinda', 2, 0, 0, 0),
+(3, 'Cabinda', 0, 0, 0, 0),
 (4, 'Huíla', 0, 0, 0, 0),
 (5, 'Huambo', 0, 0, 0, 0),
 (6, 'Namibe', 0, 0, 0, 0),
@@ -134,13 +136,13 @@ ALTER TABLE `provincias`
 -- AUTO_INCREMENT de tabela `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `casos_registrados`
 --
 ALTER TABLE `casos_registrados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `provincias`
