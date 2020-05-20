@@ -68,6 +68,7 @@ if (isset($_SESSION['admin'])) {
                             </h1>
                             <hr class="my-3 bg-light">
                             <form action="#" method="post" class="px-3" id="AdminSystem-RForm">
+                                <div id="regAlert"></div>
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text rounded-0">
@@ -145,18 +146,18 @@ if (isset($_SESSION['admin'])) {
                                     title: 'Conta',
                                     text: 'Nova conta criada com sucesso! Redirecionando...',
                                     icon: 'success',
-                                    timer: 5000,
+                                    timer: 10000,
                                     timerProgressBar: true
                                 });
-                                window.location = 'system/';
                             } else {
                                 Swal.fire({
                                     title: 'Conta',
                                     text: 'Erro ao criar a nova conta. Verifique se preencheu correctamente o formulário',
                                     icon: 'error',
-                                    timer: 3000,
+                                    timer: 10000,
                                     timerProgressBar: true
                                 });
+                                $("#regAlert").html(response);
                             }
                         }
                     });

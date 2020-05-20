@@ -33,12 +33,9 @@ class Database
     //Error Success Message Alert
     public function showMessage($type, $message)
     {
-        return '<script>
-Swal.fire({
-text: ' . $message . ',
-icon;: ' . $type . ',
-buttons;: false;
-})
-</script>';
+        return '<div class="alert alert-' . $type . ' alert-dismissible">
+<button type="button" class="close" data-dismiss="alert">&times;</button>
+<strong class="text-center">' . $message . '</strong>
+</div>';
     }
 }
