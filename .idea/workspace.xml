@@ -18,17 +18,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1241">
-              <caret line="175" selection-start-line="175" selection-end-line="175" />
+            <state relative-caret-position="-1224">
+              <caret line="81" column="13" lean-forward="true" selection-start-line="68" selection-start-column="3" selection-end-line="81" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/assets/php/process.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/examples/dashboard.php">
+        <entry file="file://$PROJECT_DIR$/examples/assets/php/auth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="276" column="89" selection-start-line="276" selection-start-column="89" selection-end-line="276" selection-end-column="89" />
+            <state relative-caret-position="-183">
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/admin/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="146" column="75" lean-forward="true" selection-start-line="146" selection-start-column="75" selection-end-line="146" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -42,52 +60,58 @@
         <option value="$PROJECT_DIR$/examples/conexao.php" />
         <option value="$PROJECT_DIR$/examples/dashboard.php" />
         <option value="$PROJECT_DIR$/examples/index.php" />
+        <option value="$PROJECT_DIR$/examples/assets/css/bootstrap-reboot.css" />
+        <option value="$PROJECT_DIR$/examples/admin/index.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-9" />
     <option name="y" value="7" />
     <option name="width" value="1346" />
     <option name="height" value="684" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="Covid_Ao_1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\wamp64\www\Covid_Ao_1" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="Covid_Ao_1" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\wamp64\www\Covid_Ao_1" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="examples" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Covid_Ao_1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Covid_Ao_1" type="462c0819:PsiDirectoryNode" />
+              <item name="Covid_Ao_1-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Covid_Ao_1-master" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Covid_Ao_1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Covid_Ao_1" type="462c0819:PsiDirectoryNode" />
+              <item name="Covid_Ao_1-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Covid_Ao_1-master" type="462c0819:PsiDirectoryNode" />
               <item name="examples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Covid_Ao_1-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Covid_Ao_1-master" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Covid_Ao_1-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Covid_Ao_1-master" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Covid_Ao_1-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Covid_Ao_1-master" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="php" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -128,18 +152,18 @@
       <workItem from="1589744043983" duration="4117000" />
       <workItem from="1589754514531" duration="433000" />
       <workItem from="1589924970575" duration="126000" />
-      <workItem from="1589925240432" duration="10163000" />
+      <workItem from="1589925240432" duration="14043000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22819000" />
+    <option name="totallyTimeSpent" value="26699000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2632375" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18316196" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -180,7 +204,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Retro_Dow/PROGRAMAS/light-bootstrap-dashboard-master/lu/examples/dashboard.html" />
-    <entry file="file://$PROJECT_DIR$/examples/assets/php/config.php" />
+    <entry file="file://$PROJECT_DIR$/examples/assets/php/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="55" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/examples/conexao.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -188,20 +218,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/admin/index.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/examples/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="276" column="89" selection-start-line="276" selection-start-column="89" selection-end-line="276" selection-end-column="89" />
+        <state relative-caret-position="799">
+          <caret line="47" column="62" lean-forward="true" selection-start-line="47" selection-start-column="62" selection-end-line="47" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/assets/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-94806">
+          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/assets/css/bootstrap-reboot.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4600">
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/assets/css/sweetalert2.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/assets/css/vs-styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-812" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/assets/css/all.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12189" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="146" column="75" lean-forward="true" selection-start-line="146" selection-start-column="75" selection-end-line="146" selection-end-column="75" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="175" selection-start-line="175" selection-end-line="175" />
+        <state relative-caret-position="-1224">
+          <caret line="81" column="13" lean-forward="true" selection-start-line="68" selection-start-column="3" selection-end-line="81" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/assets/php/process.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/assets/php/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-183">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
         </state>
       </provider>
     </entry>

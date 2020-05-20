@@ -48,7 +48,9 @@ if (isset($_SESSION['admin'])) {
         </ul>
     </div>
 </nav>
-<div class="container">
+<div class="main-panel">
+
+    <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12 my-auto">
             <div class="jumbotron rounded-pill text-center vs-navbar mt-5" id="jumbotron">
@@ -110,6 +112,8 @@ if (isset($_SESSION['admin'])) {
             </div>
         </div>
     </div>
+
+</div>
 </div>
 
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>

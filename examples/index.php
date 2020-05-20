@@ -22,21 +22,24 @@
 </nav>
 
 <!--Painel Principal-->
-<div class="container">
+<div class="main-panel">
+
+<div class="container-fluid">
     <div class="row">
-        <div class="cols-2">
+
+        <div class="cols-1">
             <div class="card my-4" style="background-color: #1b1e21">
                 <div class="card-body" style="background-color: #1b1e21">
-                    <div class="table-responsive" id="regions_div">
+                    <div class="table-responsive" id="registros">
 
                     </div>
                 </div>
             </div>
         </div>
-        <div class="cols-1">
+        <div class="cols-2">
             <div class="card my-4" style="background-color: #1b1e21">
                 <div class="card-body" style="background-color: #1b1e21">
-                    <div class="table-responsive" id="registros">
+                    <div class="table-responsive" id="regions_div">
 
                     </div>
                 </div>
@@ -62,7 +65,21 @@
         </div>
 
     </div>
+</div>
+    <footer class="footer" style="height: 100%;width: 100%">
+        <div class="container-fluid" style="position: center;background-color: red;text-decoration-color: yellow;padding-top: 15px;padding-bottom: 10px">
+            <nav style="position: center">
 
+                <p class="copyright text-center"  style="position: center;text-underline-color: yellow">
+                    ©
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>
+                    <a href="http://blurtec.epizy.com/" >BlurTec</a>, informando Angola, Fica em Casa
+                </p>
+            </nav>
+        </div>
+    </footer>
     </div>
     <!--Painel Principal end-->
 </div>

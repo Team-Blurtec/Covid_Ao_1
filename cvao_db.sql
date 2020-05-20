@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Maio-2020 às 17:30
+-- Tempo de geração: 20-Maio-2020 às 21:13
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.3
 
@@ -86,24 +86,24 @@ CREATE TABLE `provincias` (
 --
 
 INSERT INTO `provincias` (`id`, `nome`, `confirmados`, `activos`, `recuperados`, `obitos`) VALUES
-(1, 'Luanda', 0, 0, 0, 0),
+(1, 'Luanda', 58, 38, 17, 3),
 (2, 'Benguela', 0, 0, 0, 0),
 (3, 'Cabinda', 0, 0, 0, 0),
 (4, 'Huíla', 0, 0, 0, 0),
 (5, 'Huambo', 0, 0, 0, 0),
 (6, 'Namibe', 0, 0, 0, 0),
-(7, 'Malanje', 0, 0, 0, 0),
+(7, 'Malange', 0, 0, 0, 0),
 (8, 'Bengo', 0, 0, 0, 0),
 (9, 'Bié', 0, 0, 0, 0),
-(10, 'Cuando Cubango', 0, 0, 0, 0),
+(10, 'Cuando-Cubango', 0, 0, 0, 0),
 (11, 'Moxico', 0, 0, 0, 0),
 (12, 'Cunene', 0, 0, 0, 0),
 (13, 'Lunda Norte', 0, 0, 0, 0),
 (14, 'Lunda Sul', 0, 0, 0, 0),
 (15, 'Uíge', 0, 0, 0, 0),
 (16, 'Zaire', 0, 0, 0, 0),
-(17, 'Kwanza Norte', 0, 0, 0, 0),
-(18, 'Kwanza Sul', 0, 0, 0, 0);
+(17, 'Cuanza Norte', 0, 0, 0, 0),
+(18, 'Cuanza Sul', 0, 0, 0, 0);
 
 --
 -- Índices para tabelas despejadas
