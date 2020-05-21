@@ -19,7 +19,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'register') {
         if ($user->register($name, $hpass, $email)) {
             echo 'register';
 
-            $_SESSION['user'] = $name;
         } else {
             echo $user->showMessage('error', 'Algo errado ocorreu, porfavor tente novamente.');
         }
@@ -36,6 +35,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'login') {
     if ($log != null) {
         if (password_verify($passe, $log['passe'])) {
             echo 'login';
+            $_SESSION['user'] = $nome;
         } else {
             echo $user->showMessage('warning', 'As credenciais são inválidas. Verifique o seu nome e/ou sua palavra passe');
         }

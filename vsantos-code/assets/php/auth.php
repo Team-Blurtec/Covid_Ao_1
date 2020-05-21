@@ -49,4 +49,16 @@ class Auth extends Database
 
         return true;
     }
+
+    public function current_user($crr_acc)
+    {
+        $sql = "SELECT * FROM admin WHERE nome=:nome";
+
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute(['nome' => $crr_acc]);
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $row;
+    }
 }
