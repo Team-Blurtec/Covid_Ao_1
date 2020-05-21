@@ -28,12 +28,12 @@ require_once '../../assets/php/session.php';
     <div class="collapse navbar-collapse" id="collapseNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link <?= (basename($_SERVER['PHP_SELF']) == "registrar-casos") ? "active" : ""; ?>"
-                   href="registrar-casos.php"><i class="fas fa-procedures"></i>&nbsp;Registrar Casos</a>
+                <a class="nav-link" href="#" id="registrar-casos-link" data-toggle="modal"
+                   data-target="#casos-diarios-modal"><i class="fas fa-procedures"></i>&nbsp;Registrar Casos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?= (basename($_SERVER['PHP_SELF']) == "registrar-p-provincias") ? "active" : ""; ?>"
-                   href="registrar-p-provincias.php"><i class="fas fa-sitemap"></i>&nbsp;Províncias</a>
+                <a class="nav-link" href="#" id="registrar-p-provincias-link" data-toggle="modal"
+                   data-target="#provincias-modal"><i class="fas fa-sitemap"></i>&nbsp;Províncias</a>
             </li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
@@ -56,8 +56,8 @@ require_once '../../assets/php/session.php';
             <h4 class="text-center text-light">Casos por Províncias</h4>
         </div>
     </div>
-    <div class="card border-dark">
-        <div class="card-body" style="background-color: whitesmoke;">
+    <div class="card border-dark vs-navbar">
+        <div class="card-body">
             <div class="table-responsive" id="provincias-table-div">
 
             </div>
@@ -68,14 +68,21 @@ require_once '../../assets/php/session.php';
             <h4 class="text-center text-light">Casos Diários</h4>
         </div>
     </div>
-    <div class="card border-dark">
-        <div class="card-body" style="background-color:whitesmoke;">
+    <div class="card border-dark vs-navbar">
+        <div class="card-body">
             <div class="table-responsive" id="casos-diarios-table-div">
 
             </div>
         </div>
     </div>
 </div>
+<!--Provincias Modal-->
+
+<!--Provincias Modal end-->
+
+<!--Casos Diarios Modal-->
+
+<!--Casos Diarios Modal end-->
 
 <script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
@@ -110,7 +117,9 @@ require_once '../../assets/php/session.php';
                 success: function (response) {
                     $("#provincias-table-div").html(response);
                     $("#provincias-table").DataTable({
-                        order: [0, 'asc']
+                        order: [0, 'asc'],
+                        pageLength: 5,
+                        lengthMenu: [5, 10, 15, 20, 50, 75, 100, 200]
                     });
                 }
             });

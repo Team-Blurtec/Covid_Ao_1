@@ -10,7 +10,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'case') {
     $case_regs = $crr->buscar_por_casos();
 
     if ($case_regs) {
-        $acase .= '<table class="table table-striped text-center" id="casos-table">
+        $acase .= '<table class="table table-striped table-bordered text-center" id="casos-table">
 <thead>
 <tr>
 <th>id</th>
@@ -20,6 +20,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'case') {
 <th>Mortes</th>
 <th>Data</th>
 <th>Registrado por</th>
+<th>Acção</th>
 </tr>
 </thead>
 <tbody>';
@@ -55,7 +56,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'prov') {
 
     if ($prov_regs) {
         $aprov .=
-            '<table class="table table-striped text-center" id="provincias-table">
+            '<table class="table table-striped table-bordered text-center" id="provincias-table">
 <thead>
 <tr>
 <th>id</th>
@@ -99,7 +100,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'apresentar') {
 
     if ($registros) {
         $apresentar .=
-            '<table class="table table-striped text-center">
+            '<table class="table table-striped table-bordered text-center">
                 <thead>
                     <tr>
                         <th>ANGOLA</th>
