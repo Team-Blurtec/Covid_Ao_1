@@ -3,6 +3,50 @@ require_once 'auth.php';
 
 $crr = new Auth();
 
+//Apresentar registros de casos diarios
+if (isset($_POST['action']) && $_POST['action'] == 'case') {
+    $acase = '';
+
+    $case_regs = $crr->buscar_por_casos();
+
+    if ($case_regs) {
+        $acase .= '<table class="table table-striped text-center" id="casos-table">
+<thead>
+<tr>
+<th>id</th>
+<th>Confirmados</th>
+<th>Activos</th>
+<th>Recuperados</th>
+<th>Mortes</th>
+<th>Data</th>
+<th>Registrado por</th>
+</tr>
+</thead>
+<tbody>';
+        foreach ($case_regs as $case_reg) {
+            $acase .= '<tr>
+<td>' . $case_reg['id'] . '</td>
+<td>' . $case_reg['confirmados'] . '</td>
+<td>' . $case_reg['activos'] . '</td>
+<td>' . $case_reg['recuperados'] . '</td>
+<td>' . $case_reg['obitos'] . '</td>
+<td>' . $case_reg['data_casos'] . '</td>
+<td>' . $case_reg['admin_id'] . '</td>
+<td>
+<a href="#" title="Ver detalhes" class="text-success">
+<i class="fas fa-info-circle fa-lg"></i>
+</a>
+</td>
+</tr>';
+        }
+        $acase .= '</tbody>
+</table>';
+        echo $acase;
+    } else {
+        echo '<h3 class="text-center text-success">:( sem dados registrados.</h3>';
+    }
+}
+
 //Apresentar registros de casos por provincias
 if (isset($_POST['action']) && $_POST['action'] == 'prov') {
     $aprov = '';
@@ -11,7 +55,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'prov') {
 
     if ($prov_regs) {
         $aprov .=
-            '<table class="table table-striped text-center">
+            '<table class="table table-striped text-center" id="provincias-table">
 <thead>
 <tr>
 <th>id</th>

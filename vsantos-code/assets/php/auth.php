@@ -73,4 +73,16 @@ class Auth extends Database
 
         return $row;
     }
+
+    public function buscar_por_casos()
+    {
+        $sql = "SELECT * FROM casos_registrados";
+
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute();
+
+        $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $rs;
+    }
 }

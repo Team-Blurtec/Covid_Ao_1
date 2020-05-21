@@ -58,7 +58,19 @@ require_once '../../assets/php/session.php';
     </div>
     <div class="card border-dark">
         <div class="card-body" style="background-color: whitesmoke;">
-            <div class="table-responsive" id="provincias-table">
+            <div class="table-responsive" id="provincias-table-div">
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 mt-4">
+            <h4 class="text-center text-light">Casos Diários</h4>
+        </div>
+    </div>
+    <div class="card border-dark">
+        <div class="card-body" style="background-color:whitesmoke;">
+            <div class="table-responsive" id="casos-diarios-table-div">
 
             </div>
         </div>
@@ -72,9 +84,23 @@ require_once '../../assets/php/session.php';
 <script type="text/javascript" src="../../assets/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-        $("table").DataTable();
 
         apresentarProvincias();
+        apresentarCasosDiarios();
+
+        function apresentarCasosDiarios() {
+            $.ajax({
+                url: '../../assets/php/process.php',
+                method: 'post',
+                data: {action: 'case'},
+                success: function (response) {
+                    $("#casos-diarios-table-div").html(response);
+                    $("#casos-table").DataTable({
+                        order: [0, 'desc']
+                    });
+                }
+            });
+        }
 
         function apresentarProvincias() {
             $.ajax({
@@ -82,8 +108,8 @@ require_once '../../assets/php/session.php';
                 method: 'post',
                 data: {action: 'prov'},
                 success: function (response) {
-                    $("#provincias-table").html(response);
-                    $("table").DataTable({
+                    $("#provincias-table-div").html(response);
+                    $("#provincias-table").DataTable({
                         order: [0, 'asc']
                     });
                 }
