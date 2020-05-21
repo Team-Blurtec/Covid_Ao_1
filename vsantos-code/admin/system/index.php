@@ -56,7 +56,7 @@ require_once '../../assets/php/session.php';
             <h4 class="text-center text-light">Casos por Províncias</h4>
         </div>
     </div>
-    <div class="card border-dark vs-navbar">
+    <div class="card border-dark my-3">
         <div class="card-body">
             <div class="table-responsive" id="provincias-table-div">
 
@@ -68,7 +68,7 @@ require_once '../../assets/php/session.php';
             <h4 class="text-center text-light">Casos Diários</h4>
         </div>
     </div>
-    <div class="card border-dark vs-navbar">
+    <div class="card border-dark my-3">
         <div class="card-body">
             <div class="table-responsive" id="casos-diarios-table-div">
 
@@ -103,7 +103,32 @@ require_once '../../assets/php/session.php';
                 success: function (response) {
                     $("#casos-diarios-table-div").html(response);
                     $("#casos-table").DataTable({
-                        order: [0, 'desc']
+                        order: [0, 'desc'],
+                        pageLength: 5,
+                        lengthMenu: [5, 10, 15, 20, 50, 75, 100, 200],
+                        "language": {
+                            "sEmptyTable": "Não foi encontrado nenhum registo",
+                            "sLoadingRecords": "A carregar...",
+                            "sProcessing": "A processar...",
+                            "sLengthMenu": "Mostrar _MENU_ registos",
+                            "sZeroRecords": "Não foram encontrados resultados",
+                            "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registos",
+                            "sInfoEmpty": "Mostrando de 0 até 0 de 0 registos",
+                            "sInfoFiltered": "(filtrado de _MAX_ registos no total)",
+                            "sInfoPostFix": "",
+                            "sSearch": "Procurar:",
+                            "sUrl": "",
+                            "oPaginate": {
+                                "sFirst": "Primeiro",
+                                "sPrevious": "Anterior",
+                                "sNext": "Seguinte",
+                                "sLast": "Último"
+                            },
+                            "oAria": {
+                                "sSortAscending": ": Ordenar colunas de forma ascendente",
+                                "sSortDescending": ": Ordenar colunas de forma descendente"
+                            }
+                        }
                     });
                 }
             });
@@ -119,7 +144,30 @@ require_once '../../assets/php/session.php';
                     $("#provincias-table").DataTable({
                         order: [0, 'asc'],
                         pageLength: 5,
-                        lengthMenu: [5, 10, 15, 20, 50, 75, 100, 200]
+                        lengthMenu: [5, 10, 15, 20, 50, 75, 100, 200],
+                        "language": {
+                            "sEmptyTable": "Não foi encontrado nenhum registo",
+                            "sLoadingRecords": "A carregar...",
+                            "sProcessing": "A processar...",
+                            "sLengthMenu": "Mostrar _MENU_ registos",
+                            "sZeroRecords": "Não foram encontrados resultados",
+                            "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registos",
+                            "sInfoEmpty": "Mostrando de 0 até 0 de 0 registos",
+                            "sInfoFiltered": "(filtrado de _MAX_ registos no total)",
+                            "sInfoPostFix": "",
+                            "sSearch": "Procurar:",
+                            "sUrl": "",
+                            "oPaginate": {
+                                "sFirst": "Primeiro",
+                                "sPrevious": "Anterior",
+                                "sNext": "Seguinte",
+                                "sLast": "Último"
+                            },
+                            "oAria": {
+                                "sSortAscending": ": Ordenar colunas de forma ascendente",
+                                "sSortDescending": ": Ordenar colunas de forma descendente"
+                            }
+                        }
                     });
                 }
             });
