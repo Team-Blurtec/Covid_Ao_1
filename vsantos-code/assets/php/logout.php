@@ -1,6 +1,6 @@
 <?php
 session_start();
 
-unset($_SERVER['user']);
+unset($_SESSION['user']);
 
 header('location: ../../');
