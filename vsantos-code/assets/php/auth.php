@@ -4,6 +4,18 @@ require_once 'config.php';
 class Auth extends Database
 {
 
+    public function buscar_por_provincias()
+    {
+        $sql = "SELECT * FROM provincias";
+
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute();
+
+        $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $rs;
+    }
+
     public function login($nome)
     {
         $sql = "SELECT nome,passe FROM admin WHERE nome=:nome";

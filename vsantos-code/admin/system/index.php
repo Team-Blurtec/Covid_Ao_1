@@ -16,6 +16,7 @@ require_once '../../assets/php/session.php';
     <!--Outros estilos-->
     <link href="../../assets/css/all.min.css"> <!--Estilo dos icones FontAwesome5-->
     <link href="../../assets/css/sweetalert2.min.css" rel="stylesheet"> <!--Estilo de alertas e fades com Sweetalert2-->
+    <link href="../../assets/css/jquery.dataTables.min.css" rel="stylesheet"> <!--Estilo de tabelas-->
 </head>
 <body>
 <nav class="navbar navbar-expand-md vs-navbar navbar-dark">
@@ -49,10 +50,46 @@ require_once '../../assets/php/session.php';
         </ul>
     </div>
 </nav>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 mt-4">
+            <h4 class="text-center text-light">Casos por Províncias</h4>
+        </div>
+    </div>
+    <div class="card border-dark">
+        <div class="card-body" style="background-color: whitesmoke;">
+            <div class="table-responsive" id="provincias-table">
+
+            </div>
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../assets/js/all.min.js"></script>
 <script type="text/javascript" src="../../assets/js/sweetalert2.all.min.js"></script>
+<script type="text/javascript" src="../../assets/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("table").DataTable();
+
+        apresentarProvincias();
+
+        function apresentarProvincias() {
+            $.ajax({
+                url: '../../assets/php/process.php',
+                method: 'post',
+                data: {action: 'prov'},
+                success: function (response) {
+                    $("#provincias-table").html(response);
+                    $("table").DataTable({
+                        order: [0, 'asc']
+                    });
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>
