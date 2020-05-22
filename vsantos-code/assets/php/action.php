@@ -34,6 +34,13 @@ if (isset($_POST['action']) && $_POST['action'] == 'login') {
 
     if ($log != null) {
         if (password_verify($passe, $log['passe'])) {
+            if (!empty($_POST['rem'])) {
+                setcookie("name", $nome, time() + (3 * 24 * 60 * 60), '/');
+                setcookie("password", $passe, time() + (3 * 24 * 60 * 60), '/');
+            } else {
+                setcookie("name", "", 1, "/");
+                setcookie("password", "", 1, "/");
+            }
             echo 'login';
             $_SESSION['user'] = $nome;
         } else {

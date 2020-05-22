@@ -34,11 +34,15 @@ if (isset($_SESSION['user'])) {
             <hr class="my-3 bg-light">
             <form action="#" method="post" id="AdminSystem-login-form" class="px-3 custom-control">
                 <label for="text">
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Nome de admin" required
+                    <input type="text" name="name" id="name" value="<?php if (isset($_COOKIE['name'])) {
+                        echo $_COOKIE['name'];
+                    } ?>" class="form-control" placeholder="Nome de admin" required
                            autofocus>
                 </label>
                 <label for="password">
-                    <input type="password" name="password" id="password" class="form-control"
+                    <input type="password" name="password" id="password" value="<?php if (isset($_COOKIE['password'])) {
+                        echo $_COOKIE['password'];
+                    } ?>" class="form-control"
                            placeholder="Palavra passe" required>
                 </label>
                 <input type="submit" id="AdminSystem-login-btn" value="Entrar"
@@ -50,7 +54,8 @@ if (isset($_SESSION['user'])) {
                 </div>
                 <div class="clearfix"></div>
                 <div class="custom-control custom-checkbox float-left">
-                    <input type="checkbox" name="rem" class="custom-control-input" id="customCheck">
+                    <input type="checkbox" name="rem" class="custom-control-input"
+                           id="customCheck" <?php if (isset($_COOKIE['name'])): ?> checked <?php endif; ?>>
                     <label for="customCheck" class="custom-control-label" style="color: yellow">Manter-me
                         conectado</label>
                 </div>
