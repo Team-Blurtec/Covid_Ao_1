@@ -48,6 +48,12 @@ if (isset($_SESSION['user'])) {
                         <a href="#" id="forgot-link">Esqueceu a sua palavra passe?</a>
                     </div>
                 </div>
+                <div class="clearfix"></div>
+                <div class="custom-control custom-checkbox float-left">
+                    <input type="checkbox" name="rem" class="custom-control-input" id="customCheck">
+                    <label for="customCheck" class="custom-control-label" style="color: yellow">Manter-me
+                        conectado</label>
+                </div>
             </form>
         </ul>
     </div>
