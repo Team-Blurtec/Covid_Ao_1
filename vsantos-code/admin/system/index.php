@@ -1,11 +1,9 @@
 <?php
 require_once '../../assets/php/session.php';
 
-$pdo = new Auth();
-
 $sql = "SELECT nome FROM provincias ORDER BY nome ASC";
 
-$stmt = $pdo->connect->prepare($sql);
+$stmt = $crr_user->connect->prepare($sql);
 $stmt->execute();
 ?>
 <!DOCTYPE html>
@@ -35,20 +33,20 @@ $stmt->execute();
     <div class="collapse navbar-collapse" id="collapseNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link vs-modal-title" href="#" id="casos-modal-link" data-toggle="modal"
+                <a class="nav-link vs-navlink" href="#" id="casos-modal-link" data-toggle="modal"
                    data-target="#addNewCaseModal"><i class="fas fa-procedures"></i>&nbsp;Registrar Casos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link vs-modal-title" href="#" id="provincias-modal-link" data-toggle="modal"
+                <a class="nav-link vs-navlink" href="#" id="provincias-modal-link" data-toggle="modal"
                    data-target="#addProvinceNewCaseModal"><i class="fas fa-sitemap"></i>&nbsp;Províncias</a>
             </li>
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle vs-modal-title" id="navbardrop" data-toggle="dropdown">
+                <a href="#" class="nav-link dropdown-toggle vs-inverted-navlink" id="navbardrop" data-toggle="dropdown">
                     <i class="fas fa-user-cog"></i>&nbsp;
                     <?= $crr_name; ?>
                 </a>
                 <div class="dropdown-menu">
-                    <a href="../../assets/php/logout.php" class="dropdown-item">
+                    <a href="../../assets/php/logout.php" class="dropdown-item vs-logout">
                         <i class="fas fa-sign-out-alt"></i>&nbsp;
                         Sair
                     </a>
@@ -82,51 +80,51 @@ $stmt->execute();
             </div>
         </div>
     </div>
+</div>
 
-    <!--Add New Case Modal-->
-    <div class="modal fade" id="addNewCaseModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header bg-info vs-modal-header">
-                    <h4 class="modal-title vs-modal-title"><i
-                                class="fas fa-viruses fa-lg"></i>&nbsp;Novo caso</h4>
-                    <button type="button" class="close vs-modal-close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body vs-modal-body">
-                    <form action="#" method="post" id="add-case-form" class="px-3">
-                        <div class="form-group">
-                            <input type="number" name="case-conf" class="form-control form-control-lg"
-                                   placeholder="Casos Confirmados"
-                                   required>
-                        </div>
-                        <div class="form-group">
-                            <input type="number" name="case-act" class="form-control form-control-lg"
-                                   placeholder="Casos Activos" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="number" name="case-rec" class="form-control form-control-lg"
-                                   placeholder="Recuperados" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="number" name="case-death" class="form-control form-control-lg"
-                                   placeholder="Mortes" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="date" name="case-onDate" class="form-control form-control-lg was-validated"
-                                   required>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" name="addCaseBtn" id="addCaseBtn" value="Inserir"
-                                   class="btn btn-info btn-block btn-lg vs-login-btn">
-                        </div>
-                    </form>
-                </div>
+<!--Add New Case Modal-->
+<div class="modal fade" id="addNewCaseModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-info vs-modal-header">
+                <h4 class="modal-title vs-modal-title"><i
+                            class="fas fa-viruses fa-lg"></i>&nbsp;Novo caso</h4>
+                <button type="button" class="close vs-modal-close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body vs-modal-body">
+                <form action="#" method="post" id="add-case-form" class="px-3">
+                    <div class="form-group">
+                        <input type="number" name="case-conf" class="form-control form-control-lg"
+                               placeholder="Casos Confirmados"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="case-act" class="form-control form-control-lg"
+                               placeholder="Casos Activos" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="case-rec" class="form-control form-control-lg"
+                               placeholder="Recuperados" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="case-death" class="form-control form-control-lg"
+                               placeholder="Mortes" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="case-onDate" class="form-control form-control-lg was-validated"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="addCaseBtn" id="addCaseBtn" value="Inserir"
+                               class="btn btn-info btn-block btn-lg vs-login-btn">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    <!--Add New Case Modal end-->
-
 </div>
+<!--Add New Case Modal end-->
+
 
 <script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
@@ -147,15 +145,17 @@ $stmt->execute();
                         console.log(response);
                         if (response === 'true') {
                             $("#add-case-form")[0].reset();
-                            $("#addNewCaseModal").hide();
+                            apresentarProvincias();
+                            apresentarCasosDiarios();
                             Swal.fire({
                                 text: 'Caso adicionado',
                                 icon: 'success',
                                 timer: 5000,
                                 timerProgressBar: true
                             });
+                            $("#addNewCaseModal").modal("hide");
                         } else {
-                            $("#casos-modal").hide();
+                            $("#add-case-form")[0].reset();
                             Swal.fire({
                                 text: 'Ocorreu um erro :(',
                                 icon: 'error'

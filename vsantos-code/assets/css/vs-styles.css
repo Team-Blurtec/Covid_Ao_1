@@ -84,3 +84,19 @@ tr {
         margin: 2px !important;
     }
 }
+
+.vs-inverted-navlink {
+    color: #000000 !important;
+}
+
+.vs-inverted-navlink:hover {
+    color: yellow !important;
+}
+
+.vs-logout {
+    color: #000000 !important;
+}
+
+.vs-logout:hover, .vs-logout:active {
+    color: tomato !important;
+}
