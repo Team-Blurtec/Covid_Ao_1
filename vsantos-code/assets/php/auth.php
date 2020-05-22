@@ -76,7 +76,7 @@ class Auth extends Database
 
     public function buscar_por_casos()
     {
-        $sql = "SELECT * FROM casos_registrados";
+        $sql = "SELECT casos_registrados.id as 'id', confirmados, activos, recuperados, obitos, data_casos, admin.nome as 'nome' FROM casos_registrados,admin WHERE casos_registrados.admin_id = admin.id";
 
         $stmt = $this->connect->prepare($sql);
         $stmt->execute();
@@ -84,5 +84,23 @@ class Auth extends Database
         $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $rs;
+    }
+
+    public function adicionar_caso($confirmados, $activos, $recuperados, $obitos, $data, $crr_id)
+    {
+        $sql = "INSERT INTO casos_registrados
+    (confirmados,activos,recuperados,obitos,data_casos,admin_id)
+    VALUES(:confirmados,:activos,:recuperados,:obitos,:data_casos,:admin_id)";
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute([
+            'confirmados' => $confirmados,
+            'activos' => $activos,
+            'recuperados' => $recuperados,
+            'obitos' => $obitos,
+            'data_casos' => $data,
+            'admin_id' => $crr_id
+        ]);
+
+        return true;
     }
 }

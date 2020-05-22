@@ -48,11 +48,10 @@
 
         function registros() {
             $.ajax({
-                url: 'assets/php/process.php',
+                url: 'assets/php/action.php',
                 method: 'post',
                 data: {action: 'apresentar'},
                 success: function (response) {
-                    console.log(response);
                     $("#registros").html(response);
                 }
             });

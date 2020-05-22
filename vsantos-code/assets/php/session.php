@@ -6,7 +6,7 @@ require_once 'auth.php';
 $crr_user = new Auth();
 
 if (!isset($_SESSION['user'])) {
-    header('location: index.php');
+    header('location: /');
     die;
 }
 

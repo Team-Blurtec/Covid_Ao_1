@@ -1,13 +1,28 @@
 <?php
-require_once 'auth.php';
+require_once 'session.php';
 
-$crr = new Auth();
+
+//Adicionar novo caso
+if (isset($_POST['action']) && $_POST['action'] == 'case_add') {
+
+    $confirmados = $crr_user->test_input($_POST['case-conf']);
+    $activos = $crr_user->test_input($_POST['case-act']);
+    $recuperados = $crr_user->test_input($_POST['case-rec']);
+    $obitos = $crr_user->test_input($_POST['case-death']);
+    $data = $crr_user->test_input($_POST['case-onDate']);
+
+    $crr_user->adicionar_caso($confirmados, $activos, $recuperados, $obitos, $data, $crr_id);
+
+    if ($crr_user) {
+        echo 'true';
+    }
+}
 
 //Apresentar registros de casos diarios
 if (isset($_POST['action']) && $_POST['action'] == 'case') {
     $acase = '';
 
-    $case_regs = $crr->buscar_por_casos();
+    $case_regs = $crr_user->buscar_por_casos();
 
     if ($case_regs) {
         $acase .= '<table class="table table-striped table-bordered text-center" id="casos-table" style="width: 100%">
@@ -32,9 +47,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'case') {
 <td>' . $case_reg['recuperados'] . '</td>
 <td>' . $case_reg['obitos'] . '</td>
 <td>' . $case_reg['data_casos'] . '</td>
-<td>' . $case_reg['admin_id'] . '</td>
+<td>' . $case_reg['nome'] . '</td>
 <td>
-<a href="#" title="Ver detalhes" class="text-success">
+<a href="#" title="Ver detalhes" class="text-info">
 <i class="fas fa-info-circle fa-lg"></i>
 </a>
 </td>
@@ -44,7 +59,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'case') {
 </table>';
         echo $acase;
     } else {
-        echo '<h3 class="text-center text-success">:( sem dados registrados.</h3>';
+        echo '<h3 class="text-center text-info">:( sem dados registrados.</h3>';
     }
 }
 
@@ -52,7 +67,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'case') {
 if (isset($_POST['action']) && $_POST['action'] == 'prov') {
     $aprov = '';
 
-    $prov_regs = $crr->buscar_por_provincias();
+    $prov_regs = $crr_user->buscar_por_provincias();
 
     if ($prov_regs) {
         $aprov .=
@@ -78,7 +93,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'prov') {
 <td>' . $reg['recuperados'] . '</td>
 <td>' . $reg['obitos'] . '</td>
 <td>
-<a href="#" title="Ver detalhes" class="text-success">
+<a href="#" title="Ver detalhes" class="text-info">
 <i class="fas fa-info-circle fa-lg"></i>
 </a>
 </td>
@@ -88,43 +103,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'prov') {
 </table>';
         echo $aprov;
     } else {
-        echo '<h3 class="text-center text-success">:( sem dados registrados.</h3>';
-    }
-}
-
-//Apresentar registros contidos na base de dados
-if (isset($_POST['action']) && $_POST['action'] == 'apresentar') {
-    $apresentar = '';
-
-    $registros = $crr->buscar();
-
-    if ($registros) {
-        $apresentar .=
-            '<table class="table table-striped table-bordered text-center">
-                <thead>
-                    <tr>
-                        <th>ANGOLA</th>
-                    </tr>
-                    <tr>
-                        <th>Províncias</th>
-                        <th>Confirmados</th>
-                        <th>Activos</th>
-                        <th>Recuperados</th>
-                        <th>Óbitos</th>
-                    </tr>
-                </thead>
-                <tbody>';
-        foreach ($registros as $registro) {
-            $apresentar .=
-                '<tr>
-                    <td>' . $registro['nome'] . '</td>
-                    <td>' . $registro['confirmados'] . '</td>
-                    <td>' . $registro['activos'] . '</td>
-                    <td>' . $registro['recuperados'] . '</td>
-                    <td>' . $registro['obitos'] . '</td>
-                </tr>';
-        }
-        $apresentar .= '</tbody>';
-        echo $apresentar;
+        echo '<h3 class="text-center text-info">:( sem dados registrados.</h3>';
     }
 }

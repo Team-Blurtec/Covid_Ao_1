@@ -1,5 +1,12 @@
 <?php
 require_once '../../assets/php/session.php';
+
+$pdo = new Auth();
+
+$sql = "SELECT nome FROM provincias ORDER BY nome ASC";
+
+$stmt = $pdo->connect->prepare($sql);
+$stmt->execute();
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -20,7 +27,7 @@ require_once '../../assets/php/session.php';
 </head>
 <body>
 <nav class="navbar navbar-expand-md vs-navbar navbar-dark">
-    <a class="navbar-brand" href="#"><i class="fa fa-viruses fa-lg"></i>&nbsp;
+    <a class="navbar-brand vs-modal-title" href="#"><i class="fa fa-viruses fa-lg"></i>&nbsp;
         COVID.ao</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseNav">
         <span class="navbar-toggler-icon"></span>
@@ -28,15 +35,15 @@ require_once '../../assets/php/session.php';
     <div class="collapse navbar-collapse" id="collapseNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#" id="registrar-casos-link" data-toggle="modal"
-                   data-target="#casos-diarios-modal"><i class="fas fa-procedures"></i>&nbsp;Registrar Casos</a>
+                <a class="nav-link vs-modal-title" href="#" id="casos-modal-link" data-toggle="modal"
+                   data-target="#addNewCaseModal"><i class="fas fa-procedures"></i>&nbsp;Registrar Casos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" id="registrar-p-provincias-link" data-toggle="modal"
-                   data-target="#provincias-modal"><i class="fas fa-sitemap"></i>&nbsp;Províncias</a>
+                <a class="nav-link vs-modal-title" href="#" id="provincias-modal-link" data-toggle="modal"
+                   data-target="#addProvinceNewCaseModal"><i class="fas fa-sitemap"></i>&nbsp;Províncias</a>
             </li>
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+                <a href="#" class="nav-link dropdown-toggle vs-modal-title" id="navbardrop" data-toggle="dropdown">
                     <i class="fas fa-user-cog"></i>&nbsp;
                     <?= $crr_name; ?>
                 </a>
@@ -53,7 +60,7 @@ require_once '../../assets/php/session.php';
 <div class="container">
     <div class="row">
         <div class="col-lg-12 mt-4">
-            <h4 class="text-center text-light">Casos por Províncias</h4>
+            <h4 class="text-center vs-modal-title">Casos por Províncias</h4>
         </div>
     </div>
     <div class="card border-dark my-3">
@@ -65,7 +72,7 @@ require_once '../../assets/php/session.php';
     </div>
     <div class="row">
         <div class="col-lg-12 mt-4">
-            <h4 class="text-center text-light">Casos Diários</h4>
+            <h4 class="text-center vs-modal-title">Casos Diários</h4>
         </div>
     </div>
     <div class="card border-dark my-3">
@@ -75,14 +82,51 @@ require_once '../../assets/php/session.php';
             </div>
         </div>
     </div>
+
+    <!--Add New Case Modal-->
+    <div class="modal fade" id="addNewCaseModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-info vs-modal-header">
+                    <h4 class="modal-title vs-modal-title"><i
+                                class="fas fa-viruses fa-lg"></i>&nbsp;Novo caso</h4>
+                    <button type="button" class="close vs-modal-close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body vs-modal-body">
+                    <form action="#" method="post" id="add-case-form" class="px-3">
+                        <div class="form-group">
+                            <input type="number" name="case-conf" class="form-control form-control-lg"
+                                   placeholder="Casos Confirmados"
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="case-act" class="form-control form-control-lg"
+                                   placeholder="Casos Activos" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="case-rec" class="form-control form-control-lg"
+                                   placeholder="Recuperados" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="case-death" class="form-control form-control-lg"
+                                   placeholder="Mortes" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" name="case-onDate" class="form-control form-control-lg was-validated"
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="addCaseBtn" id="addCaseBtn" value="Inserir"
+                                   class="btn btn-info btn-block btn-lg vs-login-btn">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Add New Case Modal end-->
+
 </div>
-<!--Provincias Modal-->
-
-<!--Provincias Modal end-->
-
-<!--Casos Diarios Modal-->
-
-<!--Casos Diarios Modal end-->
 
 <script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
@@ -91,6 +135,36 @@ require_once '../../assets/php/session.php';
 <script type="text/javascript" src="../../assets/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+        $("#addCaseBtn").click(function (e) {
+            if ($("#add-case-form")[0].checkValidity()) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: '../../assets/php/process.php',
+                    method: 'post',
+                    data: $("#add-case-form").serialize() + '&action=case_add',
+                    success: function (response) {
+                        console.log(response);
+                        if (response === 'true') {
+                            $("#add-case-form")[0].reset();
+                            $("#addNewCaseModal").hide();
+                            Swal.fire({
+                                text: 'Caso adicionado',
+                                icon: 'success',
+                                timer: 5000,
+                                timerProgressBar: true
+                            });
+                        } else {
+                            $("#casos-modal").hide();
+                            Swal.fire({
+                                text: 'Ocorreu um erro :(',
+                                icon: 'error'
+                            });
+                        }
+                    }
+                });
+            }
+        });
 
         apresentarProvincias();
         apresentarCasosDiarios();
