@@ -134,6 +134,46 @@ if (isset($_SESSION['user'])) {
             </div>
         </div>
     </div>
+    <!--Recuperar a palavra passe-->
+    <div class="row justify-content-center style-wrapper" id="forgot-box" style="display: none">
+        <div class="col-lg-10 my-auto">
+            <div class="card-group style-shadow">
+                <div class="card justify-content-center rounded-left vs-navbar p-4">
+                    <h1 class="text-center font-weight-bold vs-modal-title">
+                        Esqueceu a sua palavra passe&nbsp;<br><i class="fas fa-question fa-lg"></i></h1>
+                    <hr class="my-5" style="background-color:yellow;">
+                    <button class="btn btn-outline-primary vs-login-btn btn-lg" id="back-link">Voltar</button>
+                </div>
+                <div class="card rounded-right p-4" style="flex-grow: 1.4; background-color:#000000;">
+                    <h1 class="text-center font-weight-bold" style="color: yellow">
+                        Reposição de palavra passe
+                    </h1>
+                    <hr class="my-2" style="background-color:yellow;">
+                    <p class="lead text-center text-secondary">
+                        Para repôr a sua palavra passe introduz abaixo o seu e-mail de modo a verificar se está na
+                        plataforma. Caso esteja, poderá ser liberado para efectuar a reposição.
+                    </p>
+                    <form action="#" method="post" class="px-3" id="forgot-form">
+                        <div id="forgotAlert"></div>
+                        <div class="input-group input-group-lg form-group">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text rounded-0">
+                                <i class="far fa-envelope fa-lg"></i>
+                            </span>
+                            </div>
+                            <input type="email" name="femail" id="femail" class="form-control rounded-0"
+                                   placeholder="E-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" id="fr-btn"
+                                   class="btn btn-outline-primary btn-lg btn-block vs-login-btn" value="Submeter">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Recuperar a palavra passe end-->
 </div>
 
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
@@ -144,9 +184,36 @@ if (isset($_SESSION['user'])) {
 <!--Scripts e funcoes-->
 <script type="text/javascript">
     $(document).ready(function () {
+        $("#forgot-link").click(function () {
+            $("#jumbotron").hide();
+            $("nav").hide();
+            $("#forgot-box").show();
+        });
         $("#AdminSys-nc-btn").click(function () {
             $("#jumbotron").hide();
+            $("nav").hide();
             $("#AdminSystem-register").show();
+        });
+        $("#back-link").click(function () {
+            window.location = './';
+        });
+
+        //Recuperar a conta ou palavra passe
+        $("#fr-btn").click(function (e) {
+            if ($("#forgot-form")[0].checkValidity()) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: 'assets/php/action.php',
+                    method: 'post',
+                    data: $("#forgot-form").serialize() + '&action=forgot',
+                    success: function (response) {
+                        console.log(response);
+                        $("#forgot-form")[0].reset();
+                        $("#forgotAlert").html(response);
+                    }
+                });
+            }
         });
 
         //Login com conta admin
@@ -164,7 +231,7 @@ if (isset($_SESSION['user'])) {
                         } else {
                             console.log(response);
                             Swal.fire({
-                                text: 'As credenciais não se encontram certas.',
+                                text: 'As credenciais não se encontram correctas.',
                                 icon: 'error'
                             });
                         }
@@ -193,14 +260,14 @@ if (isset($_SESSION['user'])) {
                             $("#AdminSystem-register-btn").val('Submeter');
                             if (response === 'register') {
                                 Swal.fire({
-                                    text: 'Nova conta criada com sucesso!',
+                                    text: 'Conta Criada!',
                                     icon: 'success',
                                     timer: 10000,
                                     timerProgressBar: true
                                 });
-                                $("#AdminSystem-RForm")[0].reset();
                                 $("#AdminSystem-register").hide();
                                 $("#jumbotron").show();
+                                $("nav").show();
                             } else {
                                 $("#regAlert").html(response);
                             }

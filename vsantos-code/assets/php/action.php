@@ -86,4 +86,17 @@ if (isset($_POST['action']) && $_POST['action'] == 'apresentar') {
         $apresentar .= '</tbody>';
         echo $apresentar;
     }
+
+    //Recuperar a palavra passe com Ajax
+    if (isset($_POST['action']) && $_POST['action'] == 'forgot') {
+
+        $femail = $user->test_input($_POST['femail']);
+
+        $u_encontrado = $user->existe_conta($femail);
+
+        if ($u_encontrado != null) {
+            header('location: ../../admin/reset-php.php');
+        }
+
+    }
 }

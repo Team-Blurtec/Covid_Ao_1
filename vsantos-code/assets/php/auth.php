@@ -121,4 +121,15 @@ class Auth extends Database
 
         return true;
     }
+
+    public function recuperar_passe($email)
+    {
+        $sql = "SELECT * FROM admin WHERE email=:email";
+
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute(['email' => $email]);
+
+        return true;
+    }
+
 }

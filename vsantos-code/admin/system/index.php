@@ -225,7 +225,7 @@ $stmt->execute();
                             apresentarProvincias();
                             apresentarCasosDiarios();
                             Swal.fire({
-                                text: 'Caso Adicionado :>',
+                                text: 'Registo Adicionado :>',
                                 icon: 'success',
                                 timer: 5000,
                                 timerProgressBar: true
