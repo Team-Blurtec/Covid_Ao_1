@@ -1,6 +1,21 @@
 <?php
 require_once 'session.php';
 
+//Adicionar novo caso por provincia
+if (isset($_POST['action']) && $_POST['action'] == 'case_byp_add') {
+
+    $p_confirmados = $crr_user->test_input($_POST['p-case-conf']);
+    $p_activos = $crr_user->test_input($_POST['p-case-act']);
+    $p_recuperados = $crr_user->test_input($_POST['p-case-rec']);
+    $p_obitos = $crr_user->test_input($_POST['p-case-death']);
+    $p_nome = $crr_user->test_input($_POST['province_select']);
+
+    $crr_user->atualizar_caso_por_provincia($p_confirmados, $p_activos, $p_recuperados, $p_obitos, $p_nome);
+
+    if ($crr_user) {
+        echo 'true';
+    }
+}
 
 //Adicionar novo caso
 if (isset($_POST['action']) && $_POST['action'] == 'case_add') {

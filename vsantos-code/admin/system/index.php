@@ -33,12 +33,12 @@ $stmt->execute();
     <div class="collapse navbar-collapse" id="collapseNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link vs-navlink" href="#" id="casos-modal-link" data-toggle="modal"
+                <a class="nav-link vs-navlink" href="#" id="cases-modal-link" data-toggle="modal"
                    data-target="#addNewCaseModal"><i class="fas fa-procedures"></i>&nbsp;Registrar Casos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link vs-navlink" href="#" id="provincias-modal-link" data-toggle="modal"
-                   data-target="#addProvinceNewCaseModal"><i class="fas fa-sitemap"></i>&nbsp;Províncias</a>
+                <a class="nav-link vs-navlink" href="#" id="provinces-modal-link" data-toggle="modal"
+                   data-target="#addNewCaseByProvinceModal"><i class="fas fa-sitemap"></i>&nbsp;Províncias</a>
             </li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle vs-inverted-navlink" id="navbardrop" data-toggle="dropdown">
@@ -125,6 +125,52 @@ $stmt->execute();
 </div>
 <!--Add New Case Modal end-->
 
+<!--Add New Case By Province Modal-->
+<div class="modal fade" id="addNewCaseByProvinceModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-info vs-modal-header">
+                <h4 class="modal-title vs-modal-title"><i
+                            class="fas fa-viruses fa-lg"></i>&nbsp;Atualizar Casos por Província</h4>
+                <button type="button" class="close vs-modal-close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body vs-modal-body">
+                <form action="#" method="post" id="add-case-b-province-form" class="px-3">
+                    <div class="form-group">
+                        <select id="province_select" name="province_select" class="form-control form-control-lg">
+                            <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+                                <option value="<?= $row['nome']; ?>"><?= $row['nome']; ?></option>
+                            <?php endwhile; ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="p-case-conf" class="form-control form-control-lg"
+                               placeholder="Casos Confirmados"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="p-case-act" class="form-control form-control-lg"
+                               placeholder="Casos Activos" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="p-case-rec" class="form-control form-control-lg"
+                               placeholder="Recuperados" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="p-case-death" class="form-control form-control-lg"
+                               placeholder="Mortes" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="addCaseByProvinceBtn" id="addCaseByProvinceBtn" value="Atualizar"
+                               class="btn btn-info btn-block btn-lg vs-login-btn">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Add New Case By Province Modal end-->
+
 
 <script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
@@ -133,6 +179,38 @@ $stmt->execute();
 <script type="text/javascript" src="../../assets/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+        $("#addCaseByProvinceBtn").click(function (e) {
+            if ($("#add-case-b-province-form")[0].checkValidity()) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: '../../assets/php/process.php',
+                    method: 'post',
+                    data: $("#add-case-b-province-form").serialize() + '&action=case_byp_add',
+                    success: function (response) {
+                        console.log(response);
+                        if (response === 'true') {
+                            apresentarProvincias();
+                            apresentarCasosDiarios();
+                            Swal.fire({
+                                text: 'Dados Atualizados :>',
+                                icon: 'success',
+                                timer: 5000,
+                                timerProgressBar: true
+                            });
+                            $("#addNewCaseByProvinceModal").modal("hide");
+                        } else {
+                            $("#add-case-b-province-form")[0].reset();
+                            Swal.fire({
+                                text: 'Ocorreu um erro :(',
+                                icon: 'error'
+                            });
+                        }
+                    }
+                });
+            }
+        });
+
         $("#addCaseBtn").click(function (e) {
             if ($("#add-case-form")[0].checkValidity()) {
                 e.preventDefault();
@@ -144,11 +222,10 @@ $stmt->execute();
                     success: function (response) {
                         console.log(response);
                         if (response === 'true') {
-                            $("#add-case-form")[0].reset();
                             apresentarProvincias();
                             apresentarCasosDiarios();
                             Swal.fire({
-                                text: 'Caso adicionado',
+                                text: 'Caso Adicionado :>',
                                 icon: 'success',
                                 timer: 5000,
                                 timerProgressBar: true

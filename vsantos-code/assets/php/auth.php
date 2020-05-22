@@ -103,4 +103,22 @@ class Auth extends Database
 
         return true;
     }
+
+    public function atualizar_caso_por_provincia($c, $a, $r, $o, $nome)
+    {
+        $sql = "UPDATE provincias SET confirmados=:confirms,activos=:activs,recuperados=:recs,obitos=:obts WHERE nome=:nm";
+
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute(
+            [
+                'confirms' => $c,
+                'activs' => $a,
+                'recs' => $r,
+                'obts' => $o,
+                'nm' => $nome
+            ]
+        );
+
+        return true;
+    }
 }
