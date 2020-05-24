@@ -35,11 +35,11 @@ $stmt->execute();
             <li class="nav-item">
                 <a class="nav-link vs-navlink" href="#" id="cases-modal-link" data-toggle="modal"
                    data-target="#addNewCaseModal"><i class="fas fa-procedures"></i>&nbsp;Registrar Casos</a>
-            </li>
+            </li><!--
             <li class="nav-item">
                 <a class="nav-link vs-navlink" href="#" id="provinces-modal-link" data-toggle="modal"
                    data-target="#addNewCaseByProvinceModal"><i class="fas fa-sitemap"></i>&nbsp;Províncias</a>
-            </li>
+            </li>-->
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle vs-inverted-navlink" id="navbardrop" data-toggle="dropdown">
                     <i class="fas fa-user-cog"></i>&nbsp;
@@ -87,20 +87,23 @@ $stmt->execute();
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header bg-info vs-modal-header">
-                <h4 class="modal-title vs-modal-title"><i
-                            class="fas fa-viruses fa-lg"></i>&nbsp;Novo caso</h4>
+                <h4 class="modal-title vs-modal-title text-center"><i
+                            class="fas fa-viruses fa-lg"></i>&nbsp</h4>
                 <button type="button" class="close vs-modal-close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body vs-modal-body">
                 <form action="#" method="post" id="add-case-form" class="px-3">
                     <div class="form-group">
-                        <input type="number" name="case-conf" class="form-control form-control-lg"
-                               placeholder="Casos Confirmados"
-                               required>
+                        <select id="province_select" name="province_select" class="form-control form-control-lg">
+                            <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+                                <option value="<?= $row['nome']; ?>"><?= $row['nome']; ?></option>
+                            <?php endwhile; ?>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <input type="number" name="case-act" class="form-control form-control-lg"
-                               placeholder="Casos Activos" required>
+                        <input type="number" name="case-new" class="form-control form-control-lg"
+                               placeholder="Novos Casos"
+                               required>
                     </div>
                     <div class="form-group">
                         <input type="number" name="case-rec" class="form-control form-control-lg"
@@ -115,8 +118,11 @@ $stmt->execute();
                                required>
                     </div>
                     <div class="form-group">
-                        <input type="submit" name="addCaseBtn" id="addCaseBtn" value="Inserir"
-                               class="btn btn-info btn-block btn-lg vs-login-btn">
+                        <input type="submit" name="addCaseByUnifiedBtn" id="addCaseByProvinceBtn" value="Inserir"
+                               class="btn btn-success btn-lg vs-login-btn">
+                        <input type="submit" name="moreCaseByUnified" id="moreCaseByUnified" value="Mais Casos"
+                               class="btn btn-primary btn-lg vs-login-btn">
+                        <input type="reset" class="btn btn-danger btn-lg vs-login-btn" value="Limpar">
                     </div>
                 </form>
             </div>
@@ -162,7 +168,10 @@ $stmt->execute();
                     </div>
                     <div class="form-group">
                         <input type="submit" name="addCaseByProvinceBtn" id="addCaseByProvinceBtn" value="Atualizar"
-                               class="btn btn-info btn-block btn-lg vs-login-btn">
+                               class="btn btn-success btn-lg vs-login-btn">
+                        <input type="submit" name="moreCaseByUnified" id="moreCaseByUnified" value="Mais Casos"
+                               class="btn btn-primary btn-lg vs-login-btn">
+                        <input type="reset" class="btn btn-danger btn-lg vs-login-btn" value="Limpar">
                     </div>
                 </form>
             </div>
