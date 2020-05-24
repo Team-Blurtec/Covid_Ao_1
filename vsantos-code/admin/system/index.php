@@ -300,7 +300,7 @@ $stmt->execute();
                 success: function (response) {
                     $("#casos-diarios-table-div").html(response);
                     $("#casos-table").DataTable({
-                        order: [0, 'desc'],
+                        order: [0, 'asc'],
                         pageLength: 5,
                         lengthMenu: [5, 10, 15, 20, 50, 75, 100, 200],
                         "language": {
