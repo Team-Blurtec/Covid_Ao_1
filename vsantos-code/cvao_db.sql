@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2020 at 03:42 PM
+-- Generation Time: May 24, 2020 at 11:37 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -32,9 +32,18 @@ CREATE TABLE `admin`
 (
     `id`    int(11)      NOT NULL,
     `nome`  varchar(30)  NOT NULL,
-    `passe` varchar(255) NOT NULL
+    `passe` varchar(255) NOT NULL,
+    `email` varchar(255) NOT NULL
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `nome`, `passe`, `email`)
+VALUES (1, 'vijay', '', 'vijay.v@cvao.mail.com'),
+       (2, 'usertest', '$2y$10$/7RSrSqdLL4zwGw1DxoVDe58YqA3CGugYcLg06rkhqpy6El1pV8G6', 'user.usertest@cvao.mail.com');
 
 -- --------------------------------------------------------
 
@@ -46,6 +55,7 @@ CREATE TABLE `casos_registrados`
 (
     `id`          int(11) NOT NULL,
     `confirmados` int(11) NOT NULL,
+    `novos`       int(11) NOT NULL DEFAULT 0,
     `activos`     int(11) NOT NULL,
     `recuperados` int(11) NOT NULL,
     `obitos`      int(11) NOT NULL,
@@ -53,6 +63,19 @@ CREATE TABLE `casos_registrados`
     `admin_id`    int(11) NOT NULL
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+
+--
+-- Dumping data for table `casos_registrados`
+--
+
+INSERT INTO `casos_registrados` (`id`, `confirmados`, `novos`, `activos`, `recuperados`, `obitos`, `data_casos`,
+                                 `admin_id`)
+VALUES (1, 3, 3, 3, 0, 0, '2020-05-24', 2),
+       (2, 6, 3, 6, 0, 0, '2020-05-24', 2),
+       (3, 8, 2, 8, 0, 0, '2020-05-24', 2),
+       (4, 15, 7, 13, 1, 1, '2020-05-24', 2),
+       (5, 18, 3, 15, 1, 0, '2020-05-24', 2),
+       (6, 18, 0, 12, 3, 0, '2020-05-24', 2);
 
 -- --------------------------------------------------------
 
@@ -76,9 +99,9 @@ CREATE TABLE `provincias`
 --
 
 INSERT INTO `provincias` (`id`, `nome`, `confirmados`, `activos`, `recuperados`, `obitos`)
-VALUES (1, 'Luanda', 0, 0, 0, 0),
-       (2, 'Benguela', 0, 0, 0, 0),
-       (3, 'Cabinda', 0, 0, 0, 0),
+VALUES (1, 'Luanda', 13, 7, 5, 1),
+       (2, 'Benguela', 3, 3, 0, 0),
+       (3, 'Cabinda', 2, 2, 0, 0),
        (4, 'Huíla', 0, 0, 0, 0),
        (5, 'Huambo', 0, 0, 0, 0),
        (6, 'Namibe', 0, 0, 0, 0),
@@ -126,13 +149,15 @@ ALTER TABLE `provincias`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,
+    AUTO_INCREMENT = 3;
 
 --
 -- AUTO_INCREMENT for table `casos_registrados`
 --
 ALTER TABLE `casos_registrados`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,
+    AUTO_INCREMENT = 7;
 
 --
 -- AUTO_INCREMENT for table `provincias`
