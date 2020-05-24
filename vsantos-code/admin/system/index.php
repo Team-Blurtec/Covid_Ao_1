@@ -118,9 +118,9 @@ $stmt->execute();
                                required>
                     </div>
                     <div class="form-group">
-                        <input type="submit" name="addCaseByUnifiedBtn" id="addCaseByProvinceBtn" value="Inserir"
+                        <input type="submit" name="addCaseByUnifiedBtn" id="addCaseByUnifiedBtn" value="Inserir"
                                class="btn btn-success btn-lg vs-login-btn">
-                        <input type="submit" name="moreCaseByUnified" id="moreCaseByUnified" value="Mais Casos"
+                        <input type="submit" name="moreCaseByUnifiedBtn" id="moreCaseByUnifiedBtn" value="Mais Casos"
                                class="btn btn-primary btn-lg vs-login-btn">
                         <input type="reset" class="btn btn-danger btn-lg vs-login-btn" value="Limpar">
                     </div>
@@ -220,7 +220,44 @@ $stmt->execute();
             }
         });
 
-        $("#addCaseBtn").click(function (e) {
+        $("#moreCaseByUnifiedBtn").click(function (e) {
+            if ($("#add-case-form")[0].checkValidity()) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: '../../assets/php/process.php',
+                    method: 'post',
+                    data: $("#add-case-form").serialize() + '&action=more_case',
+                    success: function (response) {
+                        if (response === 'true') {
+                            $("#addCaseByUnifiedBtn").val('Terminar');
+                            apresentarProvincias();
+                            apresentarCasosDiarios();
+                            $("#add-case-form")[0].reset();
+                        } else {
+                            Swal.fire({
+                                text: 'Ocorreu um erro :(',
+                                icon: 'error'
+                            });
+                            $("#addNewCaseModal").modal("dismiss");
+                            $("#addCaseByUnifiedBtn").val('Inserir');
+                        }
+                        if (($("#addCaseByUnifiedBtn").val() === 'Terminar') && $("#addCaseByUnifiedBtn").is !== null) {
+                            Swal.fire({
+                                text: 'Todas operações foram bem-sucedidas :>',
+                                icon: 'success',
+                                timer: 5000,
+                                timerProgressBar: true
+                            });
+                            $("#addCaseByUnifiedBtn").val('Inserir');
+                            $("#addNewCaseModal").modal("dismiss");
+                        }
+                    }
+                });
+            }
+        });
+
+        $("#addCaseByUnifiedBtn").click(function (e) {
             if ($("#add-case-form")[0].checkValidity()) {
                 e.preventDefault();
 
@@ -243,7 +280,7 @@ $stmt->execute();
                         } else {
                             $("#add-case-form")[0].reset();
                             Swal.fire({
-                                text: 'Ocorreu um erro :(',
+                                text: 'Ocorreu um erro :<',
                                 icon: 'error'
                             });
                         }

@@ -1,6 +1,22 @@
 <?php
 require_once 'session.php';
 
+//Novo formulario de casos unificado
+if (isset($_POST['action']) && $_POST['action'] == 'more_case') {
+
+    $mr_provi = $crr_user->test_input($_POST['province_select']);
+    $mr_novos = $crr_user->test_input($_POST['case-new']);
+    $mr_recup = $crr_user->test_input($_POST['case-rec']);
+    $mr_obito = $crr_user->test_input($_POST['case-death']);
+    $mr_datac = $crr_user->test_input($_POST['case-onDate']);
+
+    $crr_user->adicionar_mais_casos_unified($mr_provi, $mr_novos, $mr_recup, $mr_obito, $mr_datac, $crr_id);
+
+    if ($crr_user) {
+        echo 'true';
+    }
+}
+
 //Adicionar novo caso por provincia
 if (isset($_POST['action']) && $_POST['action'] == 'case_byp_add') {
 

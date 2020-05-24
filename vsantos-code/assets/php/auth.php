@@ -132,4 +132,40 @@ class Auth extends Database
         return true;
     }
 
+    public function adicionar_mais_casos_unified($mr_provi, $mr_novos, $mr_recup, $mr_obito, $mr_datac, $crr_id)
+    {
+        $sql = "INSERT INTO casos_registrados(novos,recuperados,obitos,data_casos,admin_id) VALUES(:novos,:recup,:obito,:datac,:adminid)";
+
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute
+        (
+            [
+                'novos' => $mr_novos,
+                'recup' => $mr_recup,
+                'obito' => $mr_obito,
+                'datac' => $mr_datac,
+                'adminid' => $crr_id
+            ]
+        );
+
+        if ($stmt) {
+            //
+            $update_activos = 'UPDATE casos_registrados SET activos = (SELECT SUM(novos - recuperados - obitos) FROM casos_registrados) WHERE id = (SELECT COUNT(id) FROM casos_registrados)';
+            $stmt_activos = $this->connect->prepare($update_activos);
+            $stmt_activos->execute();
+
+            //
+            $update_confirmados = 'UPDATE casos_registrados SET confirmados = (SELECT SUM(novos) FROM casos_registrados) WHERE id = (SELECT COUNT(id) FROM casos_registrados)';
+            $stmt_confirmados = $this->connect->prepare($update_confirmados);
+            $stmt_confirmados->execute();
+
+            //
+            $update_provincia_rel = 'UPDATE provincias SET confirmados = confirmados + (SELECT SUM(novos) FROM casos_registrados WHERE id=(SELECT COUNT(id) FROM casos_registrados)), activos = activos + (SELECT SUM(novos - recuperados - obitos) FROM casos_registrados WHERE id=(SELECT COUNT(id) FROM casos_registrados)), recuperados = recuperados + (SELECT recuperados FROM casos_registrados WHERE id=(SELECT COUNT(id) FROM casos_registrados)), obitos = obitos + (SELECT obitos FROM casos_registrados WHERE id=(SELECT COUNT(id) FROM casos_registrados)) WHERE nome = :provi';
+            $stmt_provincia = $this->connect->prepare($update_provincia_rel);
+            $stmt_provincia->execute(['provi' => $mr_provi]);
+
+            return true;
+        }
+        return true;
+    }
 }
