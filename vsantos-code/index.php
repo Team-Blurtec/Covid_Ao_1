@@ -23,18 +23,17 @@
 
 <!--Painel Principal-->
 <div class="container">
-    <div class="row style-wrapper my-auto">
-        <div class="cols-1">
-            <div class="card my-4" style="background-color: #1b1e21">
-                <div class="card-body" style="background-color: #1b1e21">
-                    <div class="table-responsive" id="registros">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card border-0 mt-5" style="background-color: #1b1e21;">
+                <div class="card-body">
+                    <div class="table-responsive" id="table-atualizacao">
 
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--Painel Principal end-->
 </div>
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
@@ -50,9 +49,10 @@
             $.ajax({
                 url: 'assets/php/process.php',
                 method: 'post',
-                data: {action: 'apresentar'},
+                data: {action: 'atualizacao'},
                 success: function (response) {
-                    $("#registros").html(response);
+                    console.log(response);
+                    $("#table-atualizacao").html(response);
                 }
             });
         }
