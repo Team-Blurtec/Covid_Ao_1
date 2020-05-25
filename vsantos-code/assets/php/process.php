@@ -1,24 +1,23 @@
 <?php
 require_once 'auth.php';
 
-$auth = new Auth();
+$auth2 = new Auth2();
 
 //Apresentar os dados na landing page
-if (isset($_POST['action']) && $_POST['action'] == 'actualizacao') {
+if (isset($_POST['action']) && $_POST['action'] == 'atualizacao') {
+
     $index_main = '';
 
-    echo 'sacramento';
-
-    $registos = $auth->buscar_atualizacao();
+    $registos = $auth2->buscar_atualizacao();
 
     if ($registos) {
         $index_main .= '<table class="table table-striped text-center">
 <thead>
 <tr>
-ANGOLA
+<th>ANGOLA</th>
 </tr>
 <tr>
-<th>Provincia</th>
+<th>Província</th>
 <th>Casos Confirmados</th>
 <th>Casos Activos</th>
 <th>Casos Recuperados</th>
@@ -38,7 +37,7 @@ ANGOLA
         $index_main .= '</tbody></table>';
         echo $index_main;
     } else {
-        echo '<h3 class="text-center text-secondary"> Em processamento ...</h3>';
+        echo '<h3 class="text-center text-warning"> Em processamento ...</h3>';
     }
 
 }

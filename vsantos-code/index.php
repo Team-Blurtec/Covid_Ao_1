@@ -24,7 +24,7 @@
 <!--Painel Principal-->
 <div class="container">
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-lg-6">
             <div class="card border-0 mt-5" style="background-color: #1b1e21;">
                 <div class="card-body">
                     <div class="table-responsive" id="table-atualizacao">
