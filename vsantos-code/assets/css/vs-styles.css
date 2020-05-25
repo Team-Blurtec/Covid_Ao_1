@@ -17,7 +17,7 @@ body {
     background-color: #1b1e21 !important;
 }
 
-.style-wrapper {
+.vs-wrapper {
     height: 100vh !important;
 }
 
@@ -99,4 +99,16 @@ tr {
 
 .vs-logout:hover, .vs-logout:active {
     color: tomato !important;
+}
+
+#AdminSystem-register {
+    display: none;
+}
+
+#forgot-box {
+    display: none;
+}
+
+.vs-shadow {
+    box-shadow: 0 0 10px #fff;
 }
