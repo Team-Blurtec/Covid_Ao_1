@@ -66,15 +66,15 @@ if (isset($_SESSION['user'])) {
 <div class="container">
     <div class="row">
         <div class="col-lg-12 my-auto">
-            <div class="jumbotron rounded-pill text-center vs-navbar mt-5" id="jumbotron">
+            <div class="jumbotron vs-shadow rounded-lg text-center vs-navbar mt-5" id="jumbotron">
                 <h3 class="text-center vs-modal-title">
                     "Com grandes poderes surgem grandes responsabilidades" - Peter Parker
                 </h3>
                 <br>
                 <input type="button" id="AdminSys-nc-btn" value="Nova conta" class="btn btn-dark btn-lg vs-login-btn">
             </div>
-            <div class="row justify-content-center" id="AdminSystem-register" style="display: none">
-                <div class="col-lg-10 mt-4">
+            <div class="row justify-content-center" id="AdminSystem-register">
+                <div class="col-lg-12 mt-4">
                     <div class="card-group vs-shadow">
                         <div class="card rounded-left p-4 vs-navbar" style="flex-grow: 1.4;">
                             <h1 class="text-center font-weight-bold" style="color: #000000">
@@ -126,6 +126,8 @@ if (isset($_SESSION['user'])) {
                                 <div class="form-group">
                                     <input type="submit" value="Submeter" id="AdminSystem-register-btn"
                                            class="btn btn-dark btn-lg btn-block vs-login-btn">
+                                    <br>
+                                    <a class="text-warning" href="./">Voltar para login</a>
                                 </div>
                             </form>
                         </div>
@@ -133,47 +135,48 @@ if (isset($_SESSION['user'])) {
                 </div>
             </div>
         </div>
-    </div>
-    <!--Recuperar a palavra passe-->
-    <div class="row justify-content-center style-wrapper" id="forgot-box" style="display: none">
-        <div class="col-lg-10 my-auto">
-            <div class="card-group style-shadow">
-                <div class="card justify-content-center rounded-left vs-navbar p-4">
-                    <h1 class="text-center font-weight-bold vs-modal-title">
-                        Esqueceu a sua palavra passe&nbsp;<br><i class="fas fa-question fa-lg"></i></h1>
-                    <hr class="my-5" style="background-color:yellow;">
-                    <button class="btn btn-outline-primary vs-login-btn btn-lg" id="back-link">Voltar</button>
-                </div>
-                <div class="card rounded-right p-4" style="flex-grow: 1.4; background-color:#000000;">
-                    <h1 class="text-center font-weight-bold" style="color: yellow">
-                        Reposição de palavra passe
-                    </h1>
-                    <hr class="my-2" style="background-color:yellow;">
-                    <p class="lead text-center text-secondary">
-                        Para repôr a sua palavra passe introduz abaixo o seu e-mail de modo a verificar se está na
-                        plataforma. Caso esteja, poderá ser liberado para efectuar a reposição.
-                    </p>
-                    <form action="#" method="post" class="px-3" id="forgot-form">
-                        <div id="forgotAlert"></div>
-                        <div class="input-group input-group-lg form-group">
-                            <div class="input-group-prepend">
+        <!--Recuperar a palavra passe-->
+        <div class="row justify-content-center vs-wrapper" id="forgot-box">
+            <div class="col-lg-10 my-5">
+                <div class="card-group justify-content-center vs-shadow">
+                    <div class="card rounded-left vs-navbar p-4">
+                        <h1 class="text-center font-weight-bold vs-modal-title">
+                            Esqueceu a sua palavra passe&nbsp;<br><i class="fas fa-question fa-lg"></i></h1>
+                        <hr class="my-5" style="background-color:yellow;">
+                        <button class="btn btn-outline-primary vs-login-btn btn-lg" id="back-link">Voltar para login
+                        </button>
+                    </div>
+                    <div class="card rounded-right p-4" style="flex-grow: 1.4; background-color:#000000;">
+                        <h1 class="text-center font-weight-bold" style="color: yellow">
+                            Reposição de palavra passe
+                        </h1>
+                        <hr class="my-2" style="background-color:yellow;">
+                        <p class="lead text-center text-secondary">
+                            Para repôr a sua palavra passe introduz abaixo o seu e-mail de modo a verificar se está na
+                            plataforma. Caso esteja, poderá ser liberado para efectuar a reposição.
+                        </p>
+                        <form action="#" method="post" class="px-3" id="forgot-form">
+                            <div id="forgotAlert"></div>
+                            <div class="input-group input-group-lg form-group">
+                                <div class="input-group-prepend">
                             <span class="input-group-text rounded-0">
                                 <i class="far fa-envelope fa-lg"></i>
                             </span>
+                                </div>
+                                <input type="email" name="femail" id="femail" class="form-control rounded-0"
+                                       placeholder="E-mail" required>
                             </div>
-                            <input type="email" name="femail" id="femail" class="form-control rounded-0"
-                                   placeholder="E-mail" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" id="fr-btn"
-                                   class="btn btn-outline-primary btn-lg btn-block vs-login-btn" value="Submeter">
-                        </div>
-                    </form>
+                            <div class="form-group">
+                                <input type="submit" id="fr-btn"
+                                       class="btn btn-outline-primary btn-lg btn-block vs-login-btn" value="Submeter">
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+        <!--Recuperar a palavra passe end-->
     </div>
-    <!--Recuperar a palavra passe end-->
 </div>
 
 <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
