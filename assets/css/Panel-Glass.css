@@ -1,0 +1,10 @@
+div.panel-glass-reflexion {
+  background: url(../../assets/img/glass.svg) no-repeat;
+  background-size: cover;
+  border-radius: 15px;
+  width: 100%;
+  position: absolute;
+  opacity: 0.2;
+  height: 100%;
+}
+

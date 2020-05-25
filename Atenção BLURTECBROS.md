@@ -1,4 +1,4 @@
-ya esse e o templete que usei para o projecto 
+a esse e o templete que usei para o projecto 
 OS ARQUIVOS PRINCIPIAS ESTAO NA PASTA EXAMPLES E 
 
 DASHBOARD.PHP

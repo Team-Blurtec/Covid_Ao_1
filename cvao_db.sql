@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Maio-2020 às 21:59
+-- Tempo de geração: 25-Maio-2020 às 23:06
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.3
 
@@ -40,7 +40,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `nome`, `passe`, `email`) VALUES
-(1, 'retro', '$2y$10$vmcGbQHQ.r6VyzJwegbhc.K6sAr126T/zUxJaFjxSWBF9RcU/30Py', 'retro@gmail.com');
+(1, 'retro', '$2y$10$vmcGbQHQ.r6VyzJwegbhc.K6sAr126T/zUxJaFjxSWBF9RcU/30Py', 'retro@gmail.com'),
+(2, 'Paulo', '$2y$10$CqRmvVt3GhFY7BGV/xUh3OS6emXIMNvu.6HIZ4L6rXKsklx3ZE2A6', 'fff@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -63,10 +64,7 @@ CREATE TABLE `casos_registrados` (
 --
 
 INSERT INTO `casos_registrados` (`id`, `confirmados`, `activos`, `recuperados`, `obitos`, `data_casos`, `admin_id`) VALUES
-(1, 60, 39, 18, 3, '2020-05-22', 1),
-(2, 65, 56, 56, 56, '2020-05-07', 1),
-(3, 65, 56, 56, 56, '2020-05-07', 1),
-(4, 65, 56, 56, 56, '2020-05-07', 1);
+(1, 60, 39, 18, 3, '2020-05-22', 1);
 
 -- --------------------------------------------------------
 
@@ -94,18 +92,18 @@ INSERT INTO `provincias` (`id`, `nome`, `confirmados`, `activos`, `recuperados`,
 (4, 'Huíla', 0, 0, 0, 0),
 (5, 'Huambo', 0, 0, 0, 0),
 (6, 'Namibe', 0, 0, 0, 0),
-(7, 'Malanje', 0, 0, 0, 0),
+(7, 'Malange', 0, 0, 0, 0),
 (8, 'Bengo', 0, 0, 0, 0),
 (9, 'Bié', 0, 0, 0, 0),
-(10, 'Cuando Cubango', 0, 0, 0, 0),
+(10, 'Cuando-Cubango', 0, 0, 0, 0),
 (11, 'Moxico', 0, 0, 0, 0),
 (12, 'Cunene', 0, 0, 0, 0),
 (13, 'Lunda Norte', 0, 0, 0, 0),
 (14, 'Lunda Sul', 0, 0, 0, 0),
 (15, 'Uíge', 0, 0, 0, 0),
 (16, 'Zaire', 0, 0, 0, 0),
-(17, 'Kwanza Norte', 0, 0, 0, 0),
-(18, 'Kwanza Sul', 0, 0, 0, 0);
+(17, 'Cuanza Norte', 0, 0, 0, 0),
+(18, 'Cuanza Sul', 0, 0, 0, 0);
 
 --
 -- Índices para tabelas despejadas
@@ -138,7 +136,7 @@ ALTER TABLE `provincias`
 -- AUTO_INCREMENT de tabela `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `casos_registrados`
