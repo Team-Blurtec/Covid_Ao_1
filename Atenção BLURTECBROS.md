@@ -1,5 +1,7 @@
-a esse e o templete que usei para o projecto 
-OS ARQUIVOS PRINCIPIAS ESTAO NA PASTA EXAMPLES E 
+# Ola bros
+-No Wampp Server esta a mostar um erro muito esquisito
+mas no Xampp a cena esta a rodar lindamente.
+#testar a responsividade
+-Aqui ate um certo redimensinamento funcionou.
 
-DASHBOARD.PHP
-E CONEXAO.PHP O RESTO E RESTO
+##Salute Blur Bros
