@@ -4,7 +4,7 @@ class Database
 {
 
     public $connect;
-    private $dsn = 'mysql:host=localhost;dbname=cvao_db';
+    private $dsn = 'mysql:host=localhost;dbname=cvao2_db';
     private $dbuser = 'root';
     private $dbpass = '';
 
