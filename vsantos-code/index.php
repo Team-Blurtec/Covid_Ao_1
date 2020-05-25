@@ -48,7 +48,7 @@
 
         function registros() {
             $.ajax({
-                url: 'assets/php/action.php',
+                url: 'assets/php/process.php',
                 method: 'post',
                 data: {action: 'apresentar'},
                 success: function (response) {
