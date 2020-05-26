@@ -38,5 +38,4 @@ class Database
 <strong class="text-center">' . $message . '</strong>
 </div>';
     }
-
 }

@@ -207,7 +207,7 @@ if (isset($_SESSION['user'])) {
                 e.preventDefault();
 
                 $.ajax({
-                    url: 'assets/php/action.php',
+                    url: '../assets/php/action.php',
                     method: 'post',
                     data: $("#forgot-form").serialize() + '&action=forgot',
                     success: function (response) {
@@ -234,7 +234,7 @@ if (isset($_SESSION['user'])) {
                         } else {
                             console.log(response);
                             Swal.fire({
-                                text: 'As credenciais não se encontram correctas.',
+                                text: 'Incorrecto. Verifique o seu e-mail e/ou sua palavra passe',
                                 icon: 'error'
                             });
                         }
@@ -260,6 +260,7 @@ if (isset($_SESSION['user'])) {
                         method: 'post',
                         data: $("#AdminSystem-RForm").serialize() + '&action=register',
                         success: function (response) {
+                            console.log(response);
                             $("#AdminSystem-register-btn").val('Submeter');
                             if (response === 'register') {
                                 Swal.fire({
