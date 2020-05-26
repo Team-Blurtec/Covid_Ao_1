@@ -184,106 +184,6 @@ $stmt->execute();
 <script type="text/javascript" src="../../assets/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#addCaseByProvinceBtn").click(function (e) {
-            if ($("#add-case-b-province-form")[0].checkValidity()) {
-                e.preventDefault();
-
-                $.ajax({
-                    url: '../../assets/php/process.php',
-                    method: 'post',
-                    data: $("#add-case-b-province-form").serialize() + '&action=case_byp_add',
-                    success: function (response) {
-                        console.log(response);
-                        if (response === 'true') {
-                            apresentarProvincias();
-                            apresentarCasosDiarios();
-                            Swal.fire({
-                                text: 'Dados Atualizados :>',
-                                icon: 'success',
-                                timer: 5000,
-                                timerProgressBar: true
-                            });
-                            $("#addNewCaseByProvinceModal").modal("hide");
-                        } else {
-                            $("#add-case-b-province-form")[0].reset();
-                            Swal.fire({
-                                text: 'Ocorreu um erro :(',
-                                icon: 'error'
-                            });
-                        }
-                    }
-                });
-            }
-        });
-
-        $("#moreCaseByUnifiedBtn").click(function (e) {
-            if ($("#add-case-form")[0].checkValidity()) {
-                e.preventDefault();
-
-                $.ajax({
-                    url: '../../assets/php/process.php',
-                    method: 'post',
-                    data: $("#add-case-form").serialize() + '&action=more_case',
-                    success: function (response) {
-                        if (response === 'true') {
-                            $("#addCaseByUnifiedBtn").val('Terminar');
-                            apresentarProvincias();
-                            apresentarCasosDiarios();
-                            $("#add-case-form")[0].reset();
-                        } else {
-                            Swal.fire({
-                                text: 'Ocorreu um erro :(',
-                                icon: 'error'
-                            });
-                            $("#addNewCaseModal").modal("dismiss");
-                            $("#addCaseByUnifiedBtn").val('Inserir');
-                        }
-                        if (($("#addCaseByUnifiedBtn").val() === 'Terminar') && $("#addCaseByUnifiedBtn").is !== null) {
-                            Swal.fire({
-                                text: 'Todas operações foram bem-sucedidas :>',
-                                icon: 'success',
-                                timer: 5000,
-                                timerProgressBar: true
-                            });
-                            $("#addCaseByUnifiedBtn").val('Inserir');
-                            $("#addNewCaseModal").modal("dismiss");
-                        }
-                    }
-                });
-            }
-        });
-
-        $("#addCaseByUnifiedBtn").click(function (e) {
-            if ($("#add-case-form")[0].checkValidity()) {
-                e.preventDefault();
-
-                $.ajax({
-                    url: '../../assets/php/process.php',
-                    method: 'post',
-                    data: $("#add-case-form").serialize() + '&action=case_add',
-                    success: function (response) {
-                        console.log(response);
-                        if (response === 'true') {
-                            apresentarProvincias();
-                            apresentarCasosDiarios();
-                            Swal.fire({
-                                text: 'Registo Adicionado :>',
-                                icon: 'success',
-                                timer: 5000,
-                                timerProgressBar: true
-                            });
-                            $("#addNewCaseModal").modal("hide");
-                        } else {
-                            $("#add-case-form")[0].reset();
-                            Swal.fire({
-                                text: 'Ocorreu um erro :<',
-                                icon: 'error'
-                            });
-                        }
-                    }
-                });
-            }
-        });
 
         apresentarProvincias();
         apresentarCasosDiarios();
@@ -331,13 +231,13 @@ $stmt->execute();
             $.ajax({
                 url: '../../assets/php/process.php',
                 method: 'post',
-                data: {action: 'prov'},
+                data: {action: 'province_case'},
                 success: function (response) {
                     $("#provincias-table-div").html(response);
                     $("#provincias-table").DataTable({
                         order: [0, 'asc'],
                         pageLength: 5,
-                        lengthMenu: [5, 10, 15, 20, 50, 75, 100, 200],
+                        lengthMenu: [5, 8, 13, 21, 33, 54, 89, 200],
                         "language": {
                             "sEmptyTable": "Não foi encontrado nenhum registo",
                             "sLoadingRecords": "A carregar...",

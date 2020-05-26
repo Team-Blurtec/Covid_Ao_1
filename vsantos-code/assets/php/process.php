@@ -41,3 +41,11 @@ if (isset($_POST['action']) && $_POST['action'] == 'atualizacao') {
     }
 
 }
+if (isset($_POST['action']) && $_POST['action'] == 'more_case') {
+}
+if (isset($_POST['action']) && $_POST['action'] == 'new_case') {
+}
+if (isset($_POST['action']) && $_POST['action'] == 'case') {
+}
+if (isset($_POST['action']) && $_POST['action'] == 'province_case') {
+}
