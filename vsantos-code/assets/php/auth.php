@@ -106,7 +106,7 @@ class Auth2 extends Database
         $stmt = $this->connect->prepare($sql);
         $stmt->execute(['prov' => $province]);
 
-        $update = "UPDATE casos SET confirmados=(SELECT SUM(confirmados) FROM provincias), activos=(SELECT SUM(activos) FROM provincias)";
+        $update = "UPDATE casos SET confirmados=(SELECT SUM(confirmados) FROM provincias), activos=(SELECT SUM(activos) FROM provincias) WHERE id=(SELECT COUNT(id)FROM casos)";
         $st_update = $this->connect->prepare($update);
         $st_update->execute();
 
