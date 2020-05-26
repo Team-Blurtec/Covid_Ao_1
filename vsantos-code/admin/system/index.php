@@ -152,15 +152,22 @@ $stmt->execute();
                         method: 'post',
                         data: $("#add-case-form").serialize() + '&action=new_case',
                         success: function (response) {
+                            console.log(response);
                             if (response === 'success') {
                                 Swal.fire({
-                                    icon: 'success'
+                                    title: 'Inserido :>',
+                                    icon: 'success',
+                                    timer: 4500,
+                                    timerProgressBar: true,
+                                    showConfirmButton: false
                                 });
                                 $("#addNewCaseModal").modal("hide");
                             } else {
                                 Swal.fire({
-                                    text: 'Erro ao inserir novo caso :<',
-                                    icon: 'error'
+                                    title: 'Falhado :<',
+                                    icon: 'error',
+                                    showConfirmButton: false,
+                                    timer: 3000
                                 });
                             }
                         }

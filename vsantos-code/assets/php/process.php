@@ -44,6 +44,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'atualizacao') {
 if (isset($_POST['action']) && $_POST['action'] == 'more_case') {
 }
 if (isset($_POST['action']) && $_POST['action'] == 'new_case') {
+    print_r($_POST);
 }
 if (isset($_POST['action']) && $_POST['action'] == 'case') {
     $out_cases = '';
