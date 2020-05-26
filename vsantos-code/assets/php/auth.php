@@ -64,7 +64,7 @@ class Auth2 extends Database
 
     public function buscar_casos()
     {
-        $sql = "SELECT * FROM casos";
+        $sql = "SELECT confirmados,activos,recuperados,obitos,datas.data as 'data',admin.nome as 'admin' FROM casos,datas,admin WHERE casos.idData=datas.id AND casos.idAdmin=admin.id";
 
         $stmt = $this->connect->prepare($sql);
         $stmt->execute();

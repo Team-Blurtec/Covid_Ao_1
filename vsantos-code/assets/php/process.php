@@ -67,7 +67,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'case') {
     $cases = $auth2->buscar_casos();
 
     if ($cases) {
-        $out_cases .= '<table class="table table-striped vs-navbar justify-content-between" id="cases-table">
+        $out_cases .= '<table class="table table-striped vs-navbar table-bordered" id="cases-table">
 <thead>
 <tr>
 <th>Confirmados</th>
@@ -85,8 +85,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'case') {
 <td>' . $case['activos'] . '</td>
 <td>' . $case['recuperados'] . '</td>
 <td>' . $case['obitos'] . '</td>
-<td>' . $case['idData'] . '</td>
-<td>' . $case['idAdmin'] . '</td>
+<td>' . $case['data'] . '</td>
+<td>' . $case['admin'] . '</td>
 </tr>';
         }
         $out_cases .= '</tbody></table>';
@@ -100,7 +100,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'province_case') {
     $provinces_cases = $auth2->buscar_casos_provincias();
 
     if ($provinces_cases) {
-        $out_provinces_cases .= '<table class="table table-striped vs-navbar justify-content-between" id="provincias-table">
+        $out_provinces_cases .= '<table class="table table-striped vs-navbar table-bordered" id="provincias-table">
 <thead>
 <tr>
 <th>Província</th>
