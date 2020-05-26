@@ -59,7 +59,7 @@ $stmt->execute();
     </div>
     <div class="card border-dark my-3">
         <div class="card-body">
-            <div class="table-responsive" id="provincias-table-div">
+            <div class="table-responsive text-center" id="provincias-table-div">
 
             </div>
         </div>
@@ -71,7 +71,7 @@ $stmt->execute();
     </div>
     <div class="card border-dark my-3">
         <div class="card-body">
-            <div class="table-responsive" id="casos-diarios-table-div">
+            <div class="table-responsive text-center" id="casos-diarios-table-div">
 
             </div>
         </div>
@@ -126,56 +126,6 @@ $stmt->execute();
     </div>
 </div>
 <!--Add New Case Modal end-->
-
-<!--Add New Case By Province Modal-->
-<div class="modal fade" id="addNewCaseByProvinceModal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header bg-info vs-modal-header">
-                <h4 class="modal-title vs-modal-title"><i
-                            class="fas fa-viruses fa-lg"></i>&nbsp;Atualizar Casos por Província</h4>
-                <button type="button" class="close vs-modal-close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body vs-modal-body">
-                <form action="#" method="post" id="add-case-b-province-form" class="px-3">
-                    <div class="form-group">
-                        <select id="province_select" name="province_select" class="form-control form-control-lg">
-                            <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
-                                <option value="<?= $row['nome']; ?>"><?= $row['nome']; ?></option>
-                            <?php endwhile; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" name="p-case-conf" class="form-control form-control-lg"
-                               placeholder="Casos Confirmados"
-                               required>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" name="p-case-act" class="form-control form-control-lg"
-                               placeholder="Casos Activos" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" name="p-case-rec" class="form-control form-control-lg"
-                               placeholder="Recuperados" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" name="p-case-death" class="form-control form-control-lg"
-                               placeholder="Mortes" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" name="addCaseByProvinceBtn" id="addCaseByProvinceBtn" value="Atualizar"
-                               class="btn btn-success btn-lg vs-login-btn">
-                        <input type="submit" name="moreCaseByUnified" id="moreCaseByUnified" value="Mais Casos"
-                               class="btn btn-primary btn-lg vs-login-btn">
-                        <input type="reset" class="btn btn-danger btn-lg vs-login-btn" value="Limpar">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Add New Case By Province Modal end-->
-
 
 <script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
