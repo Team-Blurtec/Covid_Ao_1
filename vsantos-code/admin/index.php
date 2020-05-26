@@ -269,6 +269,7 @@ if (isset($_SESSION['user'])) {
                                     timer: 10000,
                                     timerProgressBar: true
                                 });
+                                $("#AdminSystem-RForm")[0].reset();
                                 $("#AdminSystem-register").hide();
                                 $("#jumbotron").show();
                                 $("nav").show();

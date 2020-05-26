@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'auth.php';
 
 $user2 = new Auth2();
@@ -11,13 +12,13 @@ if (isset($_POST['action']) && $_POST['action'] == 'login') {
     $login = $user2->login($nomeL2);
 
     if ($login != null) {
-        if (password_verify($passeL2, $login['password'])) {
+        if (password_verify($passeL2, $login['passe'])) {
             if (!empty($_POST['rem'])) {
                 setcookie("name", $nomeL2, time() + (10 * 24 * 60 * 60), '/');
-                setcookie("name", $passeL2, time() + (10 * 24 * 60 * 60), '/');
+                setcookie("password", $passeL2, time() + (10 * 24 * 60 * 60), '/');
             } else {
                 setcookie("name", "", 1, '/');
-                setcookie("name", "", 1, '/');
+                setcookie("password", "", 1, '/');
             }
             echo 'login';
             $_SESSION['user'] = $nomeL2;

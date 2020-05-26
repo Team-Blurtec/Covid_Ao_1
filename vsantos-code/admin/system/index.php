@@ -3,7 +3,7 @@ require_once '../../assets/php/session.php';
 
 $sql = "SELECT nome FROM provincias ORDER BY nome ASC";
 
-$stmt = $crr_user->connect->prepare($sql);
+$stmt = $session2auth->connect->prepare($sql);
 $stmt->execute();
 ?>
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ $stmt->execute();
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle vs-inverted-navlink" id="navbardrop" data-toggle="dropdown">
                     <i class="fas fa-user-cog"></i>&nbsp;
-                    <?= $crr_name; ?>
+                    <?= $u2name; ?>
                 </a>
                 <div class="dropdown-menu">
                     <a href="../../assets/php/logout.php" class="dropdown-item vs-logout">

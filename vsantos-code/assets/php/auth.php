@@ -18,10 +18,10 @@ class Auth2 extends Database
 
     public function login($nomeL2)
     {
-        $sql = "SELECT nome,passe FROM admin WHERE nome=:nome";
+        $sql = "SELECT nome,passe FROM admin WHERE nome=:name";
 
         $stmt = $this->connect->prepare($sql);
-        $stmt->execute(['nome' => $nomeL2]);
+        $stmt->execute(['name' => $nomeL2]);
 
         $rest = $stmt->fetch(PDO::FETCH_ASSOC);
 

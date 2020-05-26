@@ -6,7 +6,7 @@ require_once 'auth.php';
 $session2auth = new Auth2();
 
 if (!isset($_SESSION['user'])) {
-    header('location: /');
+    header('location: ../covidao/vsantos-code/');
     die;
 }
 
