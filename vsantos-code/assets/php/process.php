@@ -50,9 +50,10 @@ if (isset($_POST['action']) && $_POST['action'] == 'case') {
     $cases = $auth2->buscar_casos();
 
     if ($cases) {
-        $out_cases .= '<table class="table table-striped vs-navbar">
+        $out_cases .= '<table class="table table-striped vs-navbar" id="cases-table">
 <thead>
 <tr>
+<th>Província</th>
 <th>Confirmados</th>
 <th>Activos</th>
 <th>Recuperados</th>
@@ -62,6 +63,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'case') {
 <tbody>';
         foreach ($cases as $case) {
             $out_cases .= '<tr>
+<td>' . $case['nome'] . '</td>
 <td>' . $case['confirmados'] . '</td>
 <td>' . $case['activos'] . '</td>
 <td>' . $case['recuperados'] . '</td>
@@ -75,4 +77,29 @@ if (isset($_POST['action']) && $_POST['action'] == 'case') {
     }
 }
 if (isset($_POST['action']) && $_POST['action'] == 'province_case') {
+    $out_provinces_cases = '';
+    $provinces_cases = $auth2->buscar_casos_provincias();
+
+    if ($provinces_cases) {
+        $out_provinces_cases .= '<table class="table table-striped vs-navbar" id="provincias-table">
+<thead>
+<tr>
+<th>Confirmados</th>
+<th>Activos</th>
+<th>Recuperados</th>
+<th>Obitos</th>
+</tr>
+</thead>
+<tbody>';
+        foreach ($provinces_cases as $case) {
+            $out_provinces_cases .= '<tr>
+<td>' . $case['confirmados'] . '</td>
+<td>' . $case['activos'] . '</td>
+<td>' . $case['recuperados'] . '</td>
+<td>' . $case['obitos'] . '</td>
+</tr>';
+        }
+        $out_provinces_cases .= '</tbody></table>';
+        echo $out_provinces_cases;
+    }
 }
