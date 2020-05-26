@@ -34,7 +34,7 @@ $stmt->execute();
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link vs-navlink" href="#" id="cases-modal-link" data-toggle="modal"
-                   data-target="#addNewCaseModal"><i class="fas fa-procedures"></i>&nbsp;Registrar Casos</a>
+                   data-target="#addNewCaseModal"><i class="fas fa-procedures"></i>&nbsp;Registar Casos</a>
             </li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle vs-inverted-navlink" id="navbardrop" data-toggle="dropdown">
