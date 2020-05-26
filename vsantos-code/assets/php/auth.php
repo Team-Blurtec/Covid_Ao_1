@@ -61,4 +61,16 @@ class Auth2 extends Database
 
         return $rest;
     }
+
+    public function buscar_casos()
+    {
+        $sql = "SELECT * FROM casos";
+
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute();
+
+        $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $rs;
+    }
 }

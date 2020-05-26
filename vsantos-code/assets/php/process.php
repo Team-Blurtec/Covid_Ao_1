@@ -46,6 +46,33 @@ if (isset($_POST['action']) && $_POST['action'] == 'more_case') {
 if (isset($_POST['action']) && $_POST['action'] == 'new_case') {
 }
 if (isset($_POST['action']) && $_POST['action'] == 'case') {
+    $out_cases = '';
+    $cases = $auth2->buscar_casos();
+
+    if ($cases) {
+        $out_cases .= '<table class="table table-striped vs-navbar">
+<thead>
+<tr>
+<th>Confirmados</th>
+<th>Activos</th>
+<th>Recuperados</th>
+<th>Obitos</th>
+</tr>
+</thead>
+<tbody>';
+        foreach ($cases as $case) {
+            $out_cases .= '<tr>
+<td>' . $case['confirmados'] . '</td>
+<td>' . $case['activos'] . '</td>
+<td>' . $case['recuperados'] . '</td>
+<td>' . $case['obitos'] . '</td>
+</tr>';
+        }
+        $out_cases .= '</tbody></table>';
+        echo $out_cases;
+    } else {
+        echo '<h3 class="text-center text-success">:( sem casos registados</h3>';
+    }
 }
 if (isset($_POST['action']) && $_POST['action'] == 'province_case') {
 }
