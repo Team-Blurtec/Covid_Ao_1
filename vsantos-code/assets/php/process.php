@@ -1,5 +1,6 @@
 <?php
-require_once 'auth.php';
+include_once 'auth.php';
+include_once 'session.php';
 
 $auth2 = new Auth2();
 
@@ -41,10 +42,25 @@ if (isset($_POST['action']) && $_POST['action'] == 'atualizacao') {
     }
 
 }
+
+//Processos executados na admin panel
+
 if (isset($_POST['action']) && $_POST['action'] == 'more_case') {
 }
 if (isset($_POST['action']) && $_POST['action'] == 'new_case') {
-    print_r($_POST);
+    $province = $auth2->test_input($_POST['province-select']);
+    $new_case = $auth2->test_input($_POST['case-new']);
+    $rec_case = $auth2->test_input($_POST['case-rec']);
+    $dea_case = $auth2->test_input($_POST['case-death']);
+    $dat_case = $auth2->test_input($_POST['case-onDate']);
+
+    $isInserted = $auth2->criar_novo_registo($province, $new_case, $rec_case, $dea_case, $dat_case, $u2id);
+
+    if ($isInserted) {
+        echo 'success';
+    } else {
+        echo 'tem erro';
+    }
 }
 if (isset($_POST['action']) && $_POST['action'] == 'case') {
     $out_cases = '';
@@ -58,6 +74,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'case') {
 <th>Activos</th>
 <th>Recuperados</th>
 <th>Obitos</th>
+<th>Data</th>
+<th>Registado por</th>
 </tr>
 </thead>
 <tbody>';
@@ -67,6 +85,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'case') {
 <td>' . $case['activos'] . '</td>
 <td>' . $case['recuperados'] . '</td>
 <td>' . $case['obitos'] . '</td>
+<td>' . $case['idData'] . '</td>
+<td>' . $case['idAdmin'] . '</td>
 </tr>';
         }
         $out_cases .= '</tbody></table>';

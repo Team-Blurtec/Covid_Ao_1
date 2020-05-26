@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+include_once 'config.php';
 
 class Auth2 extends Database
 {
@@ -84,5 +84,43 @@ class Auth2 extends Database
         $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $rs;
+    }
+
+    public function criar_novo_registo($province, $new_case, $rec_case, $dea_case, $dat_case, $u2id)
+    {
+        $data = $this->verificar_data($dat_case);
+
+        if ($data) {
+            $sql = "INSERT INTO casos(novos, recuperados, obitos, idAdmin, idData) VALUES (:novos,:recs,:obts,:idAdm,:idData)";
+            $stmt = $this->connect->prepare($sql);
+            $stmt->execute(['novos' => $new_case, 'recs' => $rec_case, 'obts' => $dea_case, 'idAdm' => $u2id, 'idData' => $data['id']]);
+        } else {
+            $sql = "INSERT INTO datas(data)VALUES (:data)";
+            $stmt = $this->connect->prepare($sql);
+            $stmt->execute(['data' => $dat_case]);
+
+            return $this->criar_novo_registo($province, $new_case, $rec_case, $dea_case, $dat_case, $u2id);
+        }
+
+        $sql = "UPDATE provincias SET confirmados=confirmados+(SELECT SUM(novos)FROM casos WHERE id=(SELECT COUNT(id) FROM casos)),activos=activos+(SELECT SUM(novos-recuperados-obitos)FROM casos WHERE id=(SELECT COUNT(id) FROM casos)),recuperados=recuperados+(SELECT SUM(recuperados)FROM casos WHERE id=(SELECT COUNT(id) FROM casos)),obitos=obitos+(SELECT SUM(obitos) FROM casos WHERE id=(SELECT COUNT(id) FROM casos)) WHERE nome=:prov";
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute(['prov' => $province]);
+
+        $update = "UPDATE casos SET confirmados=(SELECT SUM(confirmados) FROM provincias), activos=(SELECT SUM(activos) FROM provincias)";
+        $st_update = $this->connect->prepare($update);
+        $st_update->execute();
+
+        return true;
+    }
+
+    public function verificar_data($dat_case)
+    {
+        $sql = "SELECT id FROM datas WHERE data=:data";
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute(['data' => $dat_case]);
+
+        $rest = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $rest;
     }
 }

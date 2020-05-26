@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'auth.php';
+include_once 'auth.php';
 
 $user2 = new Auth2();
 

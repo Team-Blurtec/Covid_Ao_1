@@ -1,5 +1,5 @@
 <?php
-require_once '../../assets/php/session.php';
+include_once '../../assets/php/session.php';
 
 $sql = "SELECT nome FROM provincias ORDER BY nome ASC";
 
@@ -90,7 +90,7 @@ $stmt->execute();
             <div class="modal-body vs-modal-body">
                 <form action="#" method="post" id="add-case-form" class="px-3">
                     <div class="form-group">
-                        <select id="province_select" name="province_select" class="form-control form-control-lg">
+                        <select id="province_select" name="province-select" class="form-control form-control-lg">
                             <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
                                 <option value="<?= $row['nome']; ?>"><?= $row['nome']; ?></option>
                             <?php endwhile; ?>
@@ -157,17 +157,19 @@ $stmt->execute();
                                 Swal.fire({
                                     title: 'Inserido :>',
                                     icon: 'success',
-                                    timer: 4500,
+                                    timer: 2000,
                                     timerProgressBar: true,
                                     showConfirmButton: false
                                 });
                                 $("#addNewCaseModal").modal("hide");
+                                apresentarProvincias();
+                                apresentarCasosDiarios();
                             } else {
                                 Swal.fire({
                                     title: 'Falhado :<',
                                     icon: 'error',
                                     showConfirmButton: false,
-                                    timer: 3000
+                                    timer: 1000
                                 });
                             }
                         }
@@ -183,7 +185,7 @@ $stmt->execute();
                 data: {action: 'case'},
                 success: function (response) {
                     $("#casos-diarios-table-div").html(response);
-                    $("#casos-table").DataTable({
+                    $("#cases-table").DataTable({
                         order: [0, 'asc'],
                         pageLength: 5,
                         lengthMenu: [5, 10, 15, 20, 50, 75, 100, 200],

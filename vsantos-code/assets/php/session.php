@@ -1,7 +1,6 @@
 <?php
+include_once 'auth.php';
 session_start();
-
-require_once 'auth.php';
 
 $session2auth = new Auth2();
 
