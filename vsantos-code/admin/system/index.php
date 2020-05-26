@@ -134,9 +134,40 @@ $stmt->execute();
 <script type="text/javascript" src="../../assets/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-
         apresentarProvincias();
         apresentarCasosDiarios();
+        $("#addCaseByUnifiedBtn").click(function (e) {
+            if ($("#addCaseByUnifiedBtn").val() === 'terminar') {
+                $("#addNewCaseModal").modal("hide");
+                Swal.fire({
+                    text: 'Terminado :>',
+                    icon: 'success'
+                });
+            } else {
+                if ($("#add-case-form")[0].checkValidity()) {
+                    e.preventDefault();
+
+                    $.ajax({
+                        url: '../../assets/php/process.php',
+                        method: 'post',
+                        data: $("#add-case-form").serialize() + '&action=new_case',
+                        success: function (response) {
+                            if (response === 'success') {
+                                Swal.fire({
+                                    icon: 'success'
+                                });
+                                $("#addNewCaseModal").modal("hide");
+                            } else {
+                                Swal.fire({
+                                    text: 'Erro ao inserir novo caso :<',
+                                    icon: 'error'
+                                });
+                            }
+                        }
+                    });
+                }
+            }
+        });
 
         function apresentarCasosDiarios() {
             $.ajax({
