@@ -53,7 +53,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'case') {
         $out_cases .= '<table class="table table-striped vs-navbar" id="cases-table">
 <thead>
 <tr>
-<th>Província</th>
 <th>Confirmados</th>
 <th>Activos</th>
 <th>Recuperados</th>
@@ -63,7 +62,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'case') {
 <tbody>';
         foreach ($cases as $case) {
             $out_cases .= '<tr>
-<td>' . $case['nome'] . '</td>
 <td>' . $case['confirmados'] . '</td>
 <td>' . $case['activos'] . '</td>
 <td>' . $case['recuperados'] . '</td>
@@ -84,6 +82,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'province_case') {
         $out_provinces_cases .= '<table class="table table-striped vs-navbar" id="provincias-table">
 <thead>
 <tr>
+<th>Província</th>
 <th>Confirmados</th>
 <th>Activos</th>
 <th>Recuperados</th>
@@ -93,6 +92,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'province_case') {
 <tbody>';
         foreach ($provinces_cases as $case) {
             $out_provinces_cases .= '<tr>
+<td>' . $case['nome'] . '</td>
 <td>' . $case['confirmados'] . '</td>
 <td>' . $case['activos'] . '</td>
 <td>' . $case['recuperados'] . '</td>
