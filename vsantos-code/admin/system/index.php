@@ -154,8 +154,10 @@ $stmt->execute();
                                 text: 'Tem a possibilidade de inserir novamente ou terminar',
                                 icon: 'info',
                                 showConfirmButton: false,
-                                timer: 3000
+                                timer: 3500
                             });
+                            apresentarProvincias();
+                            apresentarCasosDiarios();
                         } else {
                             Swal.fire({
                                 title: 'Falhado :<',
