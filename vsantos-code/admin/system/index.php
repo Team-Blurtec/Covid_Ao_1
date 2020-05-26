@@ -136,13 +136,45 @@ $stmt->execute();
     $(document).ready(function () {
         apresentarProvincias();
         apresentarCasosDiarios();
-        $("#addCaseByUnifiedBtn").click(function (e) {
-            if ($("#addCaseByUnifiedBtn").val() === 'terminar') {
-                $("#addNewCaseModal").modal("hide");
-                Swal.fire({
-                    text: 'Terminado :>',
-                    icon: 'success'
+        $("#moreCaseByUnifiedBtn").click(function (e) {
+            if ($("#add-case-form")[0].checkValidity()) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: '../../assets/php/process.php',
+                    method: 'post',
+                    data: $("#add-case-form").serialize() + '&action=more_case',
+                    success: function (response) {
+                        console.log(response);
+                        $("#addCaseByUnifiedBtn").val('Terminar');
+                        if (response === 'success') {
+                            $("#add-case-form")[0].reset();
+                            Swal.fire({
+                                title: 'Inserido :>',
+                                text: 'Tem a possibilidade de inserir novamente ou terminar',
+                                icon: 'info',
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
+                        } else {
+                            Swal.fire({
+                                title: 'Falhado :<',
+                                text: 'Tenta novamente',
+                                icon: 'warning',
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
+                        }
+                    }
                 });
+            }
+        });
+
+        $("#addCaseByUnifiedBtn").click(function (e) {
+            if ($("#addCaseByUnifiedBtn").val() === 'Terminar') {
+                $("#add-case-form")[0].reset();
+                $("#addNewCaseModal").modal("hide");
+                $(this).val('Inserir');
             } else {
                 if ($("#add-case-form")[0].checkValidity()) {
                     e.preventDefault();
@@ -161,6 +193,7 @@ $stmt->execute();
                                     timerProgressBar: true,
                                     showConfirmButton: false
                                 });
+                                $("#add-case-form")[0].reset();
                                 $("#addNewCaseModal").modal("hide");
                                 apresentarProvincias();
                                 apresentarCasosDiarios();
