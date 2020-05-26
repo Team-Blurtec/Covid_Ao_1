@@ -35,11 +35,7 @@ $stmt->execute();
             <li class="nav-item">
                 <a class="nav-link vs-navlink" href="#" id="cases-modal-link" data-toggle="modal"
                    data-target="#addNewCaseModal"><i class="fas fa-procedures"></i>&nbsp;Registrar Casos</a>
-            </li><!--
-            <li class="nav-item">
-                <a class="nav-link vs-navlink" href="#" id="provinces-modal-link" data-toggle="modal"
-                   data-target="#addNewCaseByProvinceModal"><i class="fas fa-sitemap"></i>&nbsp;Províncias</a>
-            </li>-->
+            </li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle vs-inverted-navlink" id="navbardrop" data-toggle="dropdown">
                     <i class="fas fa-user-cog"></i>&nbsp;
