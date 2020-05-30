@@ -86,41 +86,50 @@ class Auth2 extends Database
         return $rs;
     }
 
-    public function criar_novo_registo($province, $new_case, $rec_case, $dea_case, $dat_case, $u2id)
+    public function verificarData($datas)
     {
-        $data = $this->verificar_data($dat_case);
+        $sql_vd = "SELECT DISTINCT id FROM datas WHERE data=:datas";
+        $stmt_vd = $this->connect->prepare($sql_vd);
+        $stmt_vd->execute(['datas' => $datas]);
 
-        if ($data) {
-            $sql = "INSERT INTO casos(novos, recuperados, obitos, idAdmin, idData) VALUES (:novos,:recs,:obts,:idAdm,:idData)";
-            $stmt = $this->connect->prepare($sql);
-            $stmt->execute(['novos' => $new_case, 'recs' => $rec_case, 'obts' => $dea_case, 'idAdm' => $u2id, 'idData' => $data['id']]);
-        } else {
-            $sql = "INSERT INTO datas(data)VALUES (:data)";
-            $stmt = $this->connect->prepare($sql);
-            $stmt->execute(['data' => $dat_case]);
+        $rs_vd = $stmt_vd->fetch(PDO::FETCH_ASSOC);
 
-            return $this->criar_novo_registo($province, $new_case, $rec_case, $dea_case, $dat_case, $u2id);
-        }
+        return $rs_vd;
+    }
 
-        $sql = "UPDATE provincias SET confirmados=confirmados+(SELECT SUM(novos)FROM casos WHERE id=(SELECT COUNT(id) FROM casos)),activos=activos+(SELECT SUM(novos-recuperados-obitos)FROM casos WHERE id=(SELECT COUNT(id) FROM casos)),recuperados=recuperados+(SELECT SUM(recuperados)FROM casos WHERE id=(SELECT COUNT(id) FROM casos)),obitos=obitos+(SELECT SUM(obitos) FROM casos WHERE id=(SELECT COUNT(id) FROM casos)) WHERE nome=:prov";
-        $stmt = $this->connect->prepare($sql);
-        $stmt->execute(['prov' => $province]);
+    public function atualizar_registo($province, $new_case, $rec_case, $dea_case, $dat_case)
+    {
+        $uql = "UPDATE casos SET confirmados=confirmados+:novs,activos=activos+:novs-:recs-:obts,novos=novos+:novs,recuperados=recuperados+:recs,obitos=obitos+:obts WHERE idData=:idata";
+        $utm = $this->connect->prepare($uql);
+        $utm->execute(['novs' => $new_case, 'recs' => $rec_case, 'obts' => $dea_case, 'idata' => $dat_case]);
 
-        $update = "UPDATE casos SET confirmados=(SELECT SUM(confirmados) FROM provincias), activos=(SELECT SUM(activos) FROM provincias) WHERE id=(SELECT COUNT(id)FROM casos)";
-        $st_update = $this->connect->prepare($update);
-        $st_update->execute();
+        $sql = "UPDATE provincias SET confirmados=confirmados+:novs,activos=activos+:novs-:recs-:obts,recuperados=recuperados+:recs,obitos=obitos+:obts WHERE nome=:prov";
+        $stm = $this->connect->prepare($sql);
+        $stm->execute(['novs' => $new_case, 'recs' => $rec_case, 'obts' => $dea_case, 'prov' => $province]);
 
         return true;
     }
 
-    public function verificar_data($dat_case)
+    public function novo_registo($province, $new_case, $rec_case, $dea_case, $dat_case, $u2id)
     {
-        $sql = "SELECT id FROM datas WHERE data=:data";
-        $stmt = $this->connect->prepare($sql);
-        $stmt->execute(['data' => $dat_case]);
+        $vql = "INSERT INTO datas(data)VALUES (:datas)";
+        $vtm = $this->connect->prepare($vql);
+        $vtm->execute(['datas' => $dat_case]);
 
-        $rest = $stmt->fetch(PDO::FETCH_ASSOC);
+        $rvql = "SELECT DISTINCT id FROM datas WHERE data=:datar";
+        $rvtm = $this->connect->prepare($rvql);
+        $rvtm->execute(['datar' => $dat_case]);
 
-        return $rest;
+        if ($rvs = $rvtm->fetch(PDO::FETCH_ASSOC)) {
+            $wql = "INSERT INTO casos(novos, confirmados, activos, recuperados, obitos, idAdmin, idData) VALUES (:novs,:novs,:novs-:recs-:obts,:recs,:obts,:iadm,:idat)";
+            $wtm = $this->connect->prepare($wql);
+            $wtm->execute(['novs' => $new_case, 'recs' => $rec_case, 'obts' => $dea_case, 'iadm' => $u2id, 'idat' => $rvs['id']]);
+        }
+
+        $mql = "UPDATE provincias SET confirmados=confirmados+:novs,activos=activos+:novs-:recs-:obts,recuperados=recuperados+:recs,obitos=obitos+:obts WHERE nome=:prov";
+        $mtm = $this->connect->prepare($mql);
+        $mtm->execute(['novs' => $new_case, 'recs' => $rec_case, 'obts' => $dea_case, 'prov' => $province]);
+
+        return true;
     }
 }
