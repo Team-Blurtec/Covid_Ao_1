@@ -64,7 +64,7 @@ class Auth2 extends Database
 
     public function buscar_casos()
     {
-        $sql = "SELECT confirmados,activos,recuperados,obitos,datas.data as 'data',admin.nome as 'admin' FROM casos,datas,admin WHERE casos.idData=datas.id AND casos.idAdmin=admin.id";
+        $sql = "SELECT confirmados,activos,recuperados,obitos,data,admin.nome as 'admin' FROM casos,admin WHERE casos.idAdmin=admin.id ORDER BY data ASC";
 
         $stmt = $this->connect->prepare($sql);
         $stmt->execute();
@@ -86,50 +86,40 @@ class Auth2 extends Database
         return $rs;
     }
 
-    public function verificarData($datas)
+    public function atualizar_registo($province, $new_case, $rec_case, $dea_case, $dat_case, $u2id)
     {
-        $sql_vd = "SELECT DISTINCT id FROM datas WHERE data=:datas";
-        $stmt_vd = $this->connect->prepare($sql_vd);
-        $stmt_vd->execute(['datas' => $datas]);
+        $upd_provincias = "UPDATE provincias SET confirmados=confirmados+:n,activos=activos+:n-:r-:o,recuperados=recuperados+:r,obitos=obitos+:o WHERE nome=:pr";
+        $stmt_provincias = $this->connect->prepare($upd_provincias);
+        $query_p = $stmt_provincias->execute(['n' => $new_case, 'r' => $rec_case, 'o' => $dea_case, 'pr' => $province]);
 
-        $rs_vd = $stmt_vd->fetch(PDO::FETCH_ASSOC);
+        $upd_casos = "UPDATE casos SET confirmados=confirmados+:n,activos=activos+:n-:r-:o,novos=novos+:n,recuperados=recuperados+:r,obitos=obitos+:o,idAdmin=:id WHERE data=:datai";
+        $stmt_casos = $this->connect->prepare($upd_casos);
+        $query_c = $stmt_casos->execute(['n' => $new_case, 'r' => $rec_case, 'o' => $dea_case, 'id' => $u2id, 'datai' => $dat_case]);
 
-        return $rs_vd;
+        return $query_c + $query_p;
     }
 
-    public function atualizar_registo($province, $new_case, $rec_case, $dea_case, $dat_case)
+    public function existe_data($dat_case)
     {
-        $uql = "UPDATE casos SET confirmados=confirmados+:novs,activos=activos+:novs-:recs-:obts,novos=novos+:novs,recuperados=recuperados+:recs,obitos=obitos+:obts WHERE idData=:idata";
-        $utm = $this->connect->prepare($uql);
-        $utm->execute(['novs' => $new_case, 'recs' => $rec_case, 'obts' => $dea_case, 'idata' => $dat_case]);
+        $sql = "SELECT data FROM casos WHERE data=:datai";
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute(['datai' => $dat_case]);
 
-        $sql = "UPDATE provincias SET confirmados=confirmados+:novs,activos=activos+:novs-:recs-:obts,recuperados=recuperados+:recs,obitos=obitos+:obts WHERE nome=:prov";
-        $stm = $this->connect->prepare($sql);
-        $stm->execute(['novs' => $new_case, 'recs' => $rec_case, 'obts' => $dea_case, 'prov' => $province]);
+        $rest = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        return true;
+        return $rest;
     }
 
-    public function novo_registo($province, $new_case, $rec_case, $dea_case, $dat_case, $u2id)
+    public function criar_registo($province, $new_case, $rec_case, $dea_case, $dat_case, $u2id)
     {
-        $vql = "INSERT INTO datas(data)VALUES (:datas)";
-        $vtm = $this->connect->prepare($vql);
-        $vtm->execute(['datas' => $dat_case]);
+        $first_ql = "UPDATE provincias SET confirmados=confirmados+:n,activos=activos+:n-:r-:o,recuperados=recuperados+:r,obitos=obitos+:o WHERE nome=:pr";
+        $ql_stmt = $this->connect->prepare($first_ql);
+        $query_p = $ql_stmt->execute(['n' => $new_case, 'r' => $rec_case, 'o' => $dea_case, 'pr' => $province]);
 
-        $rvql = "SELECT DISTINCT id FROM datas WHERE data=:datar";
-        $rvtm = $this->connect->prepare($rvql);
-        $rvtm->execute(['datar' => $dat_case]);
+        $sql = "INSERT INTO casos(novos, confirmados, activos, recuperados, obitos, data, idAdmin) VALUES (:n,(SELECT SUM(confirmados) FROM provincias),(SELECT SUM(activos) FROM provincias),(SELECT SUM(recuperados) FROM provincias),(SELECT SUM(obitos) FROM provincias),:datai,:id)";
+        $stmt = $this->connect->prepare($sql);
+        $query_c = $stmt->execute(['n' => $new_case, 'datai' => $dat_case, 'id' => $u2id]);
 
-        if ($rvs = $rvtm->fetch(PDO::FETCH_ASSOC)) {
-            $wql = "INSERT INTO casos(novos, confirmados, activos, recuperados, obitos, idAdmin, idData) VALUES (:novs,:novs,:novs-:recs-:obts,:recs,:obts,:iadm,:idat)";
-            $wtm = $this->connect->prepare($wql);
-            $wtm->execute(['novs' => $new_case, 'recs' => $rec_case, 'obts' => $dea_case, 'iadm' => $u2id, 'idat' => $rvs['id']]);
-        }
-
-        $mql = "UPDATE provincias SET confirmados=confirmados+:novs,activos=activos+:novs-:recs-:obts,recuperados=recuperados+:recs,obitos=obitos+:obts WHERE nome=:prov";
-        $mtm = $this->connect->prepare($mql);
-        $mtm->execute(['novs' => $new_case, 'recs' => $rec_case, 'obts' => $dea_case, 'prov' => $province]);
-
-        return true;
+        return $query_p + $query_c;
     }
 }

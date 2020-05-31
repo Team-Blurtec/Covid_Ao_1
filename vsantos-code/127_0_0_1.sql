@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2020 at 12:30 AM
+-- Generation Time: May 31, 2020 at 10:54 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -33,8 +33,8 @@ USE `cvao2_db`;
 CREATE TABLE `admin`
 (
     `id`    int(11)      NOT NULL,
-    `nome`  varchar(40)  NOT NULL,
-    `email` varchar(100) NOT NULL,
+    `nome`  varchar(20)  NOT NULL,
+    `email` varchar(40)  NOT NULL,
     `passe` varchar(255) NOT NULL
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
@@ -44,7 +44,7 @@ CREATE TABLE `admin`
 --
 
 INSERT INTO `admin` (`id`, `nome`, `email`, `passe`)
-VALUES (4, 'vijay', 'vijay.v@cvao.mail.com', '$2y$10$YbF/gq5xFD7nlYuGWg2zfO8VsGAdEIZ13QvjPUNbbYylZtRlbaOHO');
+VALUES (1, 'vijay', 'vijay.v@cvao.mail.com', '$2y$10$PYyGVdADCbBf6rt.mML.oOsTkKtrvB9u8TrvneC2QOeLPDYl9Vatm');
 
 -- --------------------------------------------------------
 
@@ -60,23 +60,20 @@ CREATE TABLE `casos`
     `activos`     int(11) NOT NULL DEFAULT 0,
     `recuperados` int(11) NOT NULL DEFAULT 0,
     `obitos`      int(11) NOT NULL DEFAULT 0,
-    `idAdmin`     int(11) NOT NULL,
-    `idData`      int(11) NOT NULL
+    `data`        date    NOT NULL,
+    `idAdmin`     int(11) NOT NULL
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `datas`
+-- Dumping data for table `casos`
 --
 
-CREATE TABLE `datas`
-(
-    `id`   int(11) NOT NULL,
-    `data` date    NOT NULL
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8;
+INSERT INTO `casos` (`id`, `novos`, `confirmados`, `activos`, `recuperados`, `obitos`, `data`, `idAdmin`)
+VALUES (1, 6, 6, 6, 0, 0, '2020-05-31', 1),
+       (2, 5, 6, 4, 2, 0, '2020-06-01', 1),
+       (3, 3, 6, 4, 2, 0, '2020-06-02', 1),
+       (4, 2, 16, 12, 4, 0, '2020-06-03', 1);
 
 -- --------------------------------------------------------
 
@@ -103,8 +100,8 @@ INSERT INTO `provincias` (`id`, `nome`, `confirmados`, `activos`, `recuperados`,
 VALUES (1, 'Luanda', 0, 0, 0, 0),
        (2, 'Cabinda', 0, 0, 0, 0),
        (3, 'Huíla', 0, 0, 0, 0),
-       (4, 'Benguela', 0, 0, 0, 0),
-       (5, 'Bengo', 0, 0, 0, 0),
+       (4, 'Benguela', 5, 1, 4, 0),
+       (5, 'Bengo', 6, 6, 0, 0),
        (6, 'Malange', 0, 0, 0, 0),
        (7, 'Huambo', 0, 0, 0, 0),
        (8, 'Kuando Kubango', 0, 0, 0, 0),
@@ -116,7 +113,7 @@ VALUES (1, 'Luanda', 0, 0, 0, 0),
        (14, 'Lunda Sul', 0, 0, 0, 0),
        (15, 'Lunda Norte', 0, 0, 0, 0),
        (16, 'Namibe', 0, 0, 0, 0),
-       (17, 'Bié', 0, 0, 0, 0),
+       (17, 'Bié', 5, 5, 0, 0),
        (18, 'Zaire', 0, 0, 0, 0);
 
 --
@@ -127,22 +124,14 @@ VALUES (1, 'Luanda', 0, 0, 0, 0),
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-    ADD PRIMARY KEY (`id`),
-    ADD UNIQUE KEY `email` (`email`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `casos`
 --
 ALTER TABLE `casos`
     ADD PRIMARY KEY (`id`),
-    ADD KEY `idAdmin` (`idAdmin`),
-    ADD KEY `idData` (`idData`);
-
---
--- Indexes for table `datas`
---
-ALTER TABLE `datas`
-    ADD PRIMARY KEY (`id`);
+    ADD KEY `idAdmin` (`idAdmin`);
 
 --
 -- Indexes for table `provincias`
@@ -159,19 +148,14 @@ ALTER TABLE `provincias`
 --
 ALTER TABLE `admin`
     MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,
-    AUTO_INCREMENT = 5;
+    AUTO_INCREMENT = 2;
 
 --
 -- AUTO_INCREMENT for table `casos`
 --
 ALTER TABLE `casos`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `datas`
---
-ALTER TABLE `datas`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,
+    AUTO_INCREMENT = 5;
 
 --
 -- AUTO_INCREMENT for table `provincias`
@@ -188,8 +172,7 @@ ALTER TABLE `provincias`
 -- Constraints for table `casos`
 --
 ALTER TABLE `casos`
-    ADD CONSTRAINT `casos_ibfk_1` FOREIGN KEY (`idData`) REFERENCES `datas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-    ADD CONSTRAINT `casos_ibfk_2` FOREIGN KEY (`idAdmin`) REFERENCES `admin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+    ADD CONSTRAINT `casos_ibfk_1` FOREIGN KEY (`idAdmin`) REFERENCES `admin` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;

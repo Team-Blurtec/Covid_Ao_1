@@ -11,12 +11,19 @@ if (isset($_POST['action']) && $_POST['action'] == 'more_case') {
     $rec_case = $auth2->test_input($_POST['case-rec']);
     $dea_case = $auth2->test_input($_POST['case-death']);
     $dat_case = $auth2->test_input($_POST['case-onDate']);
-    $isInserted = $auth2->criar_novo_registo($province, $new_case, $rec_case, $dea_case, $u2id, $dat_case);
 
-    if ($isInserted) {
-        echo 'success';
+    if ($auth2->existe_data($dat_case) != null) {
+        if ($auth2->atualizar_registo($province, $new_case, $rec_case, $dea_case, $dat_case, $u2id)) {
+            echo 'success';
+        } else {
+            echo $auth2->showMessage('warning', 'atualizar registo falhou');
+        }
     } else {
-        echo 'tem erro';
+        if ($auth2->criar_registo($province, $new_case, $rec_case, $dea_case, $dat_case, $u2id)) {
+            echo 'success';
+        } else {
+            echo $auth2->showMessage('danger', 'criar registo falhou');
+        }
     }
 }
 if (isset($_POST['action']) && $_POST['action'] == 'new_case') {
@@ -26,17 +33,22 @@ if (isset($_POST['action']) && $_POST['action'] == 'new_case') {
     $dea_case = $auth2->test_input($_POST['case-death']);
     $dat_case = $auth2->test_input($_POST['case-onDate']);
 
-    if ($idata = $auth2->verificarData($dat_case)) {
-        if ($auth2->atualizar_registo($province, $new_case, $rec_case, $dea_case, $idata['id'])) {
+    if ($auth2->existe_data($dat_case) != null) {
+        if ($auth2->atualizar_registo($province, $new_case, $rec_case, $dea_case, $dat_case, $u2id)) {
             echo 'success';
+        } else {
+            echo $auth2->showMessage('warning', 'atualizar registo falhou');
         }
     } else {
-        if ($auth2->novo_registo($province, $new_case, $rec_case, $dea_case, $dat_case, $u2id)) {
+        if ($auth2->criar_registo($province, $new_case, $rec_case, $dea_case, $dat_case, $u2id)) {
             echo 'success';
+        } else {
+            echo $auth2->showMessage('danger', 'criar registo falhou');
         }
     }
 }
 
+// Processos executados na landing page
 if (isset($_POST['action']) && $_POST['action'] == 'case') {
     $out_cases = '';
     $cases = $auth2->buscar_casos();
