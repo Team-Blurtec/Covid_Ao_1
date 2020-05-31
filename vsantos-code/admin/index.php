@@ -211,7 +211,7 @@ if (isset($_SESSION['user'])) {
                     method: 'post',
                     data: $("#forgot-form").serialize() + '&action=forgot',
                     success: function (response) {
-                        console.log(response);
+
                         $("#forgot-form")[0].reset();
                         $("#forgotAlert").html(response);
                     }
@@ -260,7 +260,7 @@ if (isset($_SESSION['user'])) {
                         method: 'post',
                         data: $("#AdminSystem-RForm").serialize() + '&action=register',
                         success: function (response) {
-                            console.log(response);
+
                             $("#AdminSystem-register-btn").val('Submeter');
                             if (response === 'register') {
                                 Swal.fire({

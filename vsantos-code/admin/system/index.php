@@ -145,7 +145,7 @@ $stmt->execute();
                     method: 'post',
                     data: $("#add-case-form").serialize() + '&action=more_case',
                     success: function (response) {
-                        console.log(response);
+
                         $("#addCaseByUnifiedBtn").val('Terminar');
                         if (response === 'success') {
                             $("#add-case-form")[0].reset();
@@ -186,7 +186,7 @@ $stmt->execute();
                         method: 'post',
                         data: $("#add-case-form").serialize() + '&action=new_case',
                         success: function (response) {
-                            console.log(response);
+
                             if (response === 'success') {
                                 Swal.fire({
                                     title: 'Inserido :>',

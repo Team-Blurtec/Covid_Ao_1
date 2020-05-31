@@ -51,7 +51,7 @@
                 method: 'post',
                 data: {action: 'atualizacao'},
                 success: function (response) {
-                    console.log(response);
+
                     $("#table-atualizacao").html(response);
                 }
             });
