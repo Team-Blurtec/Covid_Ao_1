@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Jun-2020 às 22:11
+-- Tempo de geração: 16-Jun-2020 às 16:15
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.3
 
@@ -119,6 +119,46 @@ INSERT INTO `provincias` (`id`, `nome`, `confirmados`, `activos`, `recuperados`,
 (17, 'Bié', 0, 0, 0, 0),
 (18, 'Zaire', 0, 0, 0, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `visitas`
+--
+
+CREATE TABLE `visitas` (
+  `Id` int(11) NOT NULL,
+  `Ip` varchar(30) NOT NULL,
+  `Data` varchar(30) NOT NULL,
+  `Hora` varchar(30) NOT NULL,
+  `hits` varchar(30) CHARACTER SET utf8 NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `visitas`
+--
+
+INSERT INTO `visitas` (`Id`, `Ip`, `Data`, `Hora`, `hits`) VALUES
+(33, '105.168.13.152', '2020/06/14', '20:16', '1'),
+(32, '154.127.230.144', '2020/06/14', '20:23', '4'),
+(34, '105.172.183.14', '2020/06/14', '20:25', '1'),
+(35, '105.168.16.241', '2020/06/14', '20:34', '1'),
+(36, '31.13.103.2', '2020/06/15', '02:51', '1'),
+(37, '31.13.127.112', '2020/06/15', '05:06', '1'),
+(38, '173.252.87.28', '2020/06/15', '07:38', '1'),
+(39, '173.252.87.113', '2020/06/15', '07:38', '1'),
+(40, '173.252.87.119', '2020/06/15', '07:38', '2'),
+(41, '173.252.87.111', '2020/06/15', '07:38', '1'),
+(42, '173.252.87.27', '2020/06/15', '07:38', '1'),
+(43, '154.127.230.144', '2020/06/15', '08:22', '1'),
+(44, '173.252.87.27', '2020/06/16', '07:38', '5'),
+(45, '173.252.87.87', '2020/06/16', '07:38', '5'),
+(46, '178.252.87.87', '2020/06/16', '07:38', '5'),
+(47, '178.252.87.87', '2020/06/17', '09:38', '5'),
+(48, '178.252.83.87', '2020/06/17', '09:38', '5'),
+(49, '::1', '2020/06/15', '23:00', '2'),
+(50, '192.168.100.5', '2020/06/15', '23:24', '9'),
+(51, '::1', '2020/06/16', '12:19', '1');
+
 --
 -- Índices para tabelas despejadas
 --
@@ -143,6 +183,12 @@ ALTER TABLE `provincias`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `visitas`
+--
+ALTER TABLE `visitas`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -163,6 +209,12 @@ ALTER TABLE `casos`
 --
 ALTER TABLE `provincias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT de tabela `visitas`
+--
+ALTER TABLE `visitas`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- Restrições para despejos de tabelas
