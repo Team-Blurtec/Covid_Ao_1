@@ -36,6 +36,10 @@ $stmt->execute();
                 <a class="nav-link vs-navlink" href="#" id="cases-modal-link" data-toggle="modal"
                    data-target="#addNewCaseModal"><i class="fas fa-procedures"></i>&nbsp;Registar Casos</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link vs-navlink" href="post"
+                ><i class="fas fa-newspaper"></i> Postar Noticia</a>
+            </li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle vs-inverted-navlink" id="navbardrop" data-toggle="dropdown">
                     <i class="fas fa-user-cog"></i>&nbsp;
@@ -76,7 +80,7 @@ $stmt->execute();
             </div>
         </div>
     </div>
-
+    <!--
     <div class="row">
         <div class="col-lg-12 mt-4">
             <h4 class="text-center vs-modal-title">Visitas por Ip-hora-data-hits</h4>
@@ -96,20 +100,20 @@ $stmt->execute();
                     </thead>
                     <tbody>
                     <?php
-                    include '../../conexao.php';
-                    $sql="SELECT Ip,Data,Hora,hits FROM visitas";
-                    $buscar = mysqli_query($conexao,$sql);
+    include '../../conexao.php';
+    $sql="SELECT Ip,Data,Hora,hits FROM visitas";
+    $buscar = mysqli_query($conexao,$sql);
 
 
-                    while ($dados = mysqli_fetch_array($buscar)){
+    while ($dados = mysqli_fetch_array($buscar)){
 
-                    $c_ip = $dados['Ip'];
-                    $c_Data = $dados['Data'];
-                    $c_Hora = $dados['Hora'];
-                    $c_hits = $dados['hits'];
+        $c_ip = $dados['Ip'];
+        $c_Data = $dados['Data'];
+        $c_Hora = $dados['Hora'];
+        $c_hits = $dados['hits'];
 
 
-                    ?>
+        ?>
                     <tr>
                         <td ><?php echo $c_ip?></td>
                         <td ><?php echo $c_Data?></td>
@@ -119,24 +123,37 @@ $stmt->execute();
 
                     </tbody>
                     <?php }
-                    ?>
+    ?>
                 </table>
 
             </div>
         </div>
     </div>
-
+-->
 
 
     <div class="row">
         <div class="col-lg-12 mt-4">
-            <h4 class="text-center vs-modal-title">Visitas por dia</h4>
+            <h4 class="text-center vs-modal-title">Visitas por dia main page</h4>
         </div>
     </div>
     <div class="card border-dark my-3">
         <div class="card-body">
             <div class="table-responsive text-center">
                 <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 mt-4">
+            <h4 class="text-center vs-modal-title">Visitas por dia news page</h4>
+        </div>
+    </div>
+    <div class="card border-dark my-3">
+        <div class="card-body">
+            <div class="table-responsive text-center">
+                <canvas id="barChart_news" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
             </div>
         </div>
     </div>
@@ -417,6 +434,71 @@ $stmt->execute();
         }
 
         var barChart = new Chart(barChartCanvas, {
+            type: 'bar',
+            data: barChartData,
+            options: barChartOptions
+        })
+
+
+    })
+</script>
+<script>
+    <?php
+    include '../../conexao.php';
+    $dias='';
+    $c_ip='';
+    $c_t='';
+    $c_d='';
+
+    $sql = mysqli_query($conexao,"SELECT COUNT(Ip) AS Total,Data AS Dia FROM visitas_news GROUP BY DAY(Data)");
+
+
+
+    while($row = mysqli_fetch_array($sql)){
+
+        $dias = $dias . '"'. $row['Dia'].'",';
+        $c_ip = $c_ip . '"'. $row['Total'] .'",';
+
+
+    }
+
+    $dias = trim($dias,",");
+    $c_ip = trim($c_ip,",");
+
+    ?>
+    $(function () {
+        /* ChartJS
+         * -------
+         * Here we will create a few charts using ChartJS
+         */
+
+        //-------------
+        //- BAR CHART -
+        //-------------
+        var barChartCanvas = $('#barChart_news').get(0).getContext('2d')
+        var barChartData ={
+            labels  : [<?php echo $dias; ?>],
+            datasets: [
+                {
+                    label               : 'visitas',
+                    backgroundColor     : 'Darkred',
+                    borderColor         : 'rgba(60,141,188,0.8)',
+                    pointRadius          : false,
+                    pointColor          : '#3b8bba',
+                    pointStrokeColor    : 'rgba(60,141,188,1)',
+                    pointHighlightFill  : '#fff',
+                    pointHighlightStroke: 'rgba(60,141,188,1)',
+                    data                : [<?php echo $c_ip; ?>]
+                },
+            ]
+        }
+        var barChartOptions = {
+            responsive              : true,
+            maintainAspectRatio     : false,
+            datasetFill             : false
+        }
+
+        var barChart_news = new Chart(barChartCanvas, {
             type: 'bar',
             data: barChartData,
             options: barChartOptions

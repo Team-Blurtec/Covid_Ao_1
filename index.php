@@ -57,6 +57,7 @@
     <link href="assets/css/all.min.css"> <!--Estilo dos icones FontAwesome5-->
     <link href="assets/css/sweetalert2.min.css" rel="stylesheet"> <!--Estilo de alertas e fades com Sweetalert2-->
     <link href="assets/css/jquery.dataTables.min.css" rel="stylesheet"> <!--Estilo de tabelas-->
+
 </head>
 <body style="background-image: url(&quot;assets/img/7ccb010d8fddc4bcd84587ef3c34d100.jpg?h=c3d0f8c013a249f0ca03f1b6ed591c4f&quot;);padding: 3px;color: rgb(255,255,255);">
 <div class="wrapper">
@@ -74,6 +75,7 @@
                         <li class="nav-item" role="presentation"><a class="nav-link active" href="#provincias" style="color: #ffffff;" onmouseover="this.style.backgroundColor = 'rgb(255,214,0)'"; onmouseout="this.style.backgroundColor = ''";>Casos por Províncias</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="#Mapa" style="color: #ffffff;" onmouseover="this.style.backgroundColor = 'rgb(255,214,0)'"; onmouseout="this.style.backgroundColor = ''";>Mapa</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="#percentagens" style="color: #ffffff;" onmouseover="this.style.backgroundColor = 'rgb(255,214,0)'"; onmouseout="this.style.backgroundColor = ''";>Progressão</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="news/ultimas" style="color: #ffffff;" onmouseover="this.style.backgroundColor = 'rgb(255,214,0)'" ; onmouseout="this.style.backgroundColor = ''" ;>Noticias</a></li>
                         <li class="nav-item" role="presentation"></li>
                     </ul>
                 </div>
@@ -235,7 +237,7 @@
                                                 <tbody>
                                                 <?php
                                                 include 'conexao.php';
-                                                $sql="SELECT confirmados,activos,recuperados,obitos,nome FROM provincias";
+                                                $sql="SELECT confirmados,activos,recuperados,obitos,nome FROM provincias order by confirmados DESC";
                                                 $buscar = mysqli_query($conexao,$sql);
 
 
@@ -275,6 +277,7 @@
                             <!-- /.row -->
 
                             <!-- Map card -->
+
                             <div class="card " id="Mapa" style="background-color:whitesmoke ;color:  #eead2d;">
                                 <div class="card-header border-0" style="background-color:#1b1e21 ;color:  #eead2d;">
                                     <h3 class="card-title">
@@ -358,9 +361,9 @@
 
                             </div>
                         </section>
-                            <!-- /.col (LEFT) -->
+                        <!-- /.col (LEFT) -->
 
-                            <!-- /.col (RIGHT) -->
+                        <!-- /.col (RIGHT) -->
                     </div>
                     <!-- /.row -->
 
@@ -384,7 +387,7 @@
         </footer>
     </div>
 
-            </div>
+</div>
 
 
 <script type="text/javascript" src="https://www.google.com/jsapi">
@@ -435,49 +438,7 @@
 
 
 
-<!--MAPA-->
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-    google.charts.load('current', {
-        'packages':['geochart'],
-        // Note: you will need to get a mapsApiKey for your project.
-        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-        'mapsApiKey': 'AIzaSyAHmhYYdxcJdfId1UjVR4BH8eLGgeR3fN4'
-    });
-    google.charts.setOnLoadCallback(drawRegionsMap);
 
-    function drawRegionsMap() {
-        var data = google.visualization.arrayToDataTable([
-            ['Provincia', 'Casos Confirmados','Recuperados'],
-
-            <?php include 'conexao.php';
-            $sql="SELECT nome,confirmados,recuperados FROM provincias";
-            $buscar = mysqli_query($conexao,$sql);
-
-
-            while ($dados = mysqli_fetch_array($buscar)){
-
-            $Nome = $dados['nome'];
-            $C_confirm =$dados['confirmados'];
-            $C_recuperados =$dados['recuperados'];
-
-
-            ?>
-            ['<?php echo $Nome?>',<?php echo $C_confirm?>,<?php echo $C_recuperados?>],
-            <?php }
-            ?>
-
-        ]);
-
-        var options = { region: 'AO',
-            resolution: 'provinces',
-            colors: ['#acb2b9', '#FF0000']};
-
-        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-
-        chart.draw(data, options);
-    }
-</script>
 
 
 <![DESENHA GRAFICO TARTE ]-->
@@ -525,6 +486,52 @@
 </script>
 
 <![FIM DESENHA GRAFICO TARTE ]-->
+
+
+
+<!--MAPA-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyAHmhYYdxcJdfId1UjVR4BH8eLGgeR3fN4'
+    });
+    google.charts.setOnLoadCallback(drawRegionsMap);
+
+    function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+            ['Provincia', 'Casos Confirmados','Recuperados'],
+
+            <?php include 'conexao.php';
+            $sql="SELECT nome,confirmados,recuperados FROM provincias";
+            $buscar = mysqli_query($conexao,$sql);
+
+
+            while ($dados = mysqli_fetch_array($buscar)){
+
+            $Nome = $dados['nome'];
+            $C_confirm =$dados['confirmados'];
+            $C_recuperados =$dados['recuperados'];
+
+
+            ?>
+            ['<?php echo $Nome?>',<?php echo $C_confirm?>,<?php echo $C_recuperados?>],
+            <?php }
+            ?>
+
+        ]);
+
+        var options = { region: 'AO',
+            resolution: 'provinces',
+            colors: ['#acb2b9', '#FF0000']};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+    }
+</script>
 
 
 <![DESENHA GRAFICO DE LINHAS ]-->
