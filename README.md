@@ -1,4 +1,4 @@
-# COVID.AO BY BLURTEC
+# COVID.AO BY BLURTEC & JambaGraphics 
 ![COVID](https://github.com/Team-Blurtec/Covid_Ao_1/blob/master/src/styles/assets_main/images/screenhome.png)
 
 
@@ -17,4 +17,4 @@ Ciências da Computação conhecidos por TEAMBLUR.
 
 ### BLURTEC
 ![blurtec](https://github.com/Team-Blurtec/Covid_Ao_1/blob/master/src/styles/assets_main/images/BLUR-2.png)
-![Covid.ao]https://github.com/Team-Blurtec/Covid_Ao_1/blob/master/src/styles/assets_main/images/logo_p.png)
+
