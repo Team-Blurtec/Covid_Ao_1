@@ -1,0 +1,60 @@
+@import url(../fonts/Sora_wght.ttf);
+@import url(../fonts/Lato/Lato-Regular.ttf);
+@import url(../fonts/Karla-Regular.ttf);
+
+body {
+    background-color: darkgray !important;
+}
+
+tbody td {
+    background: #1b1c1d !important;
+}
+
+.button {
+    font-family: 'Karla', sans-serif !important;
+}
+
+.pusher {
+    background-color: darkgray !important;
+    font-family: 'Sora', sans-serif !important;
+}
+
+.main-content {
+    margin-top: 51px !important;
+}
+
+.ui.vertical.menu.sidebar-menu {
+    font-family: 'Sora', sans-serif !important;
+    margin-top: 52px !important;
+    max-height: calc(100% - 52px) !important;
+    height: calc(100% - 52px) !important;
+}
+
+@media (min-width: 768px) {
+    .ui.vertical.menu.sidebar-menu {
+        visibility: visible;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .ui.vertical.menu.sidebar-ui {
+        visibility: visible;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .main-content {
+        margin-left: 15rem;
+    }
+
+    .sidebar-menu-toggler {
+        display: none !important;
+    }
+}
+
+#blurtec {
+    font-family: 'Sora', sans-serif !important;
+    cursor: pointer !important;
+}
+
+#effect {
+    cursor: not-allowed;
+}
